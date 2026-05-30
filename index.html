@@ -1,0 +1,1028 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI IT - פורטל הבינה המלאכותית לעסקים ישראלים</title>
+  <meta name="description" content="AI IT הוא פורטל ה-AI הגדול בישראל. מדריכי ChatGPT, Claude, Gemini, הטמעת AI לעסקים וייעוץ מאת תומר - יועץ AI לעסקים קטנים ובינוניים.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ai-it.co.il/">
+  <meta property="og:title" content="AI IT - פורטל הבינה המלאכותית לעסקים ישראלים">
+  <meta property="og:description" content="מדריכי AI, הטמעת AI לעסקים וייעוץ אישי מאת תומר. מנגיש את עולם הבינה המלאכותית לעסקים ישראלים.">
+  <meta property="og:url" content="https://ai-it.co.il/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="AI IT">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "name": "AI IT",
+        "url": "https://ai-it.co.il",
+        "inLanguage": "he"
+      },
+      {
+        "@type": "Organization",
+        "name": "AI IT",
+        "url": "https://ai-it.co.il",
+        "founder": {"@type": "Person", "name": "תומר"},
+        "description": "פורטל הבינה המלאכותית הגדול בישראל"
+      }
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:       #FFFFFF;
+      --primary-light: #F9FAFB;
+      --surface:       #F3F4F6;
+      --accent:        #3B82F6;
+      --accent-warm:   #F59E0B;
+      --accent-glow:   rgba(59,130,246,0.08);
+      --text-primary:  #111827;
+      --text-secondary:#6B7280;
+      --border:        #E5E7EB;
+      --success:       #10B981;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: var(--primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+    .mono, .stat-number, code, pre { font-family: 'Space Mono', monospace; }
+    .skip-link {
+      position: absolute; top: -40px; right: 0;
+      background: var(--accent); color: #fff;
+      padding: 8px 16px; z-index: 9999;
+      transition: top 0.2s;
+    }
+    .skip-link:focus { top: 0; }
+    .container { max-width: 1200px; margin: 0 auto; padding: 0 24px; }
+
+    /* ========== HEADER ========== */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(255,255,255,0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+    .site-header .container {
+      display: flex; align-items: center; gap: 24px;
+      height: 64px;
+    }
+    .logo {
+      text-decoration: none; font-size: 28px; font-weight: 900;
+      letter-spacing: -1px; flex-shrink: 0;
+      display: flex; align-items: center; gap: 9px;
+    }
+    .logo-ai { color: var(--accent); }
+    .logo-it { color: var(--accent-warm); }
+    .site-nav { flex: 1; }
+    .site-nav ul { list-style: none; display: flex; gap: 4px; align-items: center; }
+    .site-nav a {
+      text-decoration: none; color: var(--text-secondary);
+      padding: 8px 14px; border-radius: 8px; font-size: 15px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+    .site-nav a:hover { color: var(--text-primary); background: var(--surface); }
+    .has-dropdown { position: relative; }
+    .has-dropdown > a::after { content: ' ▾'; font-size: 11px; }
+    .dropdown {
+      display: none; position: absolute; top: 100%; right: 0; z-index: 200;
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 12px 8px 8px; min-width: 200px;
+      box-shadow: 0 8px 32px rgba(0,0,0,0.1);
+      flex-direction: column; gap: 2px;
+    }
+    /* .has-dropdown hover handled by JS */
+    .dropdown li { list-style: none; }
+    .dropdown a {
+      display: block; padding: 10px 14px; border-radius: 8px;
+      font-size: 14px;
+    }
+    .btn {
+      display: inline-flex; align-items: center; justify-content: center;
+      padding: 10px 20px; border-radius: 8px; font-weight: 600;
+      text-decoration: none; font-size: 15px; cursor: pointer;
+      border: none; transition: all 0.2s; font-family: 'Heebo', sans-serif;
+    }
+    .btn-cta {
+      background: var(--accent); color: #fff;
+      flex-shrink: 0;
+    }
+    .btn-cta:hover { background: #2563eb; transform: translateY(-1px); }
+    .btn-outline {
+      background: transparent; color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .btn-outline:hover { background: var(--accent-glow); }
+    .btn-lg { padding: 14px 28px; font-size: 17px; border-radius: 10px; }
+    .hamburger {
+      display: none; flex-direction: column; gap: 5px;
+      background: none; border: none; cursor: pointer; padding: 8px;
+    }
+    .hamburger span {
+      display: block; width: 24px; height: 2px;
+      background: var(--text-primary); border-radius: 2px;
+      transition: all 0.3s;
+    }
+
+    /* ========== HERO ========== */
+    .hero {
+      padding: 80px 0 64px;
+      background: radial-gradient(ellipse at 60% 0%, rgba(59,130,246,0.08) 0%, transparent 60%);
+    }
+    .hero-inner {
+      display: grid; grid-template-columns: 1fr 380px; gap: 48px;
+      align-items: center;
+    }
+    .hero-tag {
+      display: inline-flex; align-items: center; gap: 8px;
+      background: var(--accent-glow); border: 1px solid rgba(59,130,246,0.3);
+      border-radius: 100px; padding: 6px 14px; font-size: 13px;
+      color: var(--accent); margin-bottom: 20px;
+    }
+    .hero-tag svg { width: 14px; height: 14px; }
+    h1 { font-size: clamp(32px, 5vw, 54px); font-weight: 900; line-height: 1.15; margin-bottom: 20px; }
+    .hero-subtitle { font-size: 18px; color: var(--text-secondary); margin-bottom: 32px; max-width: 520px; }
+    .typing-line {
+      display: flex; align-items: center; gap: 12px;
+      font-size: 18px; margin-bottom: 12px; color: var(--text-secondary);
+    }
+    .typing-word {
+      color: var(--accent); font-weight: 700;
+      border-left: 3px solid var(--accent);
+      padding-left: 8px;
+      animation: typing-cycle 6s infinite;
+    }
+    @keyframes typing-cycle {
+      0%,30% { opacity: 1; }
+      33%,63% { opacity: 0; }
+      66%,96% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+    .hero-btns { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 40px; }
+    .stat-bar {
+      display: flex; gap: 32px; flex-wrap: wrap;
+      padding-top: 32px; border-top: 1px solid var(--border);
+    }
+    .stat-item { display: flex; flex-direction: column; }
+    .stat-number { font-size: 28px; font-weight: 700; color: var(--accent); }
+    .stat-label { font-size: 13px; color: var(--text-secondary); }
+
+    /* Hero sidebar card */
+    .hero-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 28px;
+    }
+    .hero-card h3 { font-size: 18px; margin-bottom: 6px; }
+    .hero-card p { font-size: 14px; color: var(--text-secondary); margin-bottom: 20px; }
+    .form-group { margin-bottom: 14px; }
+    .form-group label { display: block; font-size: 13px; color: var(--text-secondary); margin-bottom: 6px; }
+    .form-group input, .form-group select, .form-group textarea {
+      width: 100%; background: var(--primary); border: 1px solid var(--border);
+      border-radius: 8px; padding: 10px 14px; color: var(--text-primary);
+      font-family: 'Heebo', sans-serif; font-size: 15px;
+      transition: border-color 0.2s;
+    }
+    .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+      outline: none; border-color: var(--accent);
+    }
+    .form-group select option { background: var(--surface); }
+    .form-note { font-size: 12px; color: var(--text-secondary); text-align: center; margin-top: 10px; }
+
+    /* ========== LAYOUT ========== */
+    .page-body { padding: 56px 0; }
+    .content-grid {
+      display: grid; grid-template-columns: 1fr 320px; gap: 48px;
+      align-items: start;
+    }
+    .sidebar { display: flex; flex-direction: column; gap: 20px; }
+
+    /* ========== SECTIONS ========== */
+    section { margin-bottom: 64px; }
+    h2 { font-size: clamp(22px, 3vw, 32px); font-weight: 800; margin-bottom: 20px; }
+    h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
+    p { margin-bottom: 14px; color: var(--text-secondary); }
+    p strong { color: var(--text-primary); }
+    .section-label {
+      font-size: 12px; font-weight: 700; letter-spacing: 2px;
+      text-transform: uppercase; color: var(--accent); margin-bottom: 10px;
+    }
+
+    /* ========== CARDS GRID ========== */
+    .cards-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 20px; }
+    .card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+      text-decoration: none; color: inherit; display: block;
+    }
+    .card:hover {
+      transform: translateY(-2px); border-color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .card-icon {
+      width: 44px; height: 44px; background: var(--accent-glow);
+      border-radius: 10px; display: flex; align-items: center; justify-content: center;
+      margin-bottom: 16px;
+    }
+    .card-icon svg { width: 22px; height: 22px; color: var(--accent); }
+    .card h3 { font-size: 17px; margin-bottom: 8px; }
+    .card p { font-size: 14px; margin: 0; }
+    .card-arrow { margin-top: 16px; color: var(--accent); font-size: 13px; font-weight: 600; }
+
+    /* ========== TOOLS GRID ========== */
+    .tools-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 16px; }
+    .tool-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px 16px; text-align: center;
+      text-decoration: none; color: inherit;
+      transition: transform 0.2s, border-color 0.2s, box-shadow 0.2s;
+    }
+    .tool-card:hover {
+      transform: translateY(-2px); border-color: var(--accent);
+      box-shadow: 0 0 20px var(--accent-glow);
+    }
+    .tool-logo {
+      width: 48px; height: 48px; border-radius: 12px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 22px; font-weight: 900; margin: 0 auto 12px;
+    }
+    .tool-name { font-size: 15px; font-weight: 700; margin-bottom: 6px; }
+    .tool-desc { font-size: 12px; color: var(--text-secondary); }
+
+    /* ========== CASE STUDIES ========== */
+    .case-studies-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+    .case-card {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 24px;
+      transition: transform 0.2s, border-color 0.2s;
+    }
+    .case-card:hover { transform: translateY(-2px); border-color: var(--accent); }
+    .case-badge {
+      display: inline-block; background: var(--accent-glow);
+      color: var(--accent); font-size: 12px; font-weight: 600;
+      padding: 4px 10px; border-radius: 100px; margin-bottom: 14px;
+    }
+    .case-results { display: flex; flex-direction: column; gap: 8px; margin-top: 16px; }
+    .case-result {
+      display: flex; align-items: center; gap: 8px;
+      font-size: 14px; color: var(--text-secondary);
+    }
+    .case-result::before {
+      content: ''; width: 6px; height: 6px; border-radius: 50%;
+      background: var(--success); flex-shrink: 0;
+    }
+    .case-quote {
+      border-right: 3px solid var(--accent-warm);
+      padding-right: 14px; margin-top: 16px;
+      font-size: 13px; color: var(--text-secondary); font-style: italic;
+    }
+
+    /* ========== LEAD FORM ========== */
+    .lead-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px; padding: 56px 48px;
+      text-align: center;
+    }
+    .lead-section h2 { margin-bottom: 10px; }
+    .lead-section .lead-sub { font-size: 17px; color: var(--text-secondary); margin-bottom: 36px; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .lead-form-grid {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 16px;
+      max-width: 640px; margin: 0 auto 20px;
+    }
+    .lead-form-grid .full { grid-column: 1 / -1; }
+    .trust-row {
+      display: flex; justify-content: center; gap: 28px;
+      flex-wrap: wrap; margin-top: 16px;
+    }
+    .trust-item { display: flex; align-items: center; gap: 6px; font-size: 14px; color: var(--text-secondary); }
+    .trust-item svg { width: 16px; height: 16px; color: var(--success); }
+
+    /* ========== FAQ ========== */
+    .faq-list { display: flex; flex-direction: column; gap: 8px; }
+    .faq-item {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 10px; overflow: hidden;
+    }
+    .faq-q {
+      width: 100%; background: none; border: none; cursor: pointer;
+      padding: 18px 20px; text-align: right; color: var(--text-primary);
+      font-family: 'Heebo', sans-serif; font-size: 16px; font-weight: 600;
+      display: flex; justify-content: space-between; align-items: center; gap: 12px;
+    }
+    .faq-q:hover { color: var(--accent); }
+    .faq-q svg { width: 18px; height: 18px; flex-shrink: 0; transition: transform 0.25s; color: var(--accent); }
+    .faq-item.open .faq-q svg { transform: rotate(180deg); }
+    .faq-a { display: none; padding: 0 20px 18px; color: var(--text-secondary); font-size: 15px; line-height: 1.7; }
+    .faq-item.open .faq-a { display: block; }
+
+    /* ========== SIDEBAR WIDGETS ========== */
+    .widget {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 12px; padding: 20px;
+    }
+    .widget-title { font-size: 14px; font-weight: 700; text-transform: uppercase; letter-spacing: 1px; color: var(--text-secondary); margin-bottom: 14px; }
+    .widget-links { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .widget-links a {
+      display: flex; align-items: center; gap: 8px;
+      padding: 8px 10px; border-radius: 8px;
+      text-decoration: none; color: var(--text-secondary); font-size: 14px;
+      transition: color 0.2s, background 0.2s;
+    }
+    .widget-links a:hover { color: var(--text-primary); background: var(--primary); }
+    .widget-links a::before { content: '→'; color: var(--accent); font-size: 12px; }
+    .widget-cta {
+      background: linear-gradient(135deg, var(--accent-glow), transparent);
+      border: 1px solid rgba(59,130,246,0.3);
+    }
+    .widget-cta .btn { width: 100%; margin-top: 14px; justify-content: center; }
+
+    /* ========== ABOUT ========== */
+    .about-grid { display: grid; grid-template-columns: 100px 1fr; gap: 28px; align-items: start; }
+    .avatar {
+      width: 100px; height: 100px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--accent), var(--accent-warm));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 40px; font-weight: 900; color: #fff; flex-shrink: 0;
+    }
+    .about-text p { margin-bottom: 10px; }
+    .about-btns { display: flex; gap: 10px; flex-wrap: wrap; margin-top: 16px; }
+
+    /* ========== FOOTER ========== */
+    .site-footer {
+      background: var(--primary-light); border-top: 1px solid var(--border);
+      padding: 56px 0 24px;
+    }
+    .footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1.5fr; gap: 40px; margin-bottom: 40px; }
+    .footer-col h4 { font-size: 15px; font-weight: 700; margin-bottom: 16px; color: var(--text-primary); }
+    .footer-links { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .footer-links a { color: var(--text-secondary); text-decoration: none; font-size: 14px; transition: color 0.2s; }
+    .footer-links a:hover { color: var(--accent); }
+    .footer-desc { font-size: 14px; color: var(--text-secondary); line-height: 1.7; margin-bottom: 14px; }
+    .footer-bottom {
+      border-top: 1px solid var(--border); padding-top: 24px;
+      display: flex; justify-content: space-between; align-items: center;
+      flex-wrap: wrap; gap: 12px;
+    }
+    .footer-bottom p { font-size: 13px; color: var(--text-secondary); margin: 0; }
+
+    /* ========== MOBILE ========== */
+    @media (max-width: 900px) {
+      .content-grid { grid-template-columns: 1fr; }
+      .sidebar { position: static; }
+      .hero-inner { grid-template-columns: 1fr; }
+      .tools-grid { grid-template-columns: repeat(3, 1fr); }
+      .case-studies-grid { grid-template-columns: 1fr; }
+      .footer-grid { grid-template-columns: 1fr 1fr; }
+      .lead-form-grid { grid-template-columns: 1fr; }
+      .lead-section { padding: 36px 24px; }
+    }
+    @media (max-width: 640px) {
+      .site-nav, .btn-cta { display: none; }
+      .hamburger { display: flex; }
+      h1 { font-size: 28px; }
+      .stat-bar { gap: 20px; }
+      .tools-grid { grid-template-columns: repeat(2, 1fr); }
+      .footer-grid { grid-template-columns: 1fr; }
+      .cards-grid { grid-template-columns: 1fr; }
+      .mobile-menu { display: flex; }
+    }
+    .mobile-menu {
+      display: none; flex-direction: column;
+      position: fixed; inset: 0; background: var(--primary);
+      z-index: 200; padding: 24px;
+      overflow-y: auto;
+    }
+    .mobile-menu.open { display: flex; }
+    .mobile-menu-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 32px; }
+    .mobile-menu nav ul { list-style: none; display: flex; flex-direction: column; gap: 4px; }
+    .mobile-menu nav a {
+      display: block; padding: 14px 16px; border-radius: 8px;
+      text-decoration: none; color: var(--text-primary); font-size: 18px; font-weight: 600;
+    }
+    .mobile-menu nav a:hover { background: var(--surface); }
+    .mobile-submenu { padding-right: 16px; }
+    .mobile-submenu a { font-size: 15px; font-weight: 400; color: var(--text-secondary); padding: 10px 16px; }
+    .close-btn {
+      background: none; border: none; color: var(--text-primary);
+      font-size: 28px; cursor: pointer; line-height: 1;
+    }
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">דלג לתוכן</a>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo"><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <button class="close-btn" id="close-menu" aria-label="סגור תפריט">&#x2715;</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">בית</a></li>
+        <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+        <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+        <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+        <li><a href="ai-solutions.html">פתרונות AI</a></li>
+        <li><a href="chatgpt.html">ChatGPT</a></li>
+        <li><a href="claude.html">Claude</a></li>
+        <li><a href="gemini.html">Gemini</a></li>
+        <li><a href="grok.html">Grok</a></li>
+        <li><a href="perplexity.html">Perplexity</a></li>
+        <li><a href="#lead-form">ייעוץ חינמי</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <!-- Header -->
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="AI IT - דף הבית">
+        <svg width="30" height="30" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><line x1="26" y1="10" x2="26" y2="18.5" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="26" y1="33.5" x2="26" y2="42" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="10" y1="26" x2="18.5" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="33.5" y1="26" x2="42" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="29.5" y1="22.5" x2="36.5" y2="15.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><line x1="22.5" y1="29.5" x2="15.5" y2="36.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><circle cx="26" cy="8" r="3.2" fill="white" opacity="0.88"/><circle cx="26" cy="44" r="3.2" fill="white" opacity="0.88"/><circle cx="8" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="44" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="38.5" cy="13.5" r="2.8" fill="#F59E0B"/><circle cx="13.5" cy="38.5" r="2.8" fill="#F59E0B"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg>
+        <span class="logo-ai">AI</span><span class="logo-it">IT</span>
+      </a>
+      <nav class="site-nav" aria-label="תפריט ראשי">
+        <ul>
+          <li><a href="index.html" aria-current="page">בית</a></li>
+          <li class="has-dropdown">
+            <a href="#" aria-haspopup="true">שירותים</a>
+            <ul class="dropdown" role="menu">
+              <li role="menuitem"><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+              <li role="menuitem"><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+              <li role="menuitem"><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+              <li role="menuitem"><a href="ai-solutions.html">פתרונות AI</a></li>
+              <li role="menuitem"><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#" aria-haspopup="true">כלי AI</a>
+            <ul class="dropdown" role="menu">
+              <li role="menuitem"><a href="chatgpt.html">ChatGPT</a></li>
+              <li role="menuitem"><a href="claude.html">Claude</a></li>
+              <li role="menuitem"><a href="gemini.html">Gemini</a></li>
+              <li role="menuitem"><a href="grok.html">Grok</a></li>
+              <li role="menuitem"><a href="perplexity.html">Perplexity</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="contact.html">יצירת קשר</a></li>
+        </ul>
+      </nav>
+      <a href="tel:0524534875" class="btn btn-cta">052-4534875</a>
+      <button class="hamburger" id="open-menu" aria-label="פתח תפריט">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero" aria-label="כותרת ראשית">
+    <div class="container">
+      <div class="hero-inner">
+        <div class="hero-content">
+          <div class="hero-tag">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4l3 3"/></svg>
+            פורטל ה-AI הגדול בישראל
+          </div>
+          <h1 id="main-content">AI IT - הפורטל הישראלי לבינה מלאכותית</h1>
+          <p class="hero-subtitle">אנחנו צוות AI IT. מלווים עסקים ישראלים לשלב בינה מלאכותית בצורה שנותנת תוצאות מדידות - לא רק הדגמות יפות.</p>
+          <div class="typing-line" aria-label="כלי AI מובילים">
+            <span>כל מה שצריך לדעת על</span>
+            <span class="typing-word" id="typing-word">ChatGPT</span>
+          </div>
+          <div class="hero-btns">
+            <a href="#lead-form" class="btn btn-cta btn-lg">התחל עם ייעוץ חינמי</a>
+            <a href="#ai-tools" class="btn btn-outline btn-lg">קרא מדריכים</a>
+          </div>
+          <div class="stat-bar" role="list">
+            <div class="stat-item" role="listitem">
+              <span class="stat-number mono">7</span>
+              <span class="stat-label">פרויקטים מוכחים</span>
+            </div>
+            <div class="stat-item" role="listitem">
+              <span class="stat-number mono">150+</span>
+              <span class="stat-label">שעות חסכון שבועי</span>
+            </div>
+            <div class="stat-item" role="listitem">
+              <span class="stat-number mono">5</span>
+              <span class="stat-label">כלי AI מובילים</span>
+            </div>
+            <div class="stat-item" role="listitem">
+              <span class="stat-number mono">חינמי</span>
+              <span class="stat-label">ייעוץ ראשוני</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Lead Card -->
+        <div class="hero-card">
+          <h3>דבר עם הצוות שלנו</h3>
+          <p>30 דקות ייעוץ חינמי - נבין יחד מה AI יכול לשנות בעסק שלך</p>
+          <form id="hero-form" novalidate>
+            <div class="form-group">
+              <label for="hero-name">שם מלא</label>
+              <input type="text" id="hero-name" name="name" placeholder="ישראל ישראלי" required autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="hero-phone">טלפון</label>
+              <input type="tel" id="hero-phone" name="phone" placeholder="052-4534875" required autocomplete="tel">
+            </div>
+            <div class="form-group">
+              <label for="hero-business">תחום עסק</label>
+              <select id="hero-business" name="business">
+                <option value="">בחר תחום...</option>
+                <option>ביטוח ופיננסים</option>
+                <option>אופנה וקמעונאות</option>
+                <option>עורכי דין ויועצים</option>
+                <option>נדל"ן</option>
+                <option>מסעדנות ומזון</option>
+                <option>תוכנה וטכנולוגיה</option>
+                <option>בריאות ורפואה</option>
+                <option>אחר</option>
+              </select>
+            </div>
+            <button type="submit" class="btn btn-cta" style="width:100%;justify-content:center;">
+              קבל ייעוץ חינמי
+            </button>
+          </form>
+          <p class="form-note">מגיב תוך 24 שעות | ללא התחייבות | שיחה בעברית</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main Content + Sidebar -->
+  <main class="page-body">
+    <div class="container">
+      <div class="content-grid">
+
+        <!-- Main Content -->
+        <div class="main-content">
+
+          <!-- About Tomer -->
+          <section id="about" aria-labelledby="about-heading">
+            <div class="section-label">מי אנחנו</div>
+            <h2 id="about-heading">AI IT - צוות מומחי AI לעסקים ישראלים</h2>
+            <div class="about-grid">
+              <div class="avatar" aria-label="לוגו AI IT">AI</div>
+              <div class="about-text">
+                <p>בנינו את AI IT מתוך תסכול אמיתי. ראינו עסקים ישראלים מצוינים שמבזבזים שעות ביום על עבודה שאפשר לאוטמט - ויועצים שמוכרים להם כלים במקום תוצאות.</p>
+                <p>עבדנו עם חברת ביטוח שחסכה 10 שעות עבודה ביום, עם רשת אופנה שהכפילה את כמות התוכן שלה ב-300%, ועם משרד עורכי דין שפינה 8 שעות שבועיות לכל עורך דין. כל פרויקט התחיל מאפס - ללא ידע מוקדם ב-AI.</p>
+                <p>אנחנו לא מוכרים טכנולוגיה - אנחנו מלווים עד שהתוצאות בשטח. מדריכים מעשיים, ייעוץ ישיר, ופתרונות שהצוות שלך יודע להפעיל לבד.</p>
+                <div class="about-btns">
+                  <a href="#lead-form" class="btn btn-cta">שוחח עם הצוות</a>
+                  <a href="ai-consulting.html" class="btn btn-outline">ייעוץ טכנולוגי</a>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Services -->
+          <section id="services" aria-labelledby="services-heading">
+            <div class="section-label">שירותים</div>
+            <h2 id="services-heading">השירותים שלנו</h2>
+            <p>כל שירות בנוי על ניסיון מוכח עם עסקים ישראלים. אנחנו לא מוכרים טכנולוגיה - אנחנו מוכרים תוצאות מדידות.</p>
+            <div class="cards-grid">
+              <a href="ai-implementation.html" class="card">
+                <div class="card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <h3>הטמעת AI בארגון</h3>
+                <p>מיפוי תהליכים, בחירת כלים, הדרכה וליווי. מהיום הראשון עד שה-AI עובד בעסק.</p>
+                <div class="card-arrow">קרא עוד ←</div>
+              </a>
+              <a href="ai-automation.html" class="card">
+                <div class="card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/></svg>
+                </div>
+                <h3>אוטומציה לעסקים</h3>
+                <p>מחברים בין כלי AI, CRM, אימייל ווטסאפ. תהליכים שרצים לבד בלי לגעת.</p>
+                <div class="card-arrow">קרא עוד ←</div>
+              </a>
+              <a href="ai-consulting.html" class="card">
+                <div class="card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <h3>ייעוץ טכנולוגי</h3>
+                <p>מה AI יכול לעשות בשביל העסק שלך ספציפית. שיחה אחת שמשנה את הכיוון.</p>
+                <div class="card-arrow">קרא עוד ←</div>
+              </a>
+              <a href="ai-solutions.html" class="card">
+                <div class="card-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg>
+                </div>
+                <h3>פתרונות AI</h3>
+                <p>פתרונות מותאמים אישית: prompt libraries, workflow בניה, אינטגרציות.</p>
+                <div class="card-arrow">קרא עוד ←</div>
+              </a>
+            </div>
+          </section>
+
+          <!-- AI Tools -->
+          <section id="ai-tools" aria-labelledby="tools-heading">
+            <div class="section-label">כלי AI</div>
+            <h2 id="tools-heading">מדריכים לכלי AI המובילים</h2>
+            <p>מדריכים מעשיים שכתבתי מניסיון שימוש יומיומי עם לקוחות. לא תיאוריה - שימוש אמיתי.</p>
+            <div class="tools-grid">
+              <a href="chatgpt.html" class="tool-card">
+                <div class="tool-logo" style="background:#10A37F20;color:#10A37F;">GPT</div>
+                <div class="tool-name">ChatGPT</div>
+                <div class="tool-desc">הנפוץ ביותר - מתאים להתחלה</div>
+              </a>
+              <a href="claude.html" class="tool-card">
+                <div class="tool-logo" style="background:#D97706 20;color:#D97706;">CL</div>
+                <div class="tool-name">Claude</div>
+                <div class="tool-desc">הכי טוב לכתיבה וניתוח</div>
+              </a>
+              <a href="gemini.html" class="tool-card">
+                <div class="tool-logo" style="background:#4285F420;color:#4285F4;">GEM</div>
+                <div class="tool-name">Gemini</div>
+                <div class="tool-desc">משולב ב-Google Workspace</div>
+              </a>
+              <a href="grok.html" class="tool-card">
+                <div class="tool-logo" style="background:#1DA1F220;color:#1DA1F2;">GRK</div>
+                <div class="tool-name">Grok</div>
+                <div class="tool-desc">נתונים בזמן אמת מ-X</div>
+              </a>
+              <a href="perplexity.html" class="tool-card">
+                <div class="tool-logo" style="background:#20B2AA20;color:#20B2AA;">PPX</div>
+                <div class="tool-name">Perplexity</div>
+                <div class="tool-desc">חיפוש AI עם מקורות</div>
+              </a>
+            </div>
+          </section>
+
+          <!-- Case Studies -->
+          <section id="case-studies" aria-labelledby="cases-heading">
+            <div class="section-label">מקרי שימוש</div>
+            <h2 id="cases-heading">תוצאות מהשטח</h2>
+            <p>כל מקרה הוא עסק ישראלי אמיתי שליווינו. המספרים אמיתיים, האתגרים אמיתיים - ולא כולם הסתיימו מהר. תוצאות אמיתיות לוקחות זמן.</p>
+            <div class="case-studies-grid">
+
+              <article class="case-card">
+                <div class="case-badge">ביטוח | 12 עובדים</div>
+                <h3>חברת ביטוח שחסכה 10 שעות ביום</h3>
+                <p style="font-size:14px;">4 נציגי שירות בזבזו 3 שעות ביום על מיילים ידניים. 6 שבועות עבודה עם Claude.</p>
+                <div class="case-results">
+                  <div class="case-result">חיסכון 2.5 שעות יומי לנציג</div>
+                  <div class="case-result">שביעות רצון לקוחות +18%</div>
+                  <div class="case-result">22 תבניות מייל מוכנות</div>
+                </div>
+                <blockquote class="case-quote">"הדבר שהכי עזר לא היה ה-AI עצמו - היה זה המיפוי."</blockquote>
+              </article>
+
+              <article class="case-card">
+                <div class="case-badge">נדל"ן | 15 סוכנים</div>
+                <h3>סוכנות נדל"ן שקיצרה זמן תגובה מ-4 שעות ל-12 דקות</h3>
+                <p style="font-size:14px;">ChatGPT + Zapier + CRM. כל נכס חדש מייצר 3 גרסאות פרסום אוטומטית.</p>
+                <div class="case-results">
+                  <div class="case-result">67.5 שעות חיסכון שבועי לצוות</div>
+                  <div class="case-result">פרסומי נכסים +40%</div>
+                  <div class="case-result">סגירות עסקאות +15%</div>
+                </div>
+                <blockquote class="case-quote">"זמן תגובה ללידים ירד מ-4 שעות ל-12 דקות."</blockquote>
+              </article>
+
+              <article class="case-card">
+                <div class="case-badge">מסעדה | 2 סניפים</div>
+                <h3>מסעדה שהעלתה דירוג Google מ-4.1 ל-4.6</h3>
+                <p style="font-size:14px;">הפרויקט הקצר עם ה-ROI הגבוה ביותר. 2 שבועות, שינוי אמיתי.</p>
+                <div class="case-results">
+                  <div class="case-result">6 שעות חיסכון שבועי</div>
+                  <div class="case-result">דירוג Google: 4.1 לפי 4.6</div>
+                  <div class="case-result">ערב פנוי אחד בשבוע</div>
+                </div>
+                <blockquote class="case-quote">"לראשונה מזה שנתיים יש לי ערב אחד בשבוע פנוי."</blockquote>
+              </article>
+
+            </div>
+          </section>
+
+          <!-- Lead Form -->
+          <section id="lead-form" aria-labelledby="lead-heading">
+            <div class="lead-section">
+              <div class="section-label">ייעוץ חינמי</div>
+              <h2 id="lead-heading">30 דקות שיכולות לשנות את הכיוון שלך</h2>
+              <p class="lead-sub">נשמע את האתגרים שלך ונגיד לך בדיוק מה AI יכול לעשות בעסק שלך - בלי מינוח טכני, בלי התחייבות.</p>
+              <form id="lead-form-main" novalidate>
+                <div class="lead-form-grid">
+                  <div class="form-group">
+                    <label for="lf-name">שם מלא</label>
+                    <input type="text" id="lf-name" name="name" placeholder="ישראל ישראלי" required autocomplete="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="lf-phone">טלפון</label>
+                    <input type="tel" id="lf-phone" name="phone" placeholder="052-4534875" required autocomplete="tel">
+                  </div>
+                  <div class="form-group">
+                    <label for="lf-email">אימייל</label>
+                    <input type="email" id="lf-email" name="email" placeholder="you@example.com" autocomplete="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="lf-business">תחום עסק</label>
+                    <select id="lf-business" name="business">
+                      <option value="">בחר תחום...</option>
+                      <option>ביטוח ופיננסים</option>
+                      <option>אופנה וקמעונאות</option>
+                      <option>עורכי דין ויועצים</option>
+                      <option>נדל"ן</option>
+                      <option>מסעדנות ומזון</option>
+                      <option>תוכנה וטכנולוגיה</option>
+                      <option>בריאות ורפואה</option>
+                      <option>אחר</option>
+                    </select>
+                  </div>
+                  <div class="form-group full">
+                    <label for="lf-msg">ספר לנו על העסק שלך (אופציונלי)</label>
+                    <textarea id="lf-msg" name="message" rows="3" placeholder="מה הכי לוקח לך זמן? מה היית רוצה לשפר?"></textarea>
+                  </div>
+                  <div class="full">
+                    <button type="submit" class="btn btn-cta btn-lg" style="width:100%;justify-content:center;">
+                      שלח ונחזור אליך תוך 24 שעות
+                    </button>
+                  </div>
+                </div>
+              </form>
+              <div class="trust-row">
+                <div class="trust-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  מגיב תוך 24 שעות
+                </div>
+                <div class="trust-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  ללא התחייבות
+                </div>
+                <div class="trust-item">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+                  שיחה בעברית
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section id="faq" aria-labelledby="faq-heading">
+            <div class="section-label">שאלות נפוצות</div>
+            <h2 id="faq-heading">מה בעלי עסקים שואלים אותנו</h2>
+            <div class="faq-list" role="list">
+
+              <div class="faq-item" role="listitem">
+                <button class="faq-q" aria-expanded="false">
+                  האם AI מתאים לעסק הקטן שלי?
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-a">כן - ולמעשה לעסקים קטנים ה-ROI לרוב גבוה יותר. בעסק של 5-20 עובדים, שעה שנחסכת לכל עובד ביום שווה הרבה יותר מבחינה יחסית. הפרויקט עם חברת הביטוח (12 עובדים) חסך 10 שעות עבודה ביום - ובמחיר של כמה שעות ייעוץ.</div>
+              </div>
+
+              <div class="faq-item" role="listitem">
+                <button class="faq-q" aria-expanded="false">
+                  כמה זמן לוקח להטמיע AI בעסק?
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-a">תלוי בסוג הפרויקט. הפרויקט הקצר ביותר שלנו היה 2 שבועות (מסעדה) - ובסופו הדירוג ב-Google עלה. הפרויקטים המורכבים לקחו 4 חודשים (משרד עורכי דין, חברת SaaS). ב-30 דקות של ייעוץ חינמי נוכל לתת לך הערכה מדויקת לעסק שלך.</div>
+              </div>
+
+              <div class="faq-item" role="listitem">
+                <button class="faq-q" aria-expanded="false">
+                  האם צריך ידע טכני?
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-a">לא. בעל המסעדה שעבדנו איתו לא ידע מה זה AI לפני שהתחלנו. בסוף 2 שבועות הוא ניהל לבד את כל ה-prompts שלו ב-ChatGPT וב-Claude. המטרה שלנו - שלא תהיה תלוי בנו לדברים היומיומיים.</div>
+              </div>
+
+              <div class="faq-item" role="listitem">
+                <button class="faq-q" aria-expanded="false">
+                  ChatGPT, Claude, Gemini - מה ההבדל ומה מתאים לי?
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-a">כל כלי חזק בתחום שלו. ChatGPT הכי נפוץ ומתאים להתחלה. Claude הכי טוב לכתיבה ארוכה וניתוח מסמכים. Gemini משולב ב-Google Workspace ומתאים לעסקים שכבר עובדים עם Google. לכל כלי יש מדריך מפורט באתר - ובייעוץ נמליץ בדיוק מה מתאים לעסק שלך.</div>
+              </div>
+
+              <div class="faq-item" role="listitem">
+                <button class="faq-q" aria-expanded="false">
+                  כמה עולה ייעוץ?
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-a">הייעוץ הראשוני של 30 דקות חינמי לגמרי - ללא התחייבות. אם אחרי השיחה יש הגיון בהמשך, נציע הצעת מחיר שקופה לפרויקט ספציפי. אין "שכר יועץ" שוטף - אנחנו עובדים על פרויקטים עם תוצאות מדידות.</div>
+              </div>
+
+              <div class="faq-item" role="listitem">
+                <button class="faq-q" aria-expanded="false">
+                  האם AI יחליף עובדים בעסק שלי?
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg>
+                </button>
+                <div class="faq-a">בכל הפרויקטים שליווינו, אף עובד לא פוטר. מה שקרה: אותם עובדים פינו זמן לעבודה יותר חשובה. המשרד המשפטי לא פיטר עורכי דין - הם פינו 8 שעות שבועיות לגיוס לקוחות חדשים, ובגלל זה גייסו 4 לקוחות גדולים. AI הוא כלי שמגדיל יכולות, לא מחליף אנשים.</div>
+              </div>
+
+            </div>
+          </section>
+
+        </div><!-- /main-content -->
+
+        <!-- Sidebar -->
+        <aside class="sidebar" aria-label="סרגל צד">
+
+          <div class="widget widget-cta">
+            <div class="widget-title">דבר עם הצוות</div>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:0;">ייעוץ ראשוני חינמי - 30 דקות שישנו את הגישה שלך ל-AI</p>
+            <a href="#lead-form" class="btn btn-cta">קבע שיחה חינמית</a>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">השירותים שלי</div>
+            <ul class="widget-links">
+              <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+              <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+              <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+              <li><a href="ai-solutions.html">פתרונות AI</a></li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">כלי AI מומלצים</div>
+            <ul class="widget-links">
+              <li><a href="chatgpt.html">ChatGPT - המדריך המלא</a></li>
+              <li><a href="claude.html">Claude - המדריך המלא</a></li>
+              <li><a href="gemini.html">Gemini - המדריך המלא</a></li>
+              <li><a href="grok.html">Grok - המדריך המלא</a></li>
+              <li><a href="perplexity.html">Perplexity - המדריך המלא</a></li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">מקרי שימוש</div>
+            <ul class="widget-links">
+              <li><a href="#case-studies">חברת ביטוח - 10 שעות חיסכון/יום</a></li>
+              <li><a href="#case-studies">רשת אופנה - תוכן x3</a></li>
+              <li><a href="#case-studies">סוכנות נדל"ן - לידים ב-12 דקות</a></li>
+              <li><a href="ai-implementation.html">משרד עורכי דין</a></li>
+              <li><a href="ai-automation.html">רשת קליניקות</a></li>
+            </ul>
+          </div>
+
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <!-- Footer -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-block;" aria-label="AI IT - דף הבית">
+            <span class="logo-ai">AI</span><span class="logo-it">IT</span>
+          </a>
+          <p class="footer-desc">פורטל הבינה המלאכותית הגדול בישראל. תומר עוזר לעסקים ישראלים להוציא את המיטב מ-AI - בלי בלבול, עם תוצאות.</p>
+          <p style="font-size:13px;color:var(--text-secondary);">כל הזכויות שמורות AI IT 2025</p>
+        </div>
+        <div class="footer-col">
+          <h4>שירותים</h4>
+          <ul class="footer-links">
+            <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+            <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+            <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+            <li><a href="ai-solutions.html">פתרונות AI</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>כלי AI</h4>
+          <ul class="footer-links">
+            <li><a href="chatgpt.html">ChatGPT</a></li>
+            <li><a href="claude.html">Claude</a></li>
+            <li><a href="gemini.html">Gemini</a></li>
+            <li><a href="grok.html">Grok</a></li>
+            <li><a href="perplexity.html">Perplexity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>יצירת קשר</h4>
+          <form id="footer-form" novalidate>
+            <div class="form-group">
+              <label for="ft-name">שם</label>
+              <input type="text" id="ft-name" name="name" placeholder="ישראל ישראלי" autocomplete="name">
+            </div>
+            <div class="form-group">
+              <label for="ft-phone">טלפון</label>
+              <input type="tel" id="ft-phone" name="phone" placeholder="052-4534875" autocomplete="tel">
+            </div>
+            <button type="submit" class="btn btn-cta" style="width:100%;justify-content:center;margin-top:4px;">שלח</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>AI IT - פורטל הבינה המלאכותית לעסקים ישראלים</p>
+        <p><a href="sitemap.xml" style="color:var(--text-secondary);text-decoration:none;">מפת אתר</a></p>
+      </div>
+    </div>
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "AI IT",
+      "url": "https://ai-it.co.il",
+      "founder": {"@type": "Person", "name": "תומר"},
+      "description": "פורטל הבינה המלאכותית הגדול בישראל",
+      "areaServed": "IL"
+    }
+    </script>
+  </footer>
+
+  <script>
+    // Typing effect
+    const words = ['ChatGPT', 'Claude', 'Gemini', 'Grok', 'Perplexity'];
+    let i = 0;
+    const el = document.getElementById('typing-word');
+    if (el) {
+      setInterval(() => {
+        i = (i + 1) % words.length;
+        el.style.opacity = '0';
+        setTimeout(() => { el.textContent = words[i]; el.style.opacity = '1'; }, 200);
+      }, 2000);
+      el.style.transition = 'opacity 0.2s';
+    }
+
+    // FAQ accordion
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => {
+          i.classList.remove('open');
+          i.querySelector('.faq-q').setAttribute('aria-expanded', 'false');
+        });
+        if (!isOpen) {
+          item.classList.add('open');
+          btn.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+
+    // Dropdown menus - click to open, mouseleave to close
+    (function() {
+      var nd = document.querySelectorAll('.site-nav .has-dropdown');
+      nd.forEach(function(item) { item.querySelector('.dropdown').style.display = 'none'; });
+      nd.forEach(function(item) {
+        var dd = item.querySelector('.dropdown');
+        var t;
+        function close() { t = setTimeout(function() { dd.style.display = 'none'; }, 200); }
+        item.querySelector('a').addEventListener('click', function(e) {
+          e.preventDefault();
+          if (dd.style.display === 'flex') { close(); }
+          else { clearTimeout(t); nd.forEach(function(o) { o.querySelector('.dropdown').style.display = 'none'; }); dd.style.display = 'flex'; }
+        });
+        item.addEventListener('mouseleave', close);
+        dd.addEventListener('mouseenter', function() { clearTimeout(t); });
+        dd.addEventListener('mouseleave', close);
+      });
+      document.addEventListener('click', function(e) {
+        if (!e.target.closest('.site-nav .has-dropdown')) {
+          nd.forEach(function(item) { item.querySelector('.dropdown').style.display = 'none'; });
+        }
+      });
+    })();
+
+    // Mobile menu
+    const menu = document.getElementById('mobile-menu');
+    document.getElementById('open-menu').addEventListener('click', () => {
+      menu.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    });
+    document.getElementById('close-menu').addEventListener('click', () => {
+      menu.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+    menu.querySelectorAll('a').forEach(a => {
+      a.addEventListener('click', () => {
+        menu.classList.remove('open');
+        document.body.style.overflow = '';
+      });
+    });
+
+    // Form submit (placeholder)
+    ['hero-form', 'lead-form-main', 'footer-form'].forEach(id => {
+      const f = document.getElementById(id);
+      if (f) f.addEventListener('submit', e => {
+        e.preventDefault();
+        alert('תודה! אחזור אליך תוך 24 שעות.');
+        f.reset();
+      });
+    });
+  </script>
+</body>
+</html>

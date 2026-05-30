@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Google Gemini - המדריך המלא בעברית 2025 | AI IT</title>
+  <meta name="description" content="המדריך המלא ל-Google Gemini בעברית: יכולות, אינטגרציה עם Google Workspace, Gemini Advanced, ומתי לבחור ב-Gemini על ChatGPT.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ai-it.co.il/gemini">
+  <meta property="og:title" content="Google Gemini - המדריך המלא | AI IT">
+  <meta property="og:description" content="Gemini משולב ב-Google Workspace - Gmail, Docs, Sheets. המדריך לעסקים שעובדים עם Google.">
+  <meta property="og:url" content="https://ai-it.co.il/gemini">
+  <meta property="og:type" content="article">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="AI IT">
+  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"Google Gemini - המדריך המלא בעברית","author":{"@type":"Person","name":"תומר"},"publisher":{"@type":"Organization","name":"AI IT"},"url":"https://ai-it.co.il/gemini","inLanguage":"he"}</script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#FFFFFF;--primary-light:#F9FAFB;--surface:#F3F4F6;--accent:#3B82F6;--accent-warm:#F59E0B;--accent-glow:rgba(59,130,246,0.08);--text-primary:#111827;--text-secondary:#6B7280;--border:#E5E7EB;--success:#10B981;--tool-color:#4285F4;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}html{scroll-behavior:smooth;}
+    body{font-family:'Heebo',sans-serif;background:var(--primary);color:var(--text-primary);line-height:1.7;font-size:16px;}
+    .mono,code{font-family:'Space Mono',monospace;}
+    .skip-link{position:absolute;top:-40px;right:0;background:var(--accent);color:#fff;padding:8px 16px;z-index:9999;transition:top 0.2s;}.skip-link:focus{top:0;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+    .site-header .container{display:flex;align-items:center;gap:24px;height:64px;}
+    .logo{text-decoration:none;font-size:28px;font-weight:900;letter-spacing:-1px;flex-shrink:0;display:flex;align-items:center;gap:9px;}.logo-ai{color:var(--accent);}.logo-it{color:var(--accent-warm);}
+    .site-nav{flex:1;}.site-nav ul{list-style:none;display:flex;gap:4px;align-items:center;}
+    .site-nav a{text-decoration:none;color:var(--text-secondary);padding:8px 14px;border-radius:8px;font-size:15px;transition:color 0.2s,background 0.2s;white-space:nowrap;}.site-nav a:hover{color:var(--text-primary);background:var(--surface);}
+    .has-dropdown{position:relative;}.has-dropdown>a::after{content:' ▾';font-size:11px;}
+    .dropdown{display:none;position:absolute;top:100%;right:0;z-index:200;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 8px 8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,0.1);flex-direction:column;gap:2px;}/* dropdown via JS */.dropdown li{list-style:none;}.dropdown a{display:block;padding:10px 14px;border-radius:8px;font-size:14px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:15px;cursor:pointer;border:none;transition:all 0.2s;font-family:'Heebo',sans-serif;}
+    .btn-cta{background:var(--accent);color:#fff;}.btn-cta:hover{background:#2563eb;transform:translateY(-1px);}
+    .btn-lg{padding:14px 28px;font-size:17px;border-radius:10px;}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}.hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);border-radius:2px;}
+    .breadcrumb{padding:16px 0;border-bottom:1px solid var(--border);}.breadcrumb ol{list-style:none;display:flex;gap:8px;font-size:13px;color:var(--text-secondary);}.breadcrumb a{color:var(--text-secondary);text-decoration:none;}.breadcrumb a:hover{color:var(--accent);}.breadcrumb li+li::before{content:'/';margin-left:8px;}
+    .page-hero{padding:56px 0 48px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 70% 0%,rgba(66,133,244,0.08) 0%,transparent 60%);}
+    .tool-hero-logo{width:72px;height:72px;border-radius:16px;background:rgba(66,133,244,0.15);border:1px solid rgba(66,133,244,0.3);display:flex;align-items:center;justify-content:center;font-size:18px;font-weight:900;color:var(--tool-color);font-family:'Space Mono',monospace;margin-bottom:20px;}
+    .section-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    h1{font-size:clamp(28px,4vw,46px);font-weight:900;line-height:1.15;margin-bottom:16px;}
+    .hero-desc{font-size:18px;color:var(--text-secondary);max-width:600px;margin-bottom:28px;}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap;}.hero-stat{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);}.hero-stat strong{color:var(--tool-color);font-size:22px;font-family:'Space Mono',monospace;}
+    .page-body{padding:56px 0;}
+    .content-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;}
+    .sidebar{display:flex;flex-direction:column;gap:20px;}
+    section{margin-bottom:56px;}
+    h2{font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:16px;scroll-margin-top:80px;}
+    h3{font-size:19px;font-weight:700;margin-bottom:10px;}
+    p{margin-bottom:14px;color:var(--text-secondary);}p strong{color:var(--text-primary);}
+    .stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+    .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
+    .stat-card .num{font-family:'Space Mono',monospace;font-size:28px;font-weight:700;color:var(--tool-color);display:block;}.stat-card .label{font-size:13px;color:var(--text-secondary);margin-top:4px;}
+    .callout{background:var(--accent-glow);border:1px solid rgba(59,130,246,0.25);border-radius:12px;padding:20px 24px;margin:24px 0;}.callout p{margin:0;color:var(--text-primary);}
+    .callout-tool{background:rgba(66,133,244,0.06);border-color:rgba(66,133,244,0.2);}
+    .quote-block{border-right:4px solid var(--tool-color);padding-right:20px;margin:24px 0;}.quote-block p{font-size:17px;font-style:italic;color:var(--text-primary);margin-bottom:6px;}.quote-block cite{font-size:13px;color:var(--text-secondary);font-style:normal;}
+    .info-box{display:flex;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
+    .info-box-icon{width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}.info-box-icon svg{width:20px;height:20px;color:var(--accent);}
+    .info-box-body h4{font-size:15px;font-weight:700;margin-bottom:6px;}.info-box-body p{font-size:14px;margin:0;}
+    .faq-list{display:flex;flex-direction:column;gap:8px;}
+    .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+    .faq-q{width:100%;background:none;border:none;cursor:pointer;padding:16px 20px;text-align:right;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;}.faq-q:hover{color:var(--accent);}.faq-q svg{width:16px;height:16px;flex-shrink:0;transition:transform 0.25s;color:var(--accent);}.faq-item.open .faq-q svg{transform:rotate(180deg);}.faq-a{display:none;padding:0 20px 16px;color:var(--text-secondary);font-size:14px;line-height:1.7;}.faq-item.open .faq-a{display:block;}
+    .lead-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px;text-align:center;}.lead-section h2{margin-bottom:8px;}.lead-sub{font-size:16px;color:var(--text-secondary);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;}
+    .lead-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;margin:0 auto 16px;}.lead-form-grid .full{grid-column:1/-1;}
+    .form-group{margin-bottom:0;}.form-group label{display:block;font-size:13px;color:var(--text-secondary);margin-bottom:6px;}.form-group input{width:100%;background:var(--primary);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;transition:border-color 0.2s;}.form-group input:focus{outline:none;border-color:var(--accent);}
+    .trust-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:14px;}.trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);}.trust-item svg{width:14px;height:14px;color:var(--success);}
+    .widget{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;}.widget-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-secondary);margin-bottom:14px;}
+    .widget-links{list-style:none;display:flex;flex-direction:column;gap:4px;}.widget-links a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:14px;transition:color 0.2s,background 0.2s;}.widget-links a:hover{color:var(--text-primary);background:var(--primary);}.widget-links a::before{content:'→';color:var(--accent);font-size:12px;}
+    .widget-cta{background:linear-gradient(135deg,var(--accent-glow),transparent);border:1px solid rgba(59,130,246,0.3);}.widget-cta .btn{width:100%;margin-top:14px;justify-content:center;}
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:2px;}.toc-list a{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:13px;transition:color 0.2s,background 0.2s;}.toc-list a:hover{color:var(--accent);background:var(--primary);}
+    .site-footer{background:var(--primary-light);border-top:1px solid var(--border);padding:56px 0 24px;}.footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px;}.footer-col h4{font-size:15px;font-weight:700;margin-bottom:16px;}.footer-links{list-style:none;display:flex;flex-direction:column;gap:8px;}.footer-links a{color:var(--text-secondary);text-decoration:none;font-size:14px;transition:color 0.2s;}.footer-links a:hover{color:var(--accent);}.footer-desc{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:14px;}.footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}.footer-bottom p{font-size:13px;color:var(--text-secondary);margin:0;}
+    .mobile-menu{display:none;flex-direction:column;position:fixed;inset:0;background:var(--primary);z-index:200;padding:24px;overflow-y:auto;}.mobile-menu.open{display:flex;}.mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}.mobile-menu nav ul{list-style:none;display:flex;flex-direction:column;gap:4px;}.mobile-menu nav a{display:block;padding:14px 16px;border-radius:8px;text-decoration:none;color:var(--text-primary);font-size:18px;font-weight:600;}.mobile-menu nav a:hover{background:var(--surface);}.close-btn{background:none;border:none;color:var(--text-primary);font-size:28px;cursor:pointer;line-height:1;}
+    @media(max-width:900px){.content-grid{grid-template-columns:1fr;}.sidebar{position:static;}.stat-cards{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.lead-form-grid{grid-template-columns:1fr;}.lead-section{padding:28px 20px;}}
+    @media(max-width:640px){.site-nav,.btn-cta{display:none;}.hamburger{display:flex;}.stat-cards{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.hero-stats{flex-direction:column;gap:12px;}}
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">דלג לתוכן</a>
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo"><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <button class="close-btn" id="close-menu" aria-label="סגור תפריט">&#x2715;</button>
+    </div>
+    <nav><ul>
+      <li><a href="index.html">בית</a></li>
+      <li><a href="chatgpt.html">ChatGPT</a></li>
+      <li><a href="claude.html">Claude</a></li>
+      <li><a href="gemini.html">Gemini</a></li>
+      <li><a href="grok.html">Grok</a></li>
+      <li><a href="perplexity.html">Perplexity</a></li>
+      <li><a href="#lead-form">ייעוץ חינמי</a></li>
+    </ul></nav>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="AI IT"><svg width="30" height="30" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><line x1="26" y1="10" x2="26" y2="18.5" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="26" y1="33.5" x2="26" y2="42" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="10" y1="26" x2="18.5" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="33.5" y1="26" x2="42" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="29.5" y1="22.5" x2="36.5" y2="15.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><line x1="22.5" y1="29.5" x2="15.5" y2="36.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><circle cx="26" cy="8" r="3.2" fill="white" opacity="0.88"/><circle cx="26" cy="44" r="3.2" fill="white" opacity="0.88"/><circle cx="8" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="44" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="38.5" cy="13.5" r="2.8" fill="#F59E0B"/><circle cx="13.5" cy="38.5" r="2.8" fill="#F59E0B"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <nav class="site-nav" aria-label="תפריט ראשי">
+        <ul>
+          <li><a href="index.html">בית</a></li>
+          <li class="has-dropdown"><a href="#">שירותים</a>
+            <ul class="dropdown">
+              <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+              <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+              <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+              <li><a href="ai-solutions.html">פתרונות AI</a></li><li><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown"><a href="#">כלי AI</a>
+            <ul class="dropdown">
+              <li><a href="chatgpt.html">ChatGPT</a></li>
+              <li><a href="claude.html">Claude</a></li>
+              <li><a href="gemini.html" aria-current="page">Gemini</a></li>
+              <li><a href="grok.html">Grok</a></li>
+              <li><a href="perplexity.html">Perplexity</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="contact.html">יצירת קשר</a></li>
+        </ul>
+      </nav>
+      <a href="tel:0524534875" class="btn btn-cta">052-4534875</a>
+      <button class="hamburger" id="open-menu" aria-label="פתח תפריט"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="נתיב ניווט">
+    <div class="container">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="index.html" itemprop="item"><span itemprop="name">בית</span></a><meta itemprop="position" content="1"></li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="gemini.html" itemprop="item"><span itemprop="name">Gemini</span></a><meta itemprop="position" content="2"></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-hero" aria-label="כותרת עמוד">
+    <div class="container">
+      <div class="tool-hero-logo" aria-label="לוגו Gemini">GEM</div>
+      <div class="section-label">מדריך כלי AI</div>
+      <h1 id="main-content">Google Gemini - המדריך המלא בעברית</h1>
+      <p class="hero-desc">Gemini הוא ה-AI של Google - ומה שמייחד אותו זה האינטגרציה המלאה עם Google Workspace. אם העסק שלך עובד עם Gmail, Docs ו-Sheets - Gemini הוא הבחירה הטבעית.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>Google</strong> מפתחת</div>
+        <div class="hero-stat"><strong>Workspace</strong> אינטגרציה מלאה</div>
+        <div class="hero-stat"><strong>Gemini 1.5</strong> הגרסה הנוכחית</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-body">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+
+          <section id="what-is" aria-labelledby="what-h">
+            <h2 id="what-h">מה זה Google Gemini</h2>
+            <p>Gemini (לשעבר Bard) הושק ב-2023 ועבר מיתוג מחדש ב-2024. הוא המודל המרכזי של Google ומשולב ישירות ב-Google Workspace - כלומר Gmail, Google Docs, Google Sheets, Google Slides ו-Google Meet.</p>
+            <p>מה שמייחד אותו מ-ChatGPT ו-Claude: הוא יודע לגשת לקבצים שלך ב-Google Drive, לקרוא מיילים ב-Gmail, ולנתח גיליונות ב-Sheets - כל זאת בתוך הממשק הרגיל שאתה כבר עובד בו. אנחנו ממליצים עליו בעיקר לעסקים שכבר עובדים עם Google Workspace כי זה מחסל שינוי הרגלים.</p>
+
+            <div class="stat-cards">
+              <div class="stat-card">
+                <span class="num">1M+</span>
+                <div class="label">טוקנים context window ב-Gemini 1.5 Pro</div>
+              </div>
+              <div class="stat-card">
+                <span class="num">3B+</span>
+                <div class="label">משתמשי Google Workspace בעולם</div>
+              </div>
+              <div class="stat-card">
+                <span class="num">2024</span>
+                <div class="label">שנת מיתוג מחדש מ-Bard</div>
+              </div>
+            </div>
+
+            <div class="callout callout-tool">
+              <p><strong>מתי Gemini הוא הבחירה הנכונה:</strong> אם העסק שלך עובד עם Google Workspace (Gmail, Drive, Docs), Gemini Advanced ($20/חודש) נותן לך AI ישירות בתוך הכלים שאתה כבר משתמש בהם - בלי לעבור בין אפליקציות.</p>
+            </div>
+          </section>
+
+          <section id="workspace-integration" aria-labelledby="workspace-h">
+            <h2 id="workspace-h">אינטגרציה עם Google Workspace - מה אפשר לעשות</h2>
+            <p>זה היתרון הגדול של Gemini על פני המתחרים. הנה ה-use cases שאני רואה הכי הרבה:</p>
+
+            <div class="info-box">
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+              <div class="info-box-body">
+                <h4>Gmail - כתיבה וסיכום מיילים</h4>
+                <p>Gemini ב-Gmail מסכם שיחות ארוכות, מציע תגובות, וכותב מיילים בהתבסס על ההיסטוריה. בלחיצה אחת - "כתוב תגובה מקצועית בעברית".</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg></div>
+              <div class="info-box-body">
+                <h4>Google Docs - כתיבה עריכה</h4>
+                <p>@Gemini בתוך Docs - מבקשים לכתוב סעיף, לתמצת, לשנות סגנון. הוא רואה את כל המסמך כהקשר.</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="3" y1="15" x2="21" y2="15"/><line x1="9" y1="3" x2="9" y2="21"/><line x1="15" y1="3" x2="15" y2="21"/></svg></div>
+              <div class="info-box-body">
+                <h4>Google Sheets - ניתוח נתונים</h4>
+                <p>שאל שאלות על הגיליון בשפה טבעית: "מה הממוצע של עמודה B בחודש ינואר?" - Gemini כותב את הנוסחה ומסביר.</p>
+              </div>
+            </div>
+          </section>
+
+          <section id="limitations" aria-labelledby="lim-h">
+            <h2 id="lim-h">מגבלות של Gemini - מה לדעת</h2>
+            <p>Gemini טוב לפרודוקטיביות יומיומית עם Google, אבל יש מקרים שבהם ChatGPT או Claude עדיפים:</p>
+            <ul style="padding-right:20px;color:var(--text-secondary);margin-bottom:16px;line-height:2.2;">
+              <li><strong style="color:var(--text-primary);">פחות עקבי בכתיבה יצירתית:</strong> לכתיבה שיווקית מורכבת ו-prompt libraries - <a href="claude.html" style="color:var(--accent);">Claude</a> נותן תוצאות יותר עקביות.</li>
+              <li><strong style="color:var(--text-primary);">אינטגרציות חיצוניות מוגבלות:</strong> Gemini מצטיין ב-Google ecosystem. ל-Zapier, CRM ומערכות אחרות - <a href="chatgpt.html" style="color:var(--accent);">ChatGPT</a> עדיף.</li>
+              <li><strong style="color:var(--text-primary);">עברית - עדיין לא מושלם:</strong> ChatGPT ו-Claude מעט טובים יותר בעברית ספציפית לעסקים ישראלים.</li>
+            </ul>
+
+            <div class="quote-block">
+              <p>"Gemini שיניתי לעסקים שכל התהליכים שלהם כבר ב-Google. לחברה שעובדת עם Gmail, Drive ו-Sheets - זה הפתרון הנוח ביותר כי לא צריך לשנות הרגלים."</p>
+              <cite>תומר, מייסד AI IT</cite>
+            </div>
+          </section>
+
+          <section id="faq" aria-labelledby="faq-h">
+            <h2 id="faq-h">שאלות נפוצות על Gemini</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">מה ההבדל בין Gemini Free לGemini Advanced?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">Gemini Free (gemini.google.com) נותן גישה ל-Gemini 1.0 Pro. Gemini Advanced ($20/חודש, חלק מ-Google One AI Premium) נותן גישה ל-Gemini Ultra - המודל החזק ביותר, עם אינטגרציה מלאה ב-Gmail, Docs, Sheets ו-Drive.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">האם Gemini יכול לגשת לקבצים ב-Google Drive שלי?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">כן - ב-Gemini Advanced אפשר לשתף קבצים מ-Google Drive ישירות בשיחה. ב-Gmail, Docs ו-Sheets - Gemini רואה את המסמך הנוכחי כהקשר ויכול לעבוד עליו.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">האם Gemini שומר את הנתונים שלי?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">Google משתמשת בשיחות Gemini לשיפור המוצרים (ניתן לכבות בהגדרות). ב-Google Workspace Business ו-Enterprise - נתוני Gemini לא נשמרים לאימון. לנתונים רגישים - כדאי לבדוק את המדיניות לפי רמת החשבון.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">מה זה Gemini 1.5 Pro ו-Ultra?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">Gemini 1.5 Pro - המודל האיזוני, context window של 1 מיליון טוקנים (!) - הגדול ביותר בשוק. Gemini Ultra - המודל החזק ביותר של Google, זמין ב-Gemini Advanced. לרוב השימושים היומיומיים - 1.5 Pro מספיק.</div>
+              </div>
+            </div>
+          </section>
+
+          <section id="lead-form" aria-labelledby="lead-h">
+            <div class="lead-section">
+              <div class="section-label">רוצה ללמוד להשתמש?</div>
+              <h2 id="lead-h">אשלב Gemini בסביבת Google שלך</h2>
+              <p class="lead-sub">30 דקות ייעוץ חינמי - אראה לך איך Gemini משתלב בעבודה היומיומית שלך.</p>
+              <form id="lead-form-main" novalidate>
+                <div class="lead-form-grid">
+                  <div class="form-group"><label for="lf-name">שם מלא</label><input type="text" id="lf-name" name="name" placeholder="ישראל ישראלי" required autocomplete="name"></div>
+                  <div class="form-group"><label for="lf-phone">טלפון</label><input type="tel" id="lf-phone" name="phone" placeholder="052-4534875" required autocomplete="tel"></div>
+                  <div class="form-group full"><button type="submit" class="btn btn-cta btn-lg" style="width:100%;justify-content:center;">קבל ייעוץ חינמי</button></div>
+                </div>
+              </form>
+              <div class="trust-row">
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>מגיב תוך 24 שעות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ללא התחייבות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>שיחה בעברית</div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <aside class="sidebar" aria-label="סרגל צד">
+          <div class="widget widget-cta">
+            <div class="widget-title">רוצה ללמוד?</div>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:0;">30 דקות לשלב Gemini ב-Google שלך</p>
+            <a href="tel:0524534875" class="btn btn-cta">052-4534875</a>
+          </div>
+          <div class="widget">
+            <div class="widget-title">תוכן עניינים</div>
+            <ul class="toc-list">
+              <li><a href="#what-is">מה זה Gemini</a></li>
+              <li><a href="#workspace-integration">Google Workspace</a></li>
+              <li><a href="#limitations">מגבלות</a></li>
+              <li><a href="#faq">שאלות נפוצות</a></li>
+            </ul>
+          </div>
+          <div class="widget">
+            <div class="widget-title">כלי AI נוספים</div>
+            <ul class="widget-links">
+              <li><a href="chatgpt.html">ChatGPT - המדריך</a></li>
+              <li><a href="claude.html">Claude - המדריך</a></li>
+              <li><a href="grok.html">Grok - המדריך</a></li>
+              <li><a href="perplexity.html">Perplexity - המדריך</a></li>
+            </ul>
+          </div>
+          <div class="widget">
+            <div class="widget-title">שימושים מהירים</div>
+            <ul class="widget-links">
+              <li><a href="ai-implementation.html">הטמעת Gemini בארגון</a></li>
+              <li><a href="ai-consulting.html">ייעוץ על כלי AI</a></li>
+              <li><a href="ai-solutions.html">פתרונות עם Google</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-block;" aria-label="AI IT"><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+          <p class="footer-desc">פורטל הבינה המלאכותית הגדול בישראל.</p>
+          <p style="font-size:13px;color:var(--text-secondary);">כל הזכויות שמורות AI IT 2025</p>
+        </div>
+        <div class="footer-col"><h4>שירותים</h4><ul class="footer-links"><li><a href="ai-implementation.html">הטמעת AI בארגון</a></li><li><a href="ai-automation.html">אוטומציה לעסקים</a></li><li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li><li><a href="ai-solutions.html">פתרונות AI</a></li><li><a href="marketing-automation.html">אוטומציה שיווקית</a></li></ul></div>
+        <div class="footer-col"><h4>כלי AI</h4><ul class="footer-links"><li><a href="chatgpt.html">ChatGPT</a></li><li><a href="claude.html">Claude</a></li><li><a href="gemini.html">Gemini</a></li><li><a href="grok.html">Grok</a></li><li><a href="perplexity.html">Perplexity</a></li></ul></div>
+        <div class="footer-col"><h4>יצירת קשר</h4>
+          <form id="footer-form" novalidate>
+            <div class="form-group" style="margin-bottom:12px;"><label for="ft-name">שם</label><input type="text" id="ft-name" name="name" placeholder="ישראל ישראלי" autocomplete="name"></div>
+            <div class="form-group" style="margin-bottom:12px;"><label for="ft-phone">טלפון</label><input type="tel" id="ft-phone" name="phone" placeholder="052-4534875" autocomplete="tel"></div>
+            <button type="submit" class="btn btn-cta" style="width:100%;justify-content:center;">שלח</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom"><p>AI IT - פורטל הבינה המלאכותית לעסקים ישראלים</p><p><a href="sitemap.xml" style="color:var(--text-secondary);text-decoration:none;">מפת אתר</a></p></div>
+    </div>
+  </footer>
+
+  <script>
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      });
+    });
+    // Dropdown menus - click to open, mouseleave to close
+    (function(){var nd=document.querySelectorAll('.site-nav .has-dropdown');nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});nd.forEach(function(item){var dd=item.querySelector('.dropdown'),t;function close(){t=setTimeout(function(){dd.style.display='none';},200);}item.querySelector('a').addEventListener('click',function(e){e.preventDefault();if(dd.style.display==='flex'){close();}else{clearTimeout(t);nd.forEach(function(o){o.querySelector('.dropdown').style.display='none';});dd.style.display='flex';}});item.addEventListener('mouseleave',close);dd.addEventListener('mouseenter',function(){clearTimeout(t);});dd.addEventListener('mouseleave',close);});document.addEventListener('click',function(e){if(!e.target.closest('.site-nav .has-dropdown'))nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});});})();
+
+    const menu = document.getElementById('mobile-menu');
+    document.getElementById('open-menu').addEventListener('click', () => { menu.classList.add('open'); document.body.style.overflow='hidden'; });
+    document.getElementById('close-menu').addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow=''; });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow=''; }));
+    ['lead-form-main','footer-form'].forEach(id => {
+      const f = document.getElementById(id);
+      if(f) f.addEventListener('submit', e => { e.preventDefault(); alert('תודה! אחזור אליך תוך 24 שעות.'); f.reset(); });
+    });
+  </script>
+</body>
+</html>

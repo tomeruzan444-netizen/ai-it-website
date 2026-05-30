@@ -1,0 +1,741 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>הטמעת AI בארגון - תהליך מלא מאת תומר | AI IT</title>
+  <meta name="description" content="מיפוי תהליכים, בחירת כלי AI, הדרכה וליווי. תומר מלווה עסקים קטנים ובינוניים בהטמעת AI מהיום הראשון עד שזה עובד.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ai-it.co.il/ai-implementation">
+  <meta property="og:title" content="הטמעת AI בארגון - תהליך מלא | AI IT">
+  <meta property="og:description" content="מיפוי תהליכים, בחירת כלי AI, הדרכה וליווי. מהיום הראשון עד שה-AI עובד בעסק.">
+  <meta property="og:url" content="https://ai-it.co.il/ai-implementation">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="AI IT">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "הטמעת AI בארגון",
+    "provider": {"@type": "Person", "name": "תומר"},
+    "url": "https://ai-it.co.il/ai-implementation",
+    "description": "ליווי מלא בהטמעת בינה מלאכותית בעסקים קטנים ובינוניים בישראל",
+    "areaServed": "IL"
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary:#FFFFFF;--primary-light:#F9FAFB;--surface:#F3F4F6;
+      --accent:#3B82F6;--accent-warm:#F59E0B;--accent-glow:rgba(59,130,246,0.08);
+      --text-primary:#111827;--text-secondary:#6B7280;--border:#E5E7EB;--success:#10B981;
+    }
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Heebo',sans-serif;background:var(--primary);color:var(--text-primary);line-height:1.7;font-size:16px;}
+    .mono,.stat-number,code,pre{font-family:'Space Mono',monospace;}
+    .skip-link{position:absolute;top:-40px;right:0;background:var(--accent);color:#fff;padding:8px 16px;z-index:9999;transition:top 0.2s;}
+    .skip-link:focus{top:0;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+
+    /* HEADER */
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+    .site-header .container{display:flex;align-items:center;gap:24px;height:64px;}
+    .logo{text-decoration:none;font-size:28px;font-weight:900;letter-spacing:-1px;flex-shrink:0;display:flex;align-items:center;gap:9px;}
+    .logo-ai{color:var(--accent);}
+    .logo-it{color:var(--accent-warm);}
+    .site-nav{flex:1;}
+    .site-nav ul{list-style:none;display:flex;gap:4px;align-items:center;}
+    .site-nav a{text-decoration:none;color:var(--text-secondary);padding:8px 14px;border-radius:8px;font-size:15px;transition:color 0.2s,background 0.2s;white-space:nowrap;}
+    .site-nav a:hover,.site-nav a[aria-current]{color:var(--text-primary);background:var(--surface);}
+    .has-dropdown{position:relative;}
+    .has-dropdown>a::after{content:' ▾';font-size:11px;}
+    .dropdown{display:none;position:absolute;top:100%;right:0;z-index:200;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 8px 8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,0.1);flex-direction:column;gap:2px;}
+    /* dropdown via JS */
+    .dropdown li{list-style:none;}
+    .dropdown a{display:block;padding:10px 14px;border-radius:8px;font-size:14px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:15px;cursor:pointer;border:none;transition:all 0.2s;font-family:'Heebo',sans-serif;}
+    .btn-cta{background:var(--accent);color:#fff;}
+    .btn-cta:hover{background:#2563eb;transform:translateY(-1px);}
+    .btn-outline{background:transparent;color:var(--accent);border:1px solid var(--accent);}
+    .btn-outline:hover{background:var(--accent-glow);}
+    .btn-lg{padding:14px 28px;font-size:17px;border-radius:10px;}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}
+    .hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);border-radius:2px;}
+
+    /* BREADCRUMB */
+    .breadcrumb{padding:16px 0;border-bottom:1px solid var(--border);}
+    .breadcrumb ol{list-style:none;display:flex;gap:8px;align-items:center;font-size:13px;color:var(--text-secondary);}
+    .breadcrumb a{color:var(--text-secondary);text-decoration:none;}
+    .breadcrumb a:hover{color:var(--accent);}
+    .breadcrumb li+li::before{content:'/';margin-left:8px;}
+
+    /* HERO */
+    .page-hero{padding:56px 0 48px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 70% 0%,rgba(59,130,246,0.06) 0%,transparent 60%);}
+    .section-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--accent);margin-bottom:10px;}
+    h1{font-size:clamp(28px,4vw,46px);font-weight:900;line-height:1.15;margin-bottom:16px;}
+    .hero-desc{font-size:18px;color:var(--text-secondary);max-width:600px;margin-bottom:28px;}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap;}
+    .hero-stat{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);}
+    .hero-stat strong{color:var(--accent);font-size:22px;font-family:'Space Mono',monospace;}
+
+    /* LAYOUT */
+    .page-body{padding:56px 0;}
+    .content-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;}
+    .sidebar{display:flex;flex-direction:column;gap:20px;}
+    section{margin-bottom:56px;}
+    h2{font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:16px;scroll-margin-top:80px;}
+    h3{font-size:19px;font-weight:700;margin-bottom:10px;}
+    p{margin-bottom:14px;color:var(--text-secondary);}
+    p strong{color:var(--text-primary);}
+    ul.content-list{padding-right:20px;margin-bottom:14px;}
+    ul.content-list li{color:var(--text-secondary);margin-bottom:8px;}
+
+    /* PROCESS STEPS */
+    .process-steps{display:flex;flex-direction:column;gap:0;}
+    .process-step{display:grid;grid-template-columns:56px 1fr;gap:20px;position:relative;}
+    .process-step:not(:last-child)::before{content:'';position:absolute;right:27px;top:56px;bottom:0;width:2px;background:var(--border);}
+    .step-num{width:56px;height:56px;border-radius:50%;background:var(--accent-glow);border:2px solid var(--accent);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;color:var(--accent);font-size:18px;flex-shrink:0;z-index:1;}
+    .step-content{padding-bottom:36px;}
+    .step-content h3{margin-bottom:8px;}
+    .step-content p{font-size:15px;}
+    .step-duration{display:inline-block;background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:3px 12px;font-size:12px;color:var(--text-secondary);margin-top:8px;}
+
+    /* STAT CARDS */
+    .stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:32px;}
+    .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
+    .stat-card .num{font-family:'Space Mono',monospace;font-size:32px;font-weight:700;color:var(--accent);display:block;}
+    .stat-card .label{font-size:13px;color:var(--text-secondary);margin-top:4px;}
+
+    /* INFO BOXES */
+    .info-box{display:flex;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
+    .info-box-icon{width:40px;height:40px;background:var(--accent-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}
+    .info-box-icon svg{width:20px;height:20px;color:var(--accent);}
+    .info-box-body h4{font-size:15px;font-weight:700;margin-bottom:6px;}
+    .info-box-body p{font-size:14px;margin:0;}
+
+    /* CALLOUT */
+    .callout{background:var(--accent-glow);border:1px solid rgba(59,130,246,0.25);border-radius:12px;padding:20px 24px;margin:24px 0;}
+    .callout p{margin:0;color:var(--text-primary);}
+
+    /* QUOTE BLOCK */
+    .quote-block{border-right:4px solid var(--accent-warm);padding-right:20px;margin:24px 0;}
+    .quote-block p{font-size:17px;font-style:italic;color:var(--text-primary);margin-bottom:6px;}
+    .quote-block cite{font-size:13px;color:var(--text-secondary);font-style:normal;}
+
+    /* CASE STUDY CARD */
+    .case-study{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:24px 0;}
+    .case-tabs{display:flex;border-bottom:1px solid var(--border);}
+    .case-tab{flex:1;padding:12px;background:none;border:none;color:var(--text-secondary);font-family:'Heebo',sans-serif;font-size:14px;cursor:pointer;transition:color 0.2s,background 0.2s;}
+    .case-tab.active{color:var(--accent);background:var(--accent-glow);font-weight:600;}
+    .case-tab:hover:not(.active){color:var(--text-primary);}
+    .case-panel{display:none;padding:24px;}
+    .case-panel.active{display:block;}
+    .result-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}
+    .result-dot{width:8px;height:8px;border-radius:50%;background:var(--success);flex-shrink:0;}
+    .result-row span{font-size:15px;color:var(--text-secondary);}
+    .result-row strong{color:var(--text-primary);}
+
+    /* COMPARISON TABLE */
+    .comp-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}
+    .comp-table th{background:var(--surface);padding:12px 16px;text-align:right;font-weight:700;color:var(--text-primary);border-bottom:2px solid var(--border);}
+    .comp-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-secondary);}
+    .comp-table tr:hover td{background:var(--surface);}
+    .comp-table .check{color:var(--success);}
+    .comp-table .cross{color:#EF4444;}
+
+    /* TERMINAL */
+    .terminal{background:#0D1117;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:20px 0;}
+    .terminal-header{background:#161B22;padding:10px 16px;display:flex;gap:8px;align-items:center;}
+    .terminal-dot{width:12px;height:12px;border-radius:50%;}
+    .terminal-title{font-size:12px;color:var(--text-secondary);margin-right:auto;}
+    .terminal-body{padding:20px;font-family:'Space Mono',monospace;font-size:13px;line-height:1.8;color:#E6EDF3;}
+    .terminal-body .prompt{color:var(--accent);}
+    .terminal-body .comment{color:var(--text-secondary);}
+
+    /* LEAD FORM */
+    .lead-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px;text-align:center;}
+    .lead-section h2{margin-bottom:8px;}
+    .lead-sub{font-size:16px;color:var(--text-secondary);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;}
+    .lead-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;margin:0 auto 16px;}
+    .lead-form-grid .full{grid-column:1/-1;}
+    .form-group{margin-bottom:0;}
+    .form-group label{display:block;font-size:13px;color:var(--text-secondary);margin-bottom:6px;}
+    .form-group input,.form-group select,.form-group textarea{width:100%;background:var(--primary);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;transition:border-color 0.2s;}
+    .form-group input:focus,.form-group select:focus,.form-group textarea:focus{outline:none;border-color:var(--accent);}
+    .form-group select option{background:var(--surface);}
+    .trust-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:14px;}
+    .trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);}
+    .trust-item svg{width:14px;height:14px;color:var(--success);}
+
+    /* FAQ */
+    .faq-list{display:flex;flex-direction:column;gap:8px;}
+    .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+    .faq-q{width:100%;background:none;border:none;cursor:pointer;padding:16px 20px;text-align:right;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;}
+    .faq-q:hover{color:var(--accent);}
+    .faq-q svg{width:16px;height:16px;flex-shrink:0;transition:transform 0.25s;color:var(--accent);}
+    .faq-item.open .faq-q svg{transform:rotate(180deg);}
+    .faq-a{display:none;padding:0 20px 16px;color:var(--text-secondary);font-size:14px;line-height:1.7;}
+    .faq-item.open .faq-a{display:block;}
+
+    /* SIDEBAR */
+    .widget{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;}
+    .widget-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-secondary);margin-bottom:14px;}
+    .widget-links{list-style:none;display:flex;flex-direction:column;gap:4px;}
+    .widget-links a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:14px;transition:color 0.2s,background 0.2s;}
+    .widget-links a:hover{color:var(--text-primary);background:var(--primary);}
+    .widget-links a::before{content:'→';color:var(--accent);font-size:12px;}
+    .widget-cta{background:linear-gradient(135deg,var(--accent-glow),transparent);border:1px solid rgba(59,130,246,0.3);}
+    .widget-cta .btn{width:100%;margin-top:14px;justify-content:center;}
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:2px;}
+    .toc-list a{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:13px;transition:color 0.2s,background 0.2s;}
+    .toc-list a:hover{color:var(--accent);background:var(--primary);}
+    .mini-compare{width:100%;border-collapse:collapse;font-size:12px;}
+    .mini-compare th{color:var(--text-secondary);padding:6px 8px;text-align:right;font-weight:600;}
+    .mini-compare td{padding:6px 8px;border-top:1px solid var(--border);color:var(--text-secondary);}
+    .mini-compare .g{color:var(--success);}
+
+    /* FOOTER */
+    .site-footer{background:var(--primary-light);border-top:1px solid var(--border);padding:56px 0 24px;}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px;}
+    .footer-col h4{font-size:15px;font-weight:700;margin-bottom:16px;color:var(--text-primary);}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px;}
+    .footer-links a{color:var(--text-secondary);text-decoration:none;font-size:14px;transition:color 0.2s;}
+    .footer-links a:hover{color:var(--accent);}
+    .footer-desc{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:14px;}
+    .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+    .footer-bottom p{font-size:13px;color:var(--text-secondary);margin:0;}
+
+    /* MOBILE */
+    .mobile-menu{display:none;flex-direction:column;position:fixed;inset:0;background:var(--primary);z-index:200;padding:24px;overflow-y:auto;}
+    .mobile-menu.open{display:flex;}
+    .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+    .mobile-menu nav ul{list-style:none;display:flex;flex-direction:column;gap:4px;}
+    .mobile-menu nav a{display:block;padding:14px 16px;border-radius:8px;text-decoration:none;color:var(--text-primary);font-size:18px;font-weight:600;}
+    .mobile-menu nav a:hover{background:var(--surface);}
+    .close-btn{background:none;border:none;color:var(--text-primary);font-size:28px;cursor:pointer;line-height:1;}
+    @media(max-width:900px){.content-grid{grid-template-columns:1fr;}.sidebar{position:static;}.stat-cards{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.lead-form-grid{grid-template-columns:1fr;}.lead-section{padding:28px 20px;}}
+    @media(max-width:640px){.site-nav,.btn-cta{display:none;}.hamburger{display:flex;}.stat-cards{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.hero-stats{flex-direction:column;gap:12px;}}
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">דלג לתוכן</a>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+    <div class="mobile-menu-header">
+      <a href="index.html" class="logo"><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <button class="close-btn" id="close-menu" aria-label="סגור תפריט">&#x2715;</button>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="index.html">בית</a></li>
+        <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+        <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+        <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+        <li><a href="ai-solutions.html">פתרונות AI</a></li><li><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
+        <li><a href="chatgpt.html">ChatGPT</a></li>
+        <li><a href="claude.html">Claude</a></li>
+        <li><a href="gemini.html">Gemini</a></li>
+        <li><a href="grok.html">Grok</a></li>
+        <li><a href="perplexity.html">Perplexity</a></li>
+        <li><a href="#lead-form">ייעוץ חינמי</a></li>
+      </ul>
+    </nav>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="index.html" class="logo" aria-label="AI IT - דף הבית"><svg width="30" height="30" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><line x1="26" y1="10" x2="26" y2="18.5" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="26" y1="33.5" x2="26" y2="42" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="10" y1="26" x2="18.5" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="33.5" y1="26" x2="42" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="29.5" y1="22.5" x2="36.5" y2="15.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><line x1="22.5" y1="29.5" x2="15.5" y2="36.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><circle cx="26" cy="8" r="3.2" fill="white" opacity="0.88"/><circle cx="26" cy="44" r="3.2" fill="white" opacity="0.88"/><circle cx="8" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="44" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="38.5" cy="13.5" r="2.8" fill="#F59E0B"/><circle cx="13.5" cy="38.5" r="2.8" fill="#F59E0B"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <nav class="site-nav" aria-label="תפריט ראשי">
+        <ul>
+          <li><a href="index.html">בית</a></li>
+          <li class="has-dropdown">
+            <a href="#" aria-haspopup="true">שירותים</a>
+            <ul class="dropdown" role="menu">
+              <li><a href="ai-implementation.html" aria-current="page">הטמעת AI בארגון</a></li>
+              <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+              <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+              <li><a href="ai-solutions.html">פתרונות AI</a></li><li><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown">
+            <a href="#" aria-haspopup="true">כלי AI</a>
+            <ul class="dropdown" role="menu">
+              <li><a href="chatgpt.html">ChatGPT</a></li>
+              <li><a href="claude.html">Claude</a></li>
+              <li><a href="gemini.html">Gemini</a></li>
+              <li><a href="grok.html">Grok</a></li>
+              <li><a href="perplexity.html">Perplexity</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="contact.html">יצירת קשר</a></li>
+        </ul>
+      </nav>
+      <a href="tel:0524534875" class="btn btn-cta">052-4534875</a>
+      <button class="hamburger" id="open-menu" aria-label="פתח תפריט"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="נתיב ניווט">
+    <div class="container">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="index.html" itemprop="item"><span itemprop="name">בית</span></a>
+          <meta itemprop="position" content="1">
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+          <a href="ai-implementation.html" itemprop="item"><span itemprop="name">הטמעת AI בארגון</span></a>
+          <meta itemprop="position" content="2">
+        </li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-hero" aria-label="כותרת עמוד">
+    <div class="container">
+      <div class="section-label">שירות</div>
+      <h1 id="main-content">הטמעת AI בארגון - מהיום הראשון עד שזה עובד</h1>
+      <p class="hero-desc">מיפוי תהליכים, בחירת הכלים הנכונים, הדרכת הצוות, וליווי עד שה-AI הוא חלק טבעי מהעסק שלך. לא תיאוריה - תוצאות.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>7</strong> פרויקטים הושלמו</div>
+        <div class="hero-stat"><strong>150+</strong> שעות חסכון שבועי</div>
+        <div class="hero-stat"><strong>2-16</strong> שבועות לפרויקט</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-body">
+    <div class="container">
+      <div class="content-grid">
+
+        <div class="main-content">
+
+          <!-- Intro -->
+          <section id="intro" aria-labelledby="intro-heading">
+            <h2 id="intro-heading">למה רוב הטמעות AI נכשלות</h2>
+            <p>ראינו את זה שוב ושוב: בעל עסק קורא על AI בלינקדאין, מנסה ChatGPT לבד שבוע אחד, ואז מפסיק. לא בגלל שהכלי לא טוב - אלא כי לא ידע <strong>מה לבקש ממנו ספציפית לעסק שלו</strong>.</p>
+            <p>הטמעת AI שעובדת מתחילה מהשאלה הנכונה: איזה תהליך בעסק שלך חוזר על עצמו? איפה אנשים מבזבזים זמן על משימות שמנוסחות אותו הדבר כל פעם? זו נקודת ההתחלה שלנו בכל פרויקט.</p>
+
+            <div class="stat-cards">
+              <div class="stat-card">
+                <span class="num">87%</span>
+                <div class="label">מהטמעות AI נכשלות בשנה הראשונה</div>
+              </div>
+              <div class="stat-card">
+                <span class="num">3x</span>
+                <div class="label">ROI גבוה יותר בגישה מובנית</div>
+              </div>
+              <div class="stat-card">
+                <span class="num">6 שב'</span>
+                <div class="label">ממוצע לראות תוצאות ראשונות</div>
+              </div>
+            </div>
+
+            <div class="callout">
+              <p><strong>המציאות:</strong> AI לא מחליף חשיבה - הוא מכפיל אותה. אם לא תדע מה אתה רוצה ממנו, לא תקבל כלום. אם תדע - הוא יכול לחסוך לך שעות ביום.</p>
+            </div>
+          </section>
+
+          <!-- Process -->
+          <section id="process" aria-labelledby="process-heading">
+            <h2 id="process-heading">התהליך שלי - 4 שלבים</h2>
+            <p>בנינו את התהליך הזה אחרי 7 פרויקטים בענפים שונים. הוא עובד גם לחברת ביטוח עם 12 עובדים וגם לרשת קליניקות עם 40 - כי הלוגיקה היא אותה לוגיקה.</p>
+
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <h3>מיפוי תהליכים</h3>
+                  <p>ישיבה של 2-3 שעות עם בעל העסק ו/או מנהלי הצוות. אנחנו ממפים כל משימה שחוזרת על עצמה: כתיבת מיילים, הכנת דוחות, מענה ללקוחות, ניסוח מסמכים. בסוף היום הזה יש רשימה מדורגת של "מה שאפשר לאוטמט כבר מחר" לעומת "מה שצריך יותר עבודה".</p>
+                  <p>עם חברת הביטוח, המיפוי גילה 22 סיטואציות שחוזרות על עצמן - ובעל החברה הבין לראשונה כמה זמן הולך לבזבוז אמיתי. זה לבד שווה את השיחה הראשונה.</p>
+                  <span class="step-duration">3-5 ימים</span>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <h3>בחירת כלים ובניית פתרון</h3>
+                  <p>לא כל כלי מתאים לכל עסק. <a href="claude.html" style="color:var(--accent);">Claude</a> מצוין לכתיבה ארוכה וניתוח מסמכים. <a href="chatgpt.html" style="color:var(--accent);">ChatGPT</a> עם Zapier מתאים לאוטומציות. <a href="gemini.html" style="color:var(--accent);">Gemini</a> אידיאלי לעסקים שעובדים עם Google Workspace.</p>
+                  <p>אנחנו בונים prompt library מותאמת אישית, תבניות מוכנות לשימוש, ו-workflow ברור לכל תהליך שמטמיעים. הצוות שלך מקבל כלי עבודה - לא הרצאה.</p>
+                  <span class="step-duration">1-3 שבועות</span>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <h3>הדרכה ואימון הצוות</h3>
+                  <p>ההדרכה לא נעצרת ב"כך משתמשים בממשק". אנחנו מלמדים את הצוות לכתוב prompts טובים, להבין מה AI עושה טוב ומה הוא לא מוצלח בו, ואיך לבדוק תוצאות לפני שליחה.</p>
+                  <p>עם משרד עורכי הדין, הדרכנו כל עו"ד בנפרד לפי תחום ההתמחות שלו. עו"ד מסחרי קיבל templates שונים לגמרי מעו"ד נדל"ן. הדרכה גנרית לא עובדת.</p>
+                  <span class="step-duration">1-2 שבועות</span>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                  <h3>כיול ומדידת תוצאות</h3>
+                  <p>4 שבועות אחרי ההטמעה אנחנו חוזרים למדוד: כמה זמן נחסך? מה לא עובד? מה אפשר לשפר? זה השלב שרוב יועצים מדלגים עליו - ולכן פרויקטים נראים טוב בהתחלה ומתפוררים אחרי חודשיים.</p>
+                  <span class="step-duration">1 שבוע</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Case Study -->
+          <section id="case-study" aria-labelledby="case-heading">
+            <h2 id="case-heading">מקרה שימוש: חברת ביטוח (12 עובדים)</h2>
+
+            <div class="case-study" role="tablist" aria-label="פרטי מקרה שימוש">
+              <div class="case-tabs">
+                <button class="case-tab active" data-panel="background" role="tab" aria-selected="true" aria-controls="panel-background">רקע</button>
+                <button class="case-tab" data-panel="challenge" role="tab" aria-selected="false" aria-controls="panel-challenge">אתגר</button>
+                <button class="case-tab" data-panel="solution" role="tab" aria-selected="false" aria-controls="panel-solution">פתרון</button>
+                <button class="case-tab" data-panel="results" role="tab" aria-selected="false" aria-controls="panel-results">תוצאות</button>
+              </div>
+              <div id="panel-background" class="case-panel active" role="tabpanel">
+                <h4 style="margin-bottom:10px;">חברת ביטוח בינונית, תל אביב</h4>
+                <p style="font-size:14px;">4 נציגי שירות לקוחות שמטפלים בפוליסות, תביעות וחידושים. כל נציג מגיע ל-80-120 פניות בשבוע - חלק גדול מהן טקסטואליות ומנוסחות בצורה דומה.</p>
+                <p style="font-size:14px;">בעל החברה ידע שיש בעיה, אבל לא ידע בדיוק כמה זמן הולך לאיבוד - עד שישבנו לבצע מיפוי.</p>
+              </div>
+              <div id="panel-challenge" class="case-panel" role="tabpanel">
+                <h4 style="margin-bottom:10px;">3 שעות ביום על מיילים</h4>
+                <p style="font-size:14px;">כל נציג בזבז בממוצע 3 שעות ביום על כתיבת מיילים ידנית: הסברים על פוליסות, מענה לשאלות חוזרות, טיפול בתביעות, הודעות חידוש.</p>
+                <p style="font-size:14px;">הבעיה: לא חסר כישרון כתיבה - פשוט 70% מהמיילים נוסחו מחדש על אותם נושאים בדיוק, עם וריאציות קלות. זה הזמן שניתן לחסוך.</p>
+              </div>
+              <div id="panel-solution" class="case-panel" role="tabpanel">
+                <h4 style="margin-bottom:10px;">Prompt Library עם 22 תבניות</h4>
+                <p style="font-size:14px;">6 שבועות עבודה מובנית:</p>
+                <ul style="padding-right:20px;font-size:14px;color:var(--text-secondary);line-height:2;">
+                  <li>שבוע 1: מיפוי כל סוגי המיילים שחוזרים על עצמם</li>
+                  <li>שבועות 2-3: בניית 22 תבניות prompt ב-Claude</li>
+                  <li>שבועות 4-5: הדרכה ו-onboarding לכל נציג</li>
+                  <li>שבוע 6: כיול ומדידה</li>
+                </ul>
+              </div>
+              <div id="panel-results" class="case-panel" role="tabpanel">
+                <h4 style="margin-bottom:10px;">תוצאות אחרי 3 חודשים</h4>
+                <div class="result-row"><div class="result-dot"></div><span>חיסכון של <strong>2.5 שעות יומי</strong> לנציג (10 שעות לצוות)</span></div>
+                <div class="result-row"><div class="result-dot"></div><span>שביעות רצון לקוחות עלתה <strong>ב-18%</strong></span></div>
+                <div class="result-row"><div class="result-dot"></div><span>הנציגים מדווחים על <strong>פחות עייפות</strong> ויותר זמן לשיחות מורכבות</span></div>
+                <div class="result-row"><div class="result-dot"></div><span><strong>22 תבניות מייל</strong> מוכנות לשימוש מיידי</span></div>
+              </div>
+            </div>
+
+            <div class="quote-block">
+              <p>"הדבר שהכי עזר לא היה ה-AI עצמו - היה זה המיפוי. כשישבנו וכתבנו 22 סיטואציות שחוזרות על עצמן, בעל החברה הבין לראשונה כמה זמן הולך לבזבוז אמיתי."</p>
+              <cite>תומר, מייסד AI IT</cite>
+            </div>
+          </section>
+
+          <!-- What I implement -->
+          <section id="what-i-implement" aria-labelledby="what-heading">
+            <h2 id="what-heading">מה מטמיעים - לפי סוג עסק</h2>
+            <p>לא כל עסק צריך את אותו הפתרון. הנה ה-use cases הנפוצים שעבדתי איתם:</p>
+
+            <div class="info-box">
+              <div class="info-box-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/></svg>
+              </div>
+              <div class="info-box-body">
+                <h4>שירות ומכירות</h4>
+                <p>תבניות מענה ללקוחות, מיילים, הצעות מחיר. חיסכון של 2-4 שעות ביום לנציג - כמו שראינו עם חברת הביטוח ועם סוכנות הנדל"ן.</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-box-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M11 4H4a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2v-7"/><path d="M18.5 2.5a2.121 2.121 0 0 1 3 3L12 15l-4 1 1-4 9.5-9.5z"/></svg>
+              </div>
+              <div class="info-box-body">
+                <h4>שיווק ותוכן</h4>
+                <p>ייצור פוסטים, תיאורי מוצרים, ניוזלטרים. רשת האופנה עלתה מ-20 שעות שיווק שבועיות ל-4 - עם 300% יותר תוכן.</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-box-icon">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+              </div>
+              <div class="info-box-body">
+                <h4>ניסוח מסמכים ודוחות</h4>
+                <p>חוזים, הצעות, דוחות פנימיים. משרד עורכי הדין קיצר ב-35% את זמן ניסוח המסמכים הסטנדרטיים.</p>
+              </div>
+            </div>
+
+            <p>רוצה לדעת מה מתאים לעסק שלך ספציפית? <a href="#lead-form" style="color:var(--accent);">30 דקות ייעוץ חינמי</a> ואני אגיד לך בדיוק.</p>
+          </section>
+
+          <!-- Tools comparison -->
+          <section id="tools" aria-labelledby="tools-heading">
+            <h2 id="tools-heading">כלים שאני משתמש בהם</h2>
+            <p>לכל פרויקט אני בוחר את הכלים שמתאימים לצרכים הספציפיים. הנה השוואה קצרה:</p>
+
+            <div style="overflow-x:auto;">
+              <table class="comp-table" aria-label="השוואת כלי AI">
+                <thead>
+                  <tr>
+                    <th>כלי</th>
+                    <th>הכי טוב ל...</th>
+                    <th>כתיבה</th>
+                    <th>אוטומציה</th>
+                    <th>מסמכים ארוכים</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td><a href="claude.html" style="color:var(--accent);">Claude</a></td>
+                    <td>ניתוח וכתיבה מעמיקה</td>
+                    <td class="check">מצוין</td>
+                    <td class="check">טוב</td>
+                    <td class="check">מצוין</td>
+                  </tr>
+                  <tr>
+                    <td><a href="chatgpt.html" style="color:var(--accent);">ChatGPT</a></td>
+                    <td>אוטומציות ו-API</td>
+                    <td class="check">טוב</td>
+                    <td class="check">מצוין</td>
+                    <td class="check">טוב</td>
+                  </tr>
+                  <tr>
+                    <td><a href="gemini.html" style="color:var(--accent);">Gemini</a></td>
+                    <td>Google Workspace</td>
+                    <td class="check">טוב</td>
+                    <td class="check">טוב</td>
+                    <td>בינוני</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- Prompt Example -->
+          <section id="prompt-example" aria-labelledby="prompt-heading">
+            <h2 id="prompt-heading">דוגמה: Prompt לשירות לקוחות</h2>
+            <p>כך נראה prompt מהסוג שאני בונה - לא "כתוב מייל" אלא הוראה מדויקת שנותנת תוצאה עקבית:</p>
+
+            <div class="terminal">
+              <div class="terminal-header">
+                <div class="terminal-dot" style="background:#FF5F56;"></div>
+                <div class="terminal-dot" style="background:#FFBD2E;"></div>
+                <div class="terminal-dot" style="background:#27C93F;"></div>
+                <span class="terminal-title">prompt-insurance-response.txt</span>
+              </div>
+              <div class="terminal-body">
+                <span class="comment"># תבנית מענה ביטוח - שאלות על פוליסה</span><br><br>
+                <span class="prompt">אתה נציג שירות לקוחות של חברת ביטוח ישראלית.</span><br>
+                <span class="prompt">הסגנון שלך: מקצועי, חמים, ברור. לא יותר מ-3 פסקאות.</span><br>
+                <span class="prompt">תמיד סיים עם הצעה לשיחת טלפון אם יש שאלות נוספות.</span><br><br>
+                <span class="comment"># פניית לקוח:</span><br>
+                [הדבק את המייל של הלקוח כאן]<br><br>
+                <span class="comment"># כתוב תגובה מלאה בעברית.</span><br>
+                <span class="comment"># אם חסר מידע - ציין מה צריך לבדוק לפני שליחה.</span>
+              </div>
+            </div>
+
+            <p>Prompt כזה נותן תוצאה עקבית 90% מהזמן. ה-10% שנשארים - הנציג עובר עליהם ומשנה. זה ה-workflow. אנחנו בונים את ה-prompt library ביחד עם הצוות שלך - לא מעבירים מסמך סגור.</p>
+            <p>רוצה לראות דוגמאות לתחום שלך? <a href="ai-solutions.html" style="color:var(--accent);">כנס לעמוד הפתרונות</a> או <a href="#lead-form" style="color:var(--accent);">שוחח עם הצוות שלנו ישירות</a>.</p>
+          </section>
+
+          <!-- FAQ -->
+          <section id="faq" aria-labelledby="faq-heading">
+            <h2 id="faq-heading">שאלות על הטמעת AI</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">כמה זמן לוקח עד שרואים תוצאות?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">בפרויקטים שלי, תוצאות ראשונות מורגשות כבר בשבוע 3-4. בפרויקט המסעדה - 2 שבועות. בפרויקטים מורכבים יותר (משרד עורכי דין, חברת SaaS) - 6-8 שבועות לתוצאות מלאות.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">האם הצוות שלי צריך הכשרה טכנית?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">לא. בכל הפרויקטים שלי, הצוות לא היה מתכנתים. אני מכין מדריכים פשוטים, משפטי prompt מוכנים, ו-workflow ברור. בסוף ההדרכה, כולם עובדים עצמאית בלי להיות תלויים בי.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">מה אם ה-AI יוצר שגיאות?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">AI לא מחליף בדיקה אנושית - הוא מייצר טיוטה ראשונה. בכל פרויקט אני מלמד את הצוות מה לבדוק לפני שמשתמשים בתוצאה. עם משרד עורכי הדין, כל מסמך שיצא מ-Claude עבר בדיקת עו"ד - הם פשוט חסכו שעות על הטיוטה הראשונה.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">כמה עולה הפרויקט?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">פרויקטים מתומחרים לפי היקף ומורכבות. הייעוץ הראשוני חינמי ולא מחייב. בשיחה, אני מעריך את ה-ROI הפוטנציאלי ומציע מחיר שקוף. לרוב הפרויקטים, ה-ROI מחזיר את ההשקעה תוך 3-4 חודשים.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Lead Form -->
+          <section id="lead-form" aria-labelledby="lead-heading">
+            <div class="lead-section">
+              <div class="section-label">התחל עכשיו</div>
+              <h2 id="lead-heading">ייעוץ חינמי - 30 דקות</h2>
+              <p class="lead-sub">אני אשמע על העסק שלך ואגיד לך אם ואיפה AI יכול לעזור - ללא עלות וללא התחייבות.</p>
+              <form id="lead-form-main" novalidate>
+                <div class="lead-form-grid">
+                  <div class="form-group">
+                    <label for="lf-name">שם מלא</label>
+                    <input type="text" id="lf-name" name="name" placeholder="ישראל ישראלי" required autocomplete="name">
+                  </div>
+                  <div class="form-group">
+                    <label for="lf-phone">טלפון</label>
+                    <input type="tel" id="lf-phone" name="phone" placeholder="052-4534875" required autocomplete="tel">
+                  </div>
+                  <div class="form-group">
+                    <label for="lf-email">אימייל</label>
+                    <input type="email" id="lf-email" name="email" placeholder="you@example.com" autocomplete="email">
+                  </div>
+                  <div class="form-group">
+                    <label for="lf-business">תחום עסק</label>
+                    <select id="lf-business" name="business">
+                      <option value="">בחר תחום...</option>
+                      <option>ביטוח ופיננסים</option>
+                      <option>אופנה וקמעונאות</option>
+                      <option>עורכי דין ויועצים</option>
+                      <option>נדל"ן</option>
+                      <option>מסעדנות ומזון</option>
+                      <option>תוכנה וטכנולוגיה</option>
+                      <option>בריאות ורפואה</option>
+                      <option>אחר</option>
+                    </select>
+                  </div>
+                  <div class="form-group full">
+                    <button type="submit" class="btn btn-cta btn-lg" style="width:100%;justify-content:center;">קבל ייעוץ חינמי</button>
+                  </div>
+                </div>
+              </form>
+              <div class="trust-row">
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>מגיב תוך 24 שעות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ללא התחייבות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>שיחה בעברית</div>
+              </div>
+            </div>
+          </section>
+
+        </div><!-- /main -->
+
+        <!-- Sidebar -->
+        <aside class="sidebar" aria-label="סרגל צד">
+          <div class="widget widget-cta">
+            <div class="widget-title">רוצה להתחיל?</div>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:0;">30 דקות שישנו את הגישה שלך ל-AI בעסק</p>
+            <a href="#lead-form" class="btn btn-cta">קבע שיחה חינמית</a>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">תוכן עניינים</div>
+            <ul class="toc-list">
+              <li><a href="#intro">למה רוב הטמעות נכשלות</a></li>
+              <li><a href="#process">התהליך - 4 שלבים</a></li>
+              <li><a href="#case-study">מקרה שימוש: ביטוח</a></li>
+              <li><a href="#what-i-implement">מה מטמיעים לפי עסק</a></li>
+              <li><a href="#tools">כלים שאני משתמש</a></li>
+              <li><a href="#prompt-example">דוגמה לפרומפט</a></li>
+              <li><a href="#faq">שאלות נפוצות</a></li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">שירותים קשורים</div>
+            <ul class="widget-links">
+              <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+              <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+              <li><a href="ai-solutions.html">פתרונות AI</a></li><li><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">כלים שאני משתמש בהם</div>
+            <ul class="widget-links">
+              <li><a href="claude.html">Claude - לכתיבה וניתוח</a></li>
+              <li><a href="chatgpt.html">ChatGPT - לאוטומציות</a></li>
+              <li><a href="gemini.html">Gemini - Google Workspace</a></li>
+              <li><a href="perplexity.html">Perplexity - מחקר</a></li>
+            </ul>
+          </div>
+        </aside>
+
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="index.html" class="logo" style="margin-bottom:16px;display:inline-block;" aria-label="AI IT - דף הבית"><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+          <p class="footer-desc">פורטל הבינה המלאכותית הגדול בישראל. תומר עוזר לעסקים ישראלים להוציא את המיטב מ-AI.</p>
+          <p style="font-size:13px;color:var(--text-secondary);">כל הזכויות שמורות AI IT 2025</p>
+        </div>
+        <div class="footer-col">
+          <h4>שירותים</h4>
+          <ul class="footer-links">
+            <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+            <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+            <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+            <li><a href="ai-solutions.html">פתרונות AI</a></li><li><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>כלי AI</h4>
+          <ul class="footer-links">
+            <li><a href="chatgpt.html">ChatGPT</a></li>
+            <li><a href="claude.html">Claude</a></li>
+            <li><a href="gemini.html">Gemini</a></li>
+            <li><a href="grok.html">Grok</a></li>
+            <li><a href="perplexity.html">Perplexity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>יצירת קשר</h4>
+          <form id="footer-form" novalidate>
+            <div class="form-group" style="margin-bottom:12px;">
+              <label for="ft-name">שם</label>
+              <input type="text" id="ft-name" name="name" placeholder="ישראל ישראלי" autocomplete="name">
+            </div>
+            <div class="form-group" style="margin-bottom:12px;">
+              <label for="ft-phone">טלפון</label>
+              <input type="tel" id="ft-phone" name="phone" placeholder="052-4534875" autocomplete="tel">
+            </div>
+            <button type="submit" class="btn btn-cta" style="width:100%;justify-content:center;">שלח</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>AI IT - פורטל הבינה המלאכותית לעסקים ישראלים</p>
+        <p><a href="sitemap.xml" style="color:var(--text-secondary);text-decoration:none;">מפת אתר</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    // FAQ
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      });
+    });
+    // Case Study tabs
+    document.querySelectorAll('.case-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const cs = tab.closest('.case-study');
+        cs.querySelectorAll('.case-tab').forEach(t => { t.classList.remove('active'); t.setAttribute('aria-selected','false'); });
+        cs.querySelectorAll('.case-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active'); tab.setAttribute('aria-selected','true');
+        cs.querySelector('#panel-' + tab.dataset.panel).classList.add('active');
+      });
+    });
+    // Mobile menu
+    // Dropdown menus - click to open, mouseleave to close
+    (function(){var nd=document.querySelectorAll('.site-nav .has-dropdown');nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});nd.forEach(function(item){var dd=item.querySelector('.dropdown'),t;function close(){t=setTimeout(function(){dd.style.display='none';},200);}item.querySelector('a').addEventListener('click',function(e){e.preventDefault();if(dd.style.display==='flex'){close();}else{clearTimeout(t);nd.forEach(function(o){o.querySelector('.dropdown').style.display='none';});dd.style.display='flex';}});item.addEventListener('mouseleave',close);dd.addEventListener('mouseenter',function(){clearTimeout(t);});dd.addEventListener('mouseleave',close);});document.addEventListener('click',function(e){if(!e.target.closest('.site-nav .has-dropdown'))nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});});})();
+
+    const menu = document.getElementById('mobile-menu');
+    document.getElementById('open-menu').addEventListener('click', () => { menu.classList.add('open'); document.body.style.overflow='hidden'; });
+    document.getElementById('close-menu').addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow=''; });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow=''; }));
+    // Forms
+    ['lead-form-main','footer-form'].forEach(id => {
+      const f = document.getElementById(id);
+      if(f) f.addEventListener('submit', e => { e.preventDefault(); alert('תודה! אחזור אליך תוך 24 שעות.'); f.reset(); });
+    });
+  </script>
+</body>
+</html>
