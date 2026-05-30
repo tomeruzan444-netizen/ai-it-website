@@ -1,0 +1,682 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>צ'אטבוט לעסק עם AI - וואטסאפ, אתר ושירות לקוחות | AI IT</title>
+  <meta name="description" content="צ'אטבוט לעסק עם AI: מענה אוטומטי ב-24/7, תיאום תורים, לידים ושירות לקוחות. הצוות שלנו בנה צ'אטבוטים שהורידו זמן תגובה מ-6 שעות ל-4 דקות.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ai-it.co.il/chatbot">
+  <meta property="og:title" content="צ'אטבוט לעסק עם AI - וואטסאפ ואתר | AI IT">
+  <meta property="og:description" content="צ'אטבוט AI שעונה ללקוחות 24/7, מתאם תורים ומסנן לידים. מניסיון עם עסקים ישראלים.">
+  <meta property="og:url" content="https://ai-it.co.il/chatbot">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="AI IT">
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "name": "צ'אטבוט לעסק עם AI",
+    "provider": {"@type": "Organization", "name": "AI IT", "telephone": "052-4534875"},
+    "url": "https://ai-it.co.il/chatbot",
+    "description": "בניית צ'אטבוטים AI לעסקים ישראלים - וואטסאפ, אתר, שירות לקוחות ותיאום תורים",
+    "areaServed": "IL"
+  }
+  </script>
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "כמה עולה צ'אטבוט לעסק?", "acceptedAnswer": {"@type": "Answer", "text": "תלוי במורכבות. צ'אטבוט בסיסי ל-WhatsApp - מ-2,000 ש'ח. צ'אטבוט מלא עם AI ואינטגרציה ל-CRM - 8,000-20,000 ש'ח. הייעוץ הראשוני חינמי."}},
+      {"@type": "Question", "name": "האם הצ'אטבוט עובד ב-WhatsApp?", "acceptedAnswer": {"@type": "Answer", "text": "כן. WhatsApp הוא הפלטפורמה המרכזית שאנחנו בונים עליה לעסקים ישראלים - זה המקום שבו הלקוחות שלך כבר נמצאים."}},
+      {"@type": "Question", "name": "האם הצ'אטבוט מחליף נציג שירות?", "acceptedAnswer": {"@type": "Answer", "text": "לא מחליף - משלים. הצ'אטבוט מטפל ב-70-80% מהפניות הסטנדרטיות, והנציגים מתפנים לשיחות שדורשות שיקול דעת אנושי."}}
+    ]
+  }
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#FFFFFF;--primary-light:#F9FAFB;--surface:#F3F4F6;--accent:#3B82F6;--accent-warm:#F59E0B;--accent-glow:rgba(59,130,246,0.08);--text-primary:#111827;--text-secondary:#6B7280;--border:#E5E7EB;--success:#10B981;--bot:#0EA5E9;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Heebo',sans-serif;background:var(--primary);color:var(--text-primary);line-height:1.7;font-size:16px;}
+    .mono,code,pre{font-family:'Space Mono',monospace;}
+    .skip-link{position:absolute;top:-40px;right:0;background:var(--bot);color:#fff;padding:8px 16px;z-index:9999;transition:top 0.2s;}.skip-link:focus{top:0;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+    .site-header .container{display:flex;align-items:center;gap:24px;height:64px;}
+    .logo{text-decoration:none;font-size:28px;font-weight:900;letter-spacing:-1px;flex-shrink:0;display:flex;align-items:center;gap:9px;}.logo-ai{color:var(--accent);}.logo-it{color:var(--accent-warm);}
+    .site-nav{flex:1;}.site-nav ul{list-style:none;display:flex;gap:4px;align-items:center;}
+    .site-nav a{text-decoration:none;color:var(--text-secondary);padding:8px 14px;border-radius:8px;font-size:15px;transition:color 0.2s,background 0.2s;white-space:nowrap;}.site-nav a:hover,.site-nav a[aria-current]{color:var(--text-primary);background:var(--surface);}
+    .has-dropdown{position:relative;}.has-dropdown>a::after{content:' ▾';font-size:11px;}
+    .dropdown{display:none;position:absolute;top:100%;right:0;z-index:200;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 8px 8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,0.1);flex-direction:column;gap:2px;}
+    .dropdown li{list-style:none;}.dropdown a{display:block;padding:10px 14px;border-radius:8px;font-size:14px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:15px;cursor:pointer;border:none;transition:all 0.2s;font-family:'Heebo',sans-serif;}
+    .btn-cta{background:var(--bot);color:#fff;}.btn-cta:hover{background:#0284C7;transform:translateY(-1px);}
+    .btn-outline{background:transparent;color:var(--bot);border:1px solid var(--bot);}.btn-outline:hover{background:rgba(14,165,233,0.08);}
+    .btn-lg{padding:14px 28px;font-size:17px;border-radius:10px;}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}.hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);border-radius:2px;}
+    .breadcrumb{padding:16px 0;border-bottom:1px solid var(--border);}.breadcrumb ol{list-style:none;display:flex;gap:8px;font-size:13px;color:var(--text-secondary);}.breadcrumb a{color:var(--text-secondary);text-decoration:none;}.breadcrumb a:hover{color:var(--bot);}.breadcrumb li+li::before{content:'/';margin-left:8px;}
+
+    .page-hero{padding:56px 0 48px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 70% 0%,rgba(14,165,233,0.07) 0%,transparent 60%);}
+    .section-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--bot);margin-bottom:10px;}
+    h1{font-size:clamp(28px,4vw,46px);font-weight:900;line-height:1.15;margin-bottom:16px;}
+    .hero-desc{font-size:18px;color:var(--text-secondary);max-width:600px;margin-bottom:28px;}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap;}.hero-stat{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);}.hero-stat strong{color:var(--bot);font-size:22px;font-family:'Space Mono',monospace;}
+    .page-body{padding:56px 0;}
+    .content-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;}
+    .sidebar{display:flex;flex-direction:column;gap:20px;}
+    section{margin-bottom:56px;}
+    h2{font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:16px;scroll-margin-top:80px;}
+    h3{font-size:19px;font-weight:700;margin-bottom:10px;}
+    p{margin-bottom:14px;color:var(--text-secondary);}p strong{color:var(--text-primary);}
+
+    .stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+    .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
+    .stat-card .num{font-family:'Space Mono',monospace;font-size:32px;font-weight:700;color:var(--bot);display:block;}.stat-card .label{font-size:13px;color:var(--text-secondary);margin-top:4px;}
+
+    /* CHAT DEMO */
+    .chat-demo{background:var(--surface);border:1px solid var(--border);border-radius:16px;overflow:hidden;margin:24px 0;max-width:420px;}
+    .chat-header{background:var(--bot);padding:14px 18px;display:flex;align-items:center;gap:10px;}
+    .chat-header .bot-avatar{width:36px;height:36px;border-radius:50%;background:rgba(255,255,255,0.2);display:flex;align-items:center;justify-content:center;font-size:16px;}
+    .chat-header .bot-name{color:#fff;font-weight:700;font-size:15px;}
+    .chat-header .bot-status{color:rgba(255,255,255,0.8);font-size:12px;}
+    .chat-body{padding:16px;display:flex;flex-direction:column;gap:10px;}
+    .msg{max-width:80%;padding:10px 14px;border-radius:12px;font-size:14px;line-height:1.5;}
+    .msg.bot{background:var(--primary);border:1px solid var(--border);align-self:flex-start;border-bottom-right-radius:4px;}
+    .msg.user{background:var(--bot);color:#fff;align-self:flex-end;border-bottom-left-radius:4px;}
+    .msg-time{font-size:11px;color:var(--text-secondary);margin-top:2px;}
+
+    /* TYPES */
+    .types-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0;}
+    .type-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;transition:border-color 0.2s,transform 0.2s;}
+    .type-card:hover{border-color:var(--bot);transform:translateY(-2px);}
+    .type-icon{width:44px;height:44px;background:rgba(14,165,233,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:14px;}
+    .type-icon svg{width:22px;height:22px;color:var(--bot);}
+    .type-card h3{font-size:16px;margin-bottom:8px;}
+    .type-card p{font-size:14px;margin-bottom:10px;}
+    .type-tag{font-size:12px;background:rgba(14,165,233,0.1);color:var(--bot);padding:3px 10px;border-radius:100px;font-weight:600;}
+
+    /* PROCESS STEPS */
+    .process-steps{display:flex;flex-direction:column;gap:0;}
+    .process-step{display:grid;grid-template-columns:56px 1fr;gap:20px;position:relative;}
+    .process-step:not(:last-child)::before{content:'';position:absolute;right:27px;top:56px;bottom:0;width:2px;background:var(--border);}
+    .step-num{width:56px;height:56px;border-radius:50%;background:rgba(14,165,233,0.1);border:2px solid var(--bot);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;color:var(--bot);font-size:18px;flex-shrink:0;z-index:1;}
+    .step-content{padding-bottom:36px;}.step-content h3{margin-bottom:8px;}.step-content p{font-size:15px;}
+    .step-duration{display:inline-block;background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:3px 12px;font-size:12px;color:var(--text-secondary);margin-top:8px;}
+
+    /* CASE STUDY */
+    .case-study{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:24px 0;}
+    .case-tabs{display:flex;border-bottom:1px solid var(--border);}
+    .case-tab{flex:1;padding:12px;background:none;border:none;color:var(--text-secondary);font-family:'Heebo',sans-serif;font-size:14px;cursor:pointer;transition:color 0.2s,background 0.2s;}
+    .case-tab.active{color:var(--bot);background:rgba(14,165,233,0.08);font-weight:600;}
+    .case-panel{display:none;padding:24px;}.case-panel.active{display:block;}
+    .result-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}.result-dot{width:8px;height:8px;border-radius:50%;background:var(--success);flex-shrink:0;}.result-row span{font-size:15px;color:var(--text-secondary);}.result-row strong{color:var(--text-primary);}
+
+    /* INFO BOX */
+    .info-box{display:flex;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
+    .info-box-icon{width:40px;height:40px;background:rgba(14,165,233,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}.info-box-icon svg{width:20px;height:20px;color:var(--bot);}
+    .info-box-body h4{font-size:15px;font-weight:700;margin-bottom:6px;}.info-box-body p{font-size:14px;margin:0;}
+
+    .callout{background:rgba(14,165,233,0.06);border:1px solid rgba(14,165,233,0.2);border-radius:12px;padding:20px 24px;margin:24px 0;}.callout p{margin:0;color:var(--text-primary);}
+    .callout-warn{background:#FFFBEB;border-color:#FDE68A;}.callout-warn p{color:#92400E;}
+
+    .quote-block{border-right:4px solid var(--bot);padding-right:20px;margin:24px 0;}.quote-block p{font-size:17px;font-style:italic;color:var(--text-primary);margin-bottom:6px;}.quote-block cite{font-size:13px;color:var(--text-secondary);font-style:normal;}
+
+    /* COMP TABLE */
+    .comp-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}
+    .comp-table th{background:var(--surface);padding:12px 16px;text-align:right;font-weight:700;border-bottom:2px solid var(--border);}
+    .comp-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-secondary);}
+    .comp-table tr:hover td{background:var(--surface);}
+    .comp-table .win{color:var(--success);font-weight:600;}
+    .comp-table .lose{color:#EF4444;}
+
+    .faq-list{display:flex;flex-direction:column;gap:8px;}
+    .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+    .faq-q{width:100%;background:none;border:none;cursor:pointer;padding:16px 20px;text-align:right;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;}.faq-q:hover{color:var(--bot);}
+    .faq-q svg{width:16px;height:16px;flex-shrink:0;transition:transform 0.25s;color:var(--bot);}.faq-item.open .faq-q svg{transform:rotate(180deg);}
+    .faq-a{display:none;padding:0 20px 16px;color:var(--text-secondary);font-size:14px;line-height:1.7;}.faq-item.open .faq-a{display:block;}
+
+    .lead-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px;text-align:center;}
+    .lead-section h2{margin-bottom:8px;}.lead-sub{font-size:16px;color:var(--text-secondary);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;}
+    .lead-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;margin:0 auto 16px;}.lead-form-grid .full{grid-column:1/-1;}
+    .form-group{margin-bottom:0;}.form-group label{display:block;font-size:13px;color:var(--text-secondary);margin-bottom:6px;}
+    .form-group input,.form-group select{width:100%;background:var(--primary);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;transition:border-color 0.2s;}
+    .form-group input:focus,.form-group select:focus{outline:none;border-color:var(--bot);}
+    .form-group select option{background:var(--surface);}
+    .trust-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:14px;}.trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);}.trust-item svg{width:14px;height:14px;color:var(--success);}
+
+    .widget{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;}.widget-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-secondary);margin-bottom:14px;}
+    .widget-links{list-style:none;display:flex;flex-direction:column;gap:4px;}.widget-links a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:14px;transition:color 0.2s,background 0.2s;}.widget-links a:hover{color:var(--text-primary);background:var(--primary);}.widget-links a::before{content:'→';color:var(--bot);font-size:12px;}
+    .widget-cta{background:linear-gradient(135deg,rgba(14,165,233,0.08),transparent);border:1px solid rgba(14,165,233,0.2);}.widget-cta .btn-cta{width:100%;margin-top:14px;justify-content:center;}
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:2px;}.toc-list a{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:13px;transition:color 0.2s,background 0.2s;}.toc-list a:hover{color:var(--bot);background:var(--primary);}
+
+    .site-footer{background:var(--primary-light);border-top:1px solid var(--border);padding:56px 0 24px;}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px;}.footer-col h4{font-size:15px;font-weight:700;margin-bottom:16px;}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px;}.footer-links a{color:var(--text-secondary);text-decoration:none;font-size:14px;transition:color 0.2s;}.footer-links a:hover{color:var(--accent);}
+    .footer-desc{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:14px;}
+    .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}.footer-bottom p{font-size:13px;color:var(--text-secondary);margin:0;}
+    .mobile-menu{display:none;flex-direction:column;position:fixed;inset:0;background:var(--primary);z-index:200;padding:24px;overflow-y:auto;}.mobile-menu.open{display:flex;}
+    .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+    .mobile-menu nav ul{list-style:none;display:flex;flex-direction:column;gap:4px;}.mobile-menu nav a{display:block;padding:14px 16px;border-radius:8px;text-decoration:none;color:var(--text-primary);font-size:18px;font-weight:600;}.mobile-menu nav a:hover{background:var(--surface);}
+    .close-btn{background:none;border:none;color:var(--text-primary);font-size:28px;cursor:pointer;line-height:1;}
+    @media(max-width:900px){.content-grid{grid-template-columns:1fr;}.sidebar{position:static;}.stat-cards{grid-template-columns:1fr 1fr;}.types-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.lead-form-grid{grid-template-columns:1fr;}.lead-section{padding:28px 20px;}}
+    @media(max-width:640px){.site-nav,.btn-cta{display:none;}.hamburger{display:flex;}.stat-cards{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.hero-stats{flex-direction:column;gap:12px;}}
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">דלג לתוכן</a>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+    <div class="mobile-menu-header">
+      <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <button class="close-btn" id="close-menu" aria-label="סגור תפריט">&#x2715;</button>
+    </div>
+    <nav><ul>
+      <li><a href="/">בית</a></li>
+      <li><a href="chatbot.html">צ'אטבוט לעסק</a></li>
+      <li><a href="ai-automation.html">אוטומציה</a></li>
+      <li><a href="ai-agents.html">AI Agents</a></li>
+      <li><a href="about.html">אודות</a></li>
+      <li><a href="contact.html">יצירת קשר</a></li>
+      <li><a href="tel:0524534875" style="color:var(--bot);">052-4534875</a></li>
+    </ul></nav>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo" aria-label="AI IT - דף הבית"><svg width="30" height="30" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><line x1="26" y1="10" x2="26" y2="18.5" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="26" y1="33.5" x2="26" y2="42" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="10" y1="26" x2="18.5" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="33.5" y1="26" x2="42" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="29.5" y1="22.5" x2="36.5" y2="15.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><line x1="22.5" y1="29.5" x2="15.5" y2="36.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><circle cx="26" cy="8" r="3.2" fill="white" opacity="0.88"/><circle cx="26" cy="44" r="3.2" fill="white" opacity="0.88"/><circle cx="8" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="44" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="38.5" cy="13.5" r="2.8" fill="#F59E0B"/><circle cx="13.5" cy="38.5" r="2.8" fill="#F59E0B"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <nav class="site-nav" aria-label="תפריט ראשי">
+        <ul>
+          <li><a href="/">בית</a></li>
+          <li class="has-dropdown"><a href="#">שירותים</a>
+            <ul class="dropdown" role="menu">
+              <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+              <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+              <li><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
+              <li><a href="ai-agents.html">AI Agents לעסקים</a></li>
+              <li><a href="chatbot.html" aria-current="page">צ'אטבוט לעסק</a></li>
+              <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+              <li><a href="ai-solutions.html">פתרונות AI</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown"><a href="#">כלי AI</a>
+            <ul class="dropdown" role="menu">
+              <li><a href="chatgpt.html">ChatGPT</a></li>
+              <li><a href="claude.html">Claude</a></li>
+              <li><a href="gemini.html">Gemini</a></li>
+              <li><a href="grok.html">Grok</a></li>
+              <li><a href="perplexity.html">Perplexity</a></li>
+              <li><a href="n8n.html">n8n</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="contact.html">יצירת קשר</a></li>
+        </ul>
+      </nav>
+      <a href="tel:0524534875" class="btn btn-cta">052-4534875</a>
+      <button class="hamburger" id="open-menu" aria-label="פתח תפריט"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="נתיב ניווט">
+    <div class="container">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">בית</span></a><meta itemprop="position" content="1"></li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="chatbot.html" itemprop="item"><span itemprop="name">צ'אטבוט לעסק</span></a><meta itemprop="position" content="2"></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-hero" aria-label="כותרת עמוד">
+    <div class="container">
+      <div class="section-label">שירות</div>
+      <h1 id="main-content">צ'אטבוט לעסק - מענה 24/7 שמכניס לידים בלילה</h1>
+      <p class="hero-desc">הלקוחות שלך שולחים הודעות ב-23:00. ב-שבת. ביום כיפור. צ'אטבוט AI עונה להם מיידית - ומעביר לך ליד חם בבוקר.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>4 דק'</strong> זמן תגובה ממוצע (במקום 6 שעות)</div>
+        <div class="hero-stat"><strong>24/7</strong> זמינות ללא עלות נוספת</div>
+        <div class="hero-stat"><strong>70%</strong> מהפניות מטופלות אוטומטית</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-body">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+
+          <!-- Intro -->
+          <section id="intro" aria-labelledby="intro-h">
+            <h2 id="intro-h">למה עסקים ישראלים מפסידים לידים כל לילה</h2>
+            <p>ראינו את זה שוב ושוב: לקוח כותב ב-22:30 "אשמח לקבל הצעת מחיר". בבוקר - הוא כבר שוחח עם המתחרה. לא כי השירות שלך גרוע. פשוט כי אף אחד לא ענה בזמן.</p>
+            <p>עם רשת הקליניקות שבנינו עבורה צ'אטבוט, זמן התגובה ירד מ-6 שעות ל-4 דקות. לא כי גייסו עובדים. כי הצ'אטבוט עונה מיידית - גם ב-שבת, גם בחג.</p>
+
+            <div class="stat-cards">
+              <div class="stat-card">
+                <span class="num">6 שע'</span>
+                <div class="label">זמן תגובה ממוצע ללא צ'אטבוט</div>
+              </div>
+              <div class="stat-card">
+                <span class="num">4 דק'</span>
+                <div class="label">זמן תגובה עם הצ'אטבוט שלנו</div>
+              </div>
+              <div class="stat-card">
+                <span class="num">45 דק'</span>
+                <div class="label">חסכון יומי לפיזיותרפיסט</div>
+              </div>
+            </div>
+
+            <div class="callout">
+              <p><strong>ההבדל בין צ'אטבוט AI לצ'אטבוט רגיל:</strong> צ'אטבוט רגיל עוקב אחרי עץ שיחה מוגדר - "לחץ 1 לשאלות, לחץ 2 לתורים". צ'אטבוט AI מבין שאלות חופשיות בעברית, מזהה כוונה, ועונה בצורה טבעית. ההבדל בחוויה הוא עצום.</p>
+            </div>
+
+            <!-- Chat Demo -->
+            <div style="display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start;margin:24px 0;">
+              <div class="chat-demo">
+                <div class="chat-header">
+                  <div class="bot-avatar">🏥</div>
+                  <div>
+                    <div class="bot-name">קליניקת פיזיותרפיה</div>
+                    <div class="bot-status">מחובר - ענה עכשיו</div>
+                  </div>
+                </div>
+                <div class="chat-body">
+                  <div class="msg user">שלום, יש לכם תור פנוי לפיזיותרפיה הלאה?</div>
+                  <div class="msg bot">שלום! כן, יש לנו תורים פנויים השבוע 😊<br>לאיזה אזור בגוף צריך טיפול?</div>
+                  <div class="msg user">גב תחתון</div>
+                  <div class="msg bot">מצוין. יש לנו מקום ביום רביעי ב-10:00 או חמישי ב-16:00. מה מתאים?</div>
+                  <div class="msg user">רביעי ב-10</div>
+                  <div class="msg bot">שמור! קיבלת אישור ב-SMS. נתראה ברביעי ✓</div>
+                  <div class="msg-time" style="text-align:center;font-size:11px;color:var(--text-secondary);">כל הזה לקח 2 דקות - ב-22:45 בלילה</div>
+                </div>
+              </div>
+              <div style="flex:1;min-width:200px;">
+                <p><strong>זו שיחה אמיתית</strong> - לא תסריט מוכן. הלקוח שאל בשפה חופשית, הצ'אטבוט הבין, תיאם תור, ושלח אישור.</p>
+                <p>הפיזיותרפיסת לא ידעה מזה עד הבוקר - ובמקום לבלות 45 דקות ביום על תיאום, היא עסקה בטיפולים.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Types -->
+          <section id="types" aria-labelledby="types-h">
+            <h2 id="types-h">4 סוגי צ'אטבוט שאנחנו בונים</h2>
+            <p>כל עסק צריך פתרון שונה. הנה הסוגים שאנחנו בונים - ולמי כל אחד מתאים:</p>
+
+            <div class="types-grid">
+              <div class="type-card">
+                <div class="type-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg>
+                </div>
+                <h3>צ'אטבוט WhatsApp</h3>
+                <p>עונה בווטסאפ לפניות, לידים ותורים. זה המקום שבו הלקוחות הישראלים כבר נמצאים - 95% מהאוכלוסייה משתמשת בו יומיום.</p>
+                <div class="type-tag">מתאים לכולם</div>
+              </div>
+              <div class="type-card">
+                <div class="type-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="2" y="3" width="20" height="14" rx="2"/><path d="M8 21h8M12 17v4"/></svg>
+                </div>
+                <h3>צ'אטבוט אתר</h3>
+                <p>Widget שמוצג בפינת האתר. מברך מבקרים, עונה על שאלות, ומפנה ללידים. ממיר מבקרים אנונימיים ליצירת קשר.</p>
+                <div class="type-tag">מתאים לעסקי שירות</div>
+              </div>
+              <div class="type-card">
+                <div class="type-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/></svg>
+                </div>
+                <h3>צ'אטבוט שירות לקוחות</h3>
+                <p>מטפל בשאלות חוזרות - מה השעות? כמה עולה? איך מגיעים? - 24/7 בלי לעייף נציג. הנציגים מתפנים לשיחות מורכבות.</p>
+                <div class="type-tag">ביטוח, קמעונאות, רפואה</div>
+              </div>
+              <div class="type-card">
+                <div class="type-icon">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/></svg>
+                </div>
+                <h3>צ'אטבוט לידים ומכירות</h3>
+                <p>שואל שאלות מסנן (תקציב, לוח זמנים, צורך), מזהה לידים חמים ומעביר אותם מיידית לנציג מכירות. 15% עלייה בסגירות.</p>
+                <div class="type-tag">נדל"ן, ייעוץ, SaaS</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Process -->
+          <section id="process" aria-labelledby="process-h">
+            <h2 id="process-h">התהליך שלנו - מ-0 לצ'אטבוט תוך 3 שבועות</h2>
+            <p>בנינו צ'אטבוטים לשבעה ענפים שונים. הנה מה שלמדנו: הצ'אטבוט עצמו הוא לא הדבר הכי קשה. הכי קשה הוא למפות מה לקוחות שואלים בפועל.</p>
+
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <h3>מיפוי שאלות ותרחישים</h3>
+                  <p>ישיבה של 2 שעות עם בעל העסק ו/או נציג שירות. אנחנו עוברים על 50-100 השאלות שחוזרות הכי הרבה. זה הבסיס של כל הצ'אטבוט.</p>
+                  <p>עם חברת הביטוח - גילינו שנציגים עונים על אותה שאלה 15 פעם ביום בדיוק. 3 שעות עבודה שנעלמות.</p>
+                  <span class="step-duration">2-3 ימים</span>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <h3>בניית "מוח" הצ'אטבוט</h3>
+                  <p>הצ'אטבוט צריך לדעת מי אתה, מה אתה מוכר, ומה התשובות לכל שאלה. אנחנו בונים מסמך ידע מקיף שהוא ה"מוח" של המערכת.</p>
+                  <p>מגדירים גם מה הצ'אטבוט לא עונה עליו - ומתי הוא מעביר לאדם.</p>
+                  <span class="step-duration">שבוע</span>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <h3>בנייה וחיבורים</h3>
+                  <p>מחברים את הצ'אטבוט ל-WhatsApp Business API, ליומן, ל-CRM - כל מה שרלוונטי. מריצים בדיקות עם תרחישים אמיתיים.</p>
+                  <span class="step-duration">שבוע</span>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                  <h3>הדרכה ו-launch</h3>
+                  <p>מלמדים את הצוות איך לראות שיחות, לקפוץ פנימה כשצריך, ולעדכן את הצ'אטבוט כשמגלים שאלות חדשות.</p>
+                  <span class="step-duration">2-3 ימים</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Case Study -->
+          <section id="case-study" aria-labelledby="case-h">
+            <h2 id="case-h">מקרה שימוש: רשת קליניקות (6 קליניקות, 40 עובדים)</h2>
+
+            <div class="case-study">
+              <div class="case-tabs">
+                <button class="case-tab active" data-panel="bg3">רקע</button>
+                <button class="case-tab" data-panel="ch3">אתגר</button>
+                <button class="case-tab" data-panel="sol3">פתרון</button>
+                <button class="case-tab" data-panel="res3">תוצאות</button>
+              </div>
+              <div id="panel-bg3" class="case-panel active">
+                <h4 style="margin-bottom:10px;">רשת פיזיותרפיה - הרבה ניירת, מעט זמן</h4>
+                <p style="font-size:14px;">6 קליניקות, 40 עובדים. כל פיזיותרפיסט מטפל ב-8-10 מטופלים ביום. בין כל טיפול - הודעות וואטסאפ שמחכות לתגובה: תורים, שאלות, ביטולים.</p>
+              </div>
+              <div id="panel-ch3" class="case-panel">
+                <h4 style="margin-bottom:10px;">45 דקות ביום על תיאום ידני</h4>
+                <p style="font-size:14px;">כל פיזיותרפיסט בזבז 45 דקות ביום על תיאום תורים, מענה לשאלות חוזרות, ואישורים. זמן שצריך לרפא - הלך על ניהול יומן. בנוסף - תגובה ממוצעת ללקוח: 6 שעות.</p>
+              </div>
+              <div id="panel-sol3" class="case-panel">
+                <h4 style="margin-bottom:10px;">צ'אטבוט WhatsApp + אינטגרציה לCRM</h4>
+                <ul style="padding-right:20px;font-size:14px;color:var(--text-secondary);line-height:2.2;">
+                  <li>צ'אטבוט WhatsApp שמבין עברית טבעית</li>
+                  <li>חיבור ישיר ליומן - תורים נקבעים אוטומטית</li>
+                  <li>Claude API לתשובות על שאלות רפואיות כלליות</li>
+                  <li>העברה לנציג אנושי כשמדובר בדחיפות</li>
+                  <li>סיכום שיחות אוטומטי ל-CRM</li>
+                </ul>
+              </div>
+              <div id="panel-res3" class="case-panel">
+                <h4 style="margin-bottom:10px;">תוצאות אחרי חודשיים</h4>
+                <div class="result-row"><div class="result-dot"></div><span>זמן תגובה: <strong>מ-6 שעות ל-4 דקות</strong></span></div>
+                <div class="result-row"><div class="result-dot"></div><span>כל פיזיותרפיסט חסך <strong>45 דקות ביום</strong></span></div>
+                <div class="result-row"><div class="result-dot"></div><span><strong>70%</strong> מהפניות מטופלות ללא התערבות</span></div>
+                <div class="result-row"><div class="result-dot"></div><span>אפס תורים שנשכחו - SMS אוטומטי 24 שעות לפני</span></div>
+              </div>
+            </div>
+
+            <div class="quote-block">
+              <p>"לראשונה אנחנו מסתכלים על הנתונים כי עכשיו הם נגישים. הצ'אטבוט לא רק חסך זמן - הוא שינה את האופן שבו אנחנו מנהלים את הקליניקה."</p>
+              <cite>מנהל רשת הקליניקות, לאחר הפרויקט</cite>
+            </div>
+          </section>
+
+          <!-- What chatbot knows -->
+          <section id="what-it-knows" aria-labelledby="knows-h">
+            <h2 id="knows-h">מה הצ'אטבוט יכול לדעת ולעשות</h2>
+            <p>הצ'אטבוט הוא טוב כמה שהמידע שנותנים לו. הנה מה שמוזן לו:</p>
+
+            <div class="info-box">
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+              <div class="info-box-body">
+                <h4>ידע על העסק</h4>
+                <p>שירותים ומחירים, שעות פעילות, כתובות, מדיניות ביטולים, שאלות נפוצות. הצ'אטבוט יודע יותר ממה שנציג חדש יודע לאחר שבוע.</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg></div>
+              <div class="info-box-body">
+                <h4>גישה ליומן ותורים</h4>
+                <p>רואה זמינות בזמן אמת, קובע תורים, שולח אישורים ותזכורות. מחובר ל-Google Calendar, Calendly, או מערכת ניהול תורים קיימת.</p>
+              </div>
+            </div>
+            <div class="info-box">
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"/></svg></div>
+              <div class="info-box-body">
+                <h4>חיבור ל-CRM ולידים</h4>
+                <p>כל שיחה שמסתיימת בלי תור - נשמרת כליד ב-CRM. עם ציון: "שאל על מחיר", "ביקש הצעת מחיר", "שאל שאלה כללית".</p>
+              </div>
+            </div>
+
+            <div class="callout-warn callout">
+              <p><strong>מה הצ'אטבוט לא עושה:</strong> לא מחליף שיחה עסקית אמיתית. לא מנהל מו"מ. לא מטפל בתלונות רגישות. כל מקרה שדורש אמפתיה אנושית - מועבר לנציג. אנחנו בונים את ה"העברה" הזו בקפידה.</p>
+            </div>
+          </section>
+
+          <!-- Comparison -->
+          <section id="comparison" aria-labelledby="comp-h">
+            <h2 id="comp-h">צ'אטבוט AI לעומת צ'אטבוט רגיל</h2>
+            <p>לא כל "צ'אטבוט" שווה. הנה ההבדל:</p>
+
+            <div style="overflow-x:auto;">
+              <table class="comp-table" aria-label="השוואה צ'אטבוט AI לעומת רגיל">
+                <thead>
+                  <tr><th>קריטריון</th><th>צ'אטבוט AI (שלנו)</th><th>צ'אטבוט "עץ שיחה"</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>הבנת עברית חופשית</td><td class="win">כן - מבין כוונה</td><td class="lose">לא - רק מילות מפתח</td></tr>
+                  <tr><td>תשובות גמישות</td><td class="win">כן - לפי הקשר</td><td class="lose">לא - תסריט קבוע</td></tr>
+                  <tr><td>טיפול בשאלות לא צפויות</td><td class="win">כן</td><td class="lose">מגיע לנציג</td></tr>
+                  <tr><td>זמן הגדרה</td><td>3 שבועות</td><td class="win">שבוע</td></tr>
+                  <tr><td>עלות חודשית</td><td>$30-100 (API)</td><td class="win">$15-50</td></tr>
+                  <tr><td>חוויית משתמש</td><td class="win">טבעית, כמו אדם</td><td class="lose">מכנית, מגבילה</td></tr>
+                </tbody>
+              </table>
+            </div>
+
+            <p>לרוב הלקוחות אנחנו ממליצים על AI. ההפרש בעלות החודשית קטן - אבל ההפרש בחוויה גדול.</p>
+          </section>
+
+          <!-- FAQ -->
+          <section id="faq" aria-labelledby="faq-h">
+            <h2 id="faq-h">שאלות על צ'אטבוט לעסק</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">כמה עולה צ'אטבוט לעסק?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">תלוי במורכבות. צ'אטבוט בסיסי ל-WhatsApp (שאלות נפוצות + לידים) - מ-3,000 ש"ח. צ'אטבוט מלא עם תיאום תורים, חיבור ל-CRM ו-AI מתקדם - 8,000-20,000 ש"ח. עלות חודשית שוטפת: $30-100 (API + שרת). ב-30 דקות ייעוץ חינמי נוכל לתת הצעת מחיר מדויקת.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">האם הצ'אטבוט עובד ב-WhatsApp?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">כן - זה הפלטפורמה הראשית שאנחנו בונים עליה לעסקים ישראלים. צריך חשבון WhatsApp Business API (מוגדר על ידינו). בנוסף, אנחנו בונים גם לאתרים, Facebook Messenger ו-Instagram.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">האם הצ'אטבוט יכול לקבוע תורים?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">כן - אם יש לכם מערכת יומן שתומכת ב-API (Google Calendar, Calendly, ועוד). הצ'אטבוט בודק זמינות בזמן אמת, קובע תור, ושולח אישור ב-SMS. ראינו את זה עובד עם רשת הקליניקות - פינה 45 דקות ביום לכל פיזיותרפיסט.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">האם הצ'אטבוט מחליף נציג שירות?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">לא מחליף - משלים. הצ'אטבוט מטפל ב-70-80% מהפניות הסטנדרטיות, ומעביר לנציג אנושי כשמדובר בתלונה רגישה, שאלה מורכבת, או לקוח שמבקש ישירות לדבר עם אדם.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">כמה זמן לוקח לבנות?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">3-4 שבועות לצ'אטבוט מלא. שבוע ראשון - מיפוי ותכנון. שבוע שני - בנייה. שבוע שלישי - בדיקות ועדכונים. שבוע רביעי - launch ו-onboarding לצוות. צ'אטבוט בסיסי יותר - שבועיים.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Lead Form -->
+          <section id="lead-form" aria-labelledby="lead-h">
+            <div class="lead-section">
+              <div class="section-label">התחל עכשיו</div>
+              <h2 id="lead-h">בנה צ'אטבוט לעסק שלך</h2>
+              <p class="lead-sub">30 דקות ייעוץ חינמי - נבין מה צריך ונתן הצעת מחיר שקופה.</p>
+              <form id="lead-form-main" novalidate>
+                <div class="lead-form-grid">
+                  <div class="form-group"><label for="lf-name">שם מלא</label><input type="text" id="lf-name" name="name" placeholder="ישראל ישראלי" required autocomplete="name"></div>
+                  <div class="form-group"><label for="lf-phone">טלפון</label><input type="tel" id="lf-phone" name="phone" placeholder="052-4534875" required autocomplete="tel"></div>
+                  <div class="form-group">
+                    <label for="lf-type">סוג צ'אטבוט</label>
+                    <select id="lf-type" name="type">
+                      <option value="">מה מעניין...</option>
+                      <option>צ'אטבוט WhatsApp</option>
+                      <option>צ'אטבוט אתר</option>
+                      <option>שירות לקוחות</option>
+                      <option>לידים ומכירות</option>
+                      <option>תיאום תורים</option>
+                      <option>לא בטוח - צריך ייעוץ</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="lf-business">תחום עסק</label>
+                    <select id="lf-business" name="business">
+                      <option value="">בחר...</option>
+                      <option>בריאות וקליניקות</option>
+                      <option>נדל"ן</option>
+                      <option>קמעונאות</option>
+                      <option>ביטוח ופיננסים</option>
+                      <option>מסעדנות</option>
+                      <option>שירותים מקצועיים</option>
+                      <option>אחר</option>
+                    </select>
+                  </div>
+                  <div class="form-group full">
+                    <button type="submit" class="btn btn-cta btn-lg" style="width:100%;justify-content:center;">קבל ייעוץ חינמי</button>
+                  </div>
+                </div>
+              </form>
+              <div class="trust-row">
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>מגיבים תוך 24 שעות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ללא התחייבות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>שיחה בעברית</div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="sidebar" aria-label="סרגל צד">
+          <div class="widget widget-cta">
+            <div class="widget-title">בנה צ'אטבוט</div>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:0;">30 דקות לבדוק מה צריך ומה עולה</p>
+            <a href="#lead-form" class="btn btn-cta">קבע שיחה חינמית</a>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">תוכן עניינים</div>
+            <ul class="toc-list">
+              <li><a href="#intro">למה עסקים מפסידים לידים</a></li>
+              <li><a href="#types">4 סוגי צ'אטבוט</a></li>
+              <li><a href="#process">התהליך</a></li>
+              <li><a href="#case-study">מקרה: רשת קליניקות</a></li>
+              <li><a href="#what-it-knows">מה הצ'אטבוט יודע</a></li>
+              <li><a href="#comparison">AI לעומת רגיל</a></li>
+              <li><a href="#faq">שאלות נפוצות</a></li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">שירותים קשורים</div>
+            <ul class="widget-links">
+              <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+              <li><a href="ai-agents.html">AI Agents</a></li>
+              <li><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
+              <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">כלים שאנחנו משתמשים</div>
+            <ul class="widget-links">
+              <li><a href="claude.html">Claude - ה"מוח" של הצ'אטבוט</a></li>
+              <li><a href="chatgpt.html">ChatGPT - אלטרנטיבה</a></li>
+              <li><a href="n8n.html">n8n - חיבורים ואינטגרציות</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/" class="logo" style="margin-bottom:16px;display:inline-flex;" aria-label="AI IT"><svg width="28" height="28" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+          <p class="footer-desc">פורטל הבינה המלאכותית הגדול בישראל.</p>
+          <p style="font-size:14px;margin-bottom:4px;"><a href="tel:0524534875" style="color:var(--accent);text-decoration:none;font-weight:700;">052-4534875</a></p>
+          <p style="font-size:13px;color:var(--text-secondary);">כל הזכויות שמורות AI IT 2025</p>
+        </div>
+        <div class="footer-col">
+          <h4>שירותים</h4>
+          <ul class="footer-links">
+            <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+            <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+            <li><a href="chatbot.html">צ'אטבוט לעסק</a></li>
+            <li><a href="ai-agents.html">AI Agents</a></li>
+            <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>כלי AI</h4>
+          <ul class="footer-links">
+            <li><a href="chatgpt.html">ChatGPT</a></li>
+            <li><a href="claude.html">Claude</a></li>
+            <li><a href="gemini.html">Gemini</a></li>
+            <li><a href="n8n.html">n8n</a></li>
+            <li><a href="perplexity.html">Perplexity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>החברה</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">אודות AI IT</a></li>
+            <li><a href="contact.html">יצירת קשר</a></li>
+            <li><a href="tel:0524534875">052-4534875</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>AI IT - פורטל הבינה המלאכותית לעסקים ישראלים</p>
+        <p><a href="sitemap.xml" style="color:var(--text-secondary);text-decoration:none;">מפת אתר</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var nd=document.querySelectorAll('.site-nav .has-dropdown');nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});nd.forEach(function(item){var dd=item.querySelector('.dropdown'),t;function close(){t=setTimeout(function(){dd.style.display='none';},200);}item.querySelector('a').addEventListener('click',function(e){e.preventDefault();if(dd.style.display==='flex'){close();}else{clearTimeout(t);nd.forEach(function(o){o.querySelector('.dropdown').style.display='none';});dd.style.display='flex';}});item.addEventListener('mouseleave',close);dd.addEventListener('mouseenter',function(){clearTimeout(t);});dd.addEventListener('mouseleave',close);});document.addEventListener('click',function(e){if(!e.target.closest('.site-nav .has-dropdown'))nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});});})();
+
+    document.querySelectorAll('.faq-q').forEach(btn => {
+      btn.addEventListener('click', () => {
+        const item = btn.closest('.faq-item');
+        const isOpen = item.classList.contains('open');
+        document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+      });
+    });
+
+    document.querySelectorAll('.case-tab').forEach(tab => {
+      tab.addEventListener('click', () => {
+        const cs = tab.closest('.case-study');
+        cs.querySelectorAll('.case-tab').forEach(t => t.classList.remove('active'));
+        cs.querySelectorAll('.case-panel').forEach(p => p.classList.remove('active'));
+        tab.classList.add('active');
+        cs.querySelector('#panel-' + tab.dataset.panel).classList.add('active');
+      });
+    });
+
+    const menu = document.getElementById('mobile-menu');
+    document.getElementById('open-menu').addEventListener('click', () => { menu.classList.add('open'); document.body.style.overflow='hidden'; });
+    document.getElementById('close-menu').addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow=''; });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow=''; }));
+    document.getElementById('lead-form-main').addEventListener('submit', e => { e.preventDefault(); alert('תודה! נחזור אליך תוך 24 שעות.'); e.target.reset(); });
+  </script>
+</body>
+</html>

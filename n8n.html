@@ -1,14 +1,16 @@
 <!DOCTYPE html>
 <html lang="he" dir="rtl">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>n8n - המדריך המלא בעברית וביקורת אובייקטיבית 2025 | AI IT</title>
-  <meta name="description" content="מדריך n8n בעברית עם ביקורת מקצועית אמיתית: מה n8n עושה טוב, מה הוא לא עושה טוב, ומתי לבחור בו על פני Zapier ו-Make. מניסיון עם לקוחות אמיתיים.">
+  <meta name="description"
+    content="מדריך n8n בעברית עם ביקורת מקצועית אמיתית: מה n8n עושה טוב, מה הוא לא עושה טוב, ומתי לבחור בו על פני Zapier ו-Make. מניסיון עם לקוחות אמיתיים.">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://ai-it.co.il/n8n">
   <meta property="og:title" content="n8n - מדריך וביקורת מקצועית | AI IT">
-  <meta property="og:description" content="ביקורת אובייקטיבית על n8n: הכוחות, החולשות, ומתי כדאי לבחור בו. מניסיון שימוש אמיתי.">
+  <meta property="og:description" content="ביקורת אובייקטיבית על n8n: הכוחות, החולשות, ומתי כדאי לבחור בו. מניסיון .">
   <meta property="og:url" content="https://ai-it.co.il/n8n">
   <meta property="og:type" content="article">
   <meta property="og:locale" content="he_IL">
@@ -37,182 +39,1295 @@
   </script>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap"
+    rel="stylesheet">
   <style>
-    :root{--primary:#FFFFFF;--primary-light:#F9FAFB;--surface:#F3F4F6;--accent:#3B82F6;--accent-warm:#F59E0B;--accent-glow:rgba(59,130,246,0.08);--text-primary:#111827;--text-secondary:#6B7280;--border:#E5E7EB;--success:#10B981;--n8n:#EA4B71;--n8n-glow:rgba(234,75,113,0.08);}
-    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
-    html{scroll-behavior:smooth;}
-    body{font-family:'Heebo',sans-serif;background:var(--primary);color:var(--text-primary);line-height:1.7;font-size:16px;}
-    .mono,code,pre{font-family:'Space Mono',monospace;}
-    .skip-link{position:absolute;top:-40px;right:0;background:var(--n8n);color:#fff;padding:8px 16px;z-index:9999;transition:top 0.2s;}.skip-link:focus{top:0;}
-    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
-    .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
-    .site-header .container{display:flex;align-items:center;gap:24px;height:64px;}
-    .logo{text-decoration:none;font-size:28px;font-weight:900;letter-spacing:-1px;flex-shrink:0;display:flex;align-items:center;gap:9px;}.logo-ai{color:var(--accent);}.logo-it{color:var(--accent-warm);}
-    .site-nav{flex:1;}.site-nav ul{list-style:none;display:flex;gap:4px;align-items:center;}
-    .site-nav a{text-decoration:none;color:var(--text-secondary);padding:8px 14px;border-radius:8px;font-size:15px;transition:color 0.2s,background 0.2s;white-space:nowrap;}.site-nav a:hover,.site-nav a[aria-current]{color:var(--text-primary);background:var(--surface);}
-    .has-dropdown{position:relative;}.has-dropdown>a::after{content:' ▾';font-size:11px;}
-    .dropdown{display:none;position:absolute;top:100%;right:0;z-index:200;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 8px 8px;min-width:200px;box-shadow:0 8px 32px rgba(0,0,0,0.1);flex-direction:column;gap:2px;}
-    .dropdown li{list-style:none;}.dropdown a{display:block;padding:10px 14px;border-radius:8px;font-size:14px;}
-    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:15px;cursor:pointer;border:none;transition:all 0.2s;font-family:'Heebo',sans-serif;}
-    .btn-cta{background:var(--accent);color:#fff;}.btn-cta:hover{background:#2563eb;transform:translateY(-1px);}
-    .btn-outline{background:transparent;color:var(--accent);border:1px solid var(--accent);}.btn-outline:hover{background:var(--accent-glow);}
-    .btn-lg{padding:14px 28px;font-size:17px;border-radius:10px;}
-    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}.hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);border-radius:2px;}
-    .breadcrumb{padding:16px 0;border-bottom:1px solid var(--border);}.breadcrumb ol{list-style:none;display:flex;gap:8px;font-size:13px;color:var(--text-secondary);}.breadcrumb a{color:var(--text-secondary);text-decoration:none;}.breadcrumb a:hover{color:var(--n8n);}.breadcrumb li+li::before{content:'/';margin-left:8px;}
+    :root {
+      --primary: #FFFFFF;
+      --primary-light: #F9FAFB;
+      --surface: #F3F4F6;
+      --accent: #3B82F6;
+      --accent-warm: #F59E0B;
+      --accent-glow: rgba(59, 130, 246, 0.08);
+      --text-primary: #111827;
+      --text-secondary: #6B7280;
+      --border: #E5E7EB;
+      --success: #10B981;
+      --n8n: #EA4B71;
+      --n8n-glow: rgba(234, 75, 113, 0.08);
+    }
+
+    *,
+    *::before,
+    *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Heebo', sans-serif;
+      background: var(--primary);
+      color: var(--text-primary);
+      line-height: 1.7;
+      font-size: 16px;
+    }
+
+    .mono,
+    code,
+    pre {
+      font-family: 'Space Mono', monospace;
+    }
+
+    .skip-link {
+      position: absolute;
+      top: -40px;
+      right: 0;
+      background: var(--n8n);
+      color: #fff;
+      padding: 8px 16px;
+      z-index: 9999;
+      transition: top 0.2s;
+    }
+
+    .skip-link:focus {
+      top: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 24px;
+    }
+
+    .site-header {
+      position: sticky;
+      top: 0;
+      z-index: 100;
+      background: rgba(255, 255, 255, 0.97);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .site-header .container {
+      display: flex;
+      align-items: center;
+      gap: 24px;
+      height: 64px;
+    }
+
+    .logo {
+      text-decoration: none;
+      font-size: 28px;
+      font-weight: 900;
+      letter-spacing: -1px;
+      flex-shrink: 0;
+      display: flex;
+      align-items: center;
+      gap: 9px;
+    }
+
+    .logo-ai {
+      color: var(--accent);
+    }
+
+    .logo-it {
+      color: var(--accent-warm);
+    }
+
+    .site-nav {
+      flex: 1;
+    }
+
+    .site-nav ul {
+      list-style: none;
+      display: flex;
+      gap: 4px;
+      align-items: center;
+    }
+
+    .site-nav a {
+      text-decoration: none;
+      color: var(--text-secondary);
+      padding: 8px 14px;
+      border-radius: 8px;
+      font-size: 15px;
+      transition: color 0.2s, background 0.2s;
+      white-space: nowrap;
+    }
+
+    .site-nav a:hover,
+    .site-nav a[aria-current] {
+      color: var(--text-primary);
+      background: var(--surface);
+    }
+
+    .has-dropdown {
+      position: relative;
+    }
+
+    .has-dropdown>a::after {
+      content: ' ▾';
+      font-size: 11px;
+    }
+
+    .dropdown {
+      display: none;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      z-index: 200;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 12px 8px 8px;
+      min-width: 200px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .dropdown li {
+      list-style: none;
+    }
+
+    .dropdown a {
+      display: block;
+      padding: 10px 14px;
+      border-radius: 8px;
+      font-size: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 10px 20px;
+      border-radius: 8px;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 15px;
+      cursor: pointer;
+      border: none;
+      transition: all 0.2s;
+      font-family: 'Heebo', sans-serif;
+    }
+
+    .btn-cta {
+      background: var(--accent);
+      color: #fff;
+    }
+
+    .btn-cta:hover {
+      background: #2563eb;
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: transparent;
+      color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+
+    .btn-outline:hover {
+      background: var(--accent-glow);
+    }
+
+    .btn-lg {
+      padding: 14px 28px;
+      font-size: 17px;
+      border-radius: 10px;
+    }
+
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      gap: 5px;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 8px;
+    }
+
+    .hamburger span {
+      display: block;
+      width: 24px;
+      height: 2px;
+      background: var(--text-primary);
+      border-radius: 2px;
+    }
+
+    .breadcrumb {
+      padding: 16px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .breadcrumb ol {
+      list-style: none;
+      display: flex;
+      gap: 8px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .breadcrumb a {
+      color: var(--text-secondary);
+      text-decoration: none;
+    }
+
+    .breadcrumb a:hover {
+      color: var(--n8n);
+    }
+
+    .breadcrumb li+li::before {
+      content: '/';
+      margin-left: 8px;
+    }
 
     /* HERO */
-    .page-hero{padding:56px 0 48px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 70% 0%,rgba(234,75,113,0.07) 0%,transparent 60%);}
-    .tool-hero-logo{width:72px;height:72px;border-radius:16px;background:var(--n8n-glow);border:1px solid rgba(234,75,113,0.3);display:flex;align-items:center;justify-content:center;font-size:24px;font-weight:900;color:var(--n8n);font-family:'Space Mono',monospace;margin-bottom:20px;}
-    .section-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--n8n);margin-bottom:10px;}
-    h1{font-size:clamp(28px,4vw,46px);font-weight:900;line-height:1.15;margin-bottom:16px;}
-    .hero-desc{font-size:18px;color:var(--text-secondary);max-width:600px;margin-bottom:28px;}
-    .hero-stats{display:flex;gap:28px;flex-wrap:wrap;}.hero-stat{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);}.hero-stat strong{color:var(--n8n);font-size:22px;font-family:'Space Mono',monospace;}
+    .page-hero {
+      padding: 56px 0 48px;
+      border-bottom: 1px solid var(--border);
+      background: radial-gradient(ellipse at 70% 0%, rgba(234, 75, 113, 0.07) 0%, transparent 60%);
+    }
+
+    .tool-hero-logo {
+      width: 72px;
+      height: 72px;
+      border-radius: 16px;
+      background: var(--n8n-glow);
+      border: 1px solid rgba(234, 75, 113, 0.3);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      font-weight: 900;
+      color: var(--n8n);
+      font-family: 'Space Mono', monospace;
+      margin-bottom: 20px;
+    }
+
+    .section-label {
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      color: var(--n8n);
+      margin-bottom: 10px;
+    }
+
+    h1 {
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 900;
+      line-height: 1.15;
+      margin-bottom: 16px;
+    }
+
+    .hero-desc {
+      font-size: 18px;
+      color: var(--text-secondary);
+      max-width: 600px;
+      margin-bottom: 28px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 28px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      font-size: 14px;
+      color: var(--text-secondary);
+    }
+
+    .hero-stat strong {
+      color: var(--n8n);
+      font-size: 22px;
+      font-family: 'Space Mono', monospace;
+    }
 
     /* VERDICT BOX */
-    .verdict{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin:28px 0;}
-    .verdict-box{border-radius:12px;padding:20px;}
-    .verdict-box.pros{background:#F0FDF4;border:1px solid #BBF7D0;}
-    .verdict-box.cons{background:#FFF1F2;border:1px solid #FECDD3;}
-    .verdict-box h4{font-size:15px;font-weight:700;margin-bottom:12px;display:flex;align-items:center;gap:8px;}
-    .verdict-box ul{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;}
-    .verdict-box ul li{font-size:14px;color:var(--text-secondary);padding-right:18px;position:relative;}
-    .verdict-box.pros ul li::before{content:'✓';color:#16A34A;position:absolute;right:0;font-weight:700;}
-    .verdict-box.cons ul li::before{content:'✗';color:#DC2626;position:absolute;right:0;font-weight:700;}
+    .verdict {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+      margin: 28px 0;
+    }
+
+    .verdict-box {
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .verdict-box.pros {
+      background: #F0FDF4;
+      border: 1px solid #BBF7D0;
+    }
+
+    .verdict-box.cons {
+      background: #FFF1F2;
+      border: 1px solid #FECDD3;
+    }
+
+    .verdict-box h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .verdict-box ul {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .verdict-box ul li {
+      font-size: 14px;
+      color: var(--text-secondary);
+      padding-right: 18px;
+      position: relative;
+    }
+
+    .verdict-box.pros ul li::before {
+      content: '✓';
+      color: #16A34A;
+      position: absolute;
+      right: 0;
+      font-weight: 700;
+    }
+
+    .verdict-box.cons ul li::before {
+      content: '✗';
+      color: #DC2626;
+      position: absolute;
+      right: 0;
+      font-weight: 700;
+    }
 
     /* SCORE */
-    .score-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin:24px 0;}
-    .score-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;text-align:center;}
-    .score-num{font-family:'Space Mono',monospace;font-size:28px;font-weight:700;display:block;margin-bottom:4px;}
-    .score-label{font-size:12px;color:var(--text-secondary);}
-    .score-5{color:#16A34A;}.score-4{color:#65A30D;}.score-3{color:#CA8A04;}.score-2{color:#DC2626;}
+    .score-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 12px;
+      margin: 24px 0;
+    }
+
+    .score-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+      text-align: center;
+    }
+
+    .score-num {
+      font-family: 'Space Mono', monospace;
+      font-size: 28px;
+      font-weight: 700;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .score-label {
+      font-size: 12px;
+      color: var(--text-secondary);
+    }
+
+    .score-5 {
+      color: #16A34A;
+    }
+
+    .score-4 {
+      color: #65A30D;
+    }
+
+    .score-3 {
+      color: #CA8A04;
+    }
+
+    .score-2 {
+      color: #DC2626;
+    }
 
     /* COMPARISON TABLE */
-    .comp-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}
-    .comp-table th{background:var(--surface);padding:12px 16px;text-align:right;font-weight:700;border-bottom:2px solid var(--border);}
-    .comp-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-secondary);}
-    .comp-table tr:hover td{background:var(--surface);}
-    .comp-table .win{color:var(--success);font-weight:600;}
-    .comp-table .mid{color:var(--accent-warm);}
-    .comp-table .lose{color:#EF4444;}
-    .comp-table .tool{font-weight:700;color:var(--text-primary);}
+    .comp-table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 20px 0;
+      font-size: 14px;
+    }
+
+    .comp-table th {
+      background: var(--surface);
+      padding: 12px 16px;
+      text-align: right;
+      font-weight: 700;
+      border-bottom: 2px solid var(--border);
+    }
+
+    .comp-table td {
+      padding: 12px 16px;
+      border-bottom: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .comp-table tr:hover td {
+      background: var(--surface);
+    }
+
+    .comp-table .win {
+      color: var(--success);
+      font-weight: 600;
+    }
+
+    .comp-table .mid {
+      color: var(--accent-warm);
+    }
+
+    .comp-table .lose {
+      color: #EF4444;
+    }
+
+    .comp-table .tool {
+      font-weight: 700;
+      color: var(--text-primary);
+    }
 
     /* PRICING */
-    .plans-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin:24px 0;}
-    .plan-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:24px;}
-    .plan-card.featured{border-color:var(--n8n);box-shadow:0 0 0 1px var(--n8n);}
-    .plan-badge{display:inline-block;background:var(--n8n-glow);color:var(--n8n);font-size:11px;font-weight:700;padding:3px 10px;border-radius:100px;margin-bottom:10px;}
-    .plan-name{font-size:18px;font-weight:800;margin-bottom:6px;}
-    .plan-price{font-size:28px;font-weight:900;font-family:'Space Mono',monospace;color:var(--n8n);margin-bottom:4px;}
-    .plan-price span{font-size:14px;font-weight:400;color:var(--text-secondary);}
-    .plan-note{font-size:12px;color:var(--text-secondary);margin-bottom:14px;}
-    .plan-features{list-style:none;padding:0;display:flex;flex-direction:column;gap:8px;}
-    .plan-features li{font-size:13px;color:var(--text-secondary);display:flex;align-items:flex-start;gap:8px;}
-    .plan-features li::before{content:'✓';color:var(--success);font-weight:700;flex-shrink:0;}
+    .plans-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin: 24px 0;
+    }
+
+    .plan-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 24px;
+    }
+
+    .plan-card.featured {
+      border-color: var(--n8n);
+      box-shadow: 0 0 0 1px var(--n8n);
+    }
+
+    .plan-badge {
+      display: inline-block;
+      background: var(--n8n-glow);
+      color: var(--n8n);
+      font-size: 11px;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 100px;
+      margin-bottom: 10px;
+    }
+
+    .plan-name {
+      font-size: 18px;
+      font-weight: 800;
+      margin-bottom: 6px;
+    }
+
+    .plan-price {
+      font-size: 28px;
+      font-weight: 900;
+      font-family: 'Space Mono', monospace;
+      color: var(--n8n);
+      margin-bottom: 4px;
+    }
+
+    .plan-price span {
+      font-size: 14px;
+      font-weight: 400;
+      color: var(--text-secondary);
+    }
+
+    .plan-note {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    .plan-features {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .plan-features li {
+      font-size: 13px;
+      color: var(--text-secondary);
+      display: flex;
+      align-items: flex-start;
+      gap: 8px;
+    }
+
+    .plan-features li::before {
+      content: '✓';
+      color: var(--success);
+      font-weight: 700;
+      flex-shrink: 0;
+    }
 
     /* USE CASES */
-    .use-cases{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin:20px 0;}
-    .use-case{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:16px;}
-    .use-case h4{font-size:14px;font-weight:700;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
-    .use-case p{font-size:13px;margin:0;}
+    .use-cases {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 12px;
+      margin: 20px 0;
+    }
+
+    .use-case {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 16px;
+    }
+
+    .use-case h4 {
+      font-size: 14px;
+      font-weight: 700;
+      margin-bottom: 6px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .use-case p {
+      font-size: 13px;
+      margin: 0;
+    }
 
     /* CALLOUT */
-    .callout{background:var(--accent-glow);border:1px solid rgba(59,130,246,0.2);border-radius:12px;padding:20px 24px;margin:24px 0;}.callout p{margin:0;color:var(--text-primary);}
-    .callout-n8n{background:var(--n8n-glow);border-color:rgba(234,75,113,0.2);}
-    .callout-warn{background:#FFFBEB;border-color:#FDE68A;}.callout-warn p{color:#92400E;}
-    .callout-good{background:#F0FDF4;border-color:#BBF7D0;}.callout-good p{color:#14532D;}
+    .callout {
+      background: var(--accent-glow);
+      border: 1px solid rgba(59, 130, 246, 0.2);
+      border-radius: 12px;
+      padding: 20px 24px;
+      margin: 24px 0;
+    }
+
+    .callout p {
+      margin: 0;
+      color: var(--text-primary);
+    }
+
+    .callout-n8n {
+      background: var(--n8n-glow);
+      border-color: rgba(234, 75, 113, 0.2);
+    }
+
+    .callout-warn {
+      background: #FFFBEB;
+      border-color: #FDE68A;
+    }
+
+    .callout-warn p {
+      color: #92400E;
+    }
+
+    .callout-good {
+      background: #F0FDF4;
+      border-color: #BBF7D0;
+    }
+
+    .callout-good p {
+      color: #14532D;
+    }
 
     /* QUOTE */
-    .quote-block{border-right:4px solid var(--n8n);padding-right:20px;margin:24px 0;}.quote-block p{font-size:17px;font-style:italic;color:var(--text-primary);margin-bottom:6px;}.quote-block cite{font-size:13px;color:var(--text-secondary);font-style:normal;}
+    .quote-block {
+      border-right: 4px solid var(--n8n);
+      padding-right: 20px;
+      margin: 24px 0;
+    }
+
+    .quote-block p {
+      font-size: 17px;
+      font-style: italic;
+      color: var(--text-primary);
+      margin-bottom: 6px;
+    }
+
+    .quote-block cite {
+      font-size: 13px;
+      color: var(--text-secondary);
+      font-style: normal;
+    }
 
     /* TERMINAL */
-    .terminal{background:#0D1117;border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:20px 0;}
-    .terminal-header{background:#161B22;padding:10px 16px;display:flex;gap:8px;align-items:center;}
-    .terminal-dot{width:12px;height:12px;border-radius:50%;}
-    .terminal-title{font-size:12px;color:var(--text-secondary);margin-right:auto;}
-    .terminal-body{padding:20px;font-family:'Space Mono',monospace;font-size:13px;line-height:1.8;color:#E6EDF3;}
-    .terminal-body .prompt{color:var(--n8n);}.terminal-body .comment{color:var(--text-secondary);}.terminal-body .node{color:#58A6FF;}
+    .terminal {
+      background: #0D1117;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      overflow: hidden;
+      margin: 20px 0;
+    }
+
+    .terminal-header {
+      background: #161B22;
+      padding: 10px 16px;
+      display: flex;
+      gap: 8px;
+      align-items: center;
+    }
+
+    .terminal-dot {
+      width: 12px;
+      height: 12px;
+      border-radius: 50%;
+    }
+
+    .terminal-title {
+      font-size: 12px;
+      color: var(--text-secondary);
+      margin-right: auto;
+    }
+
+    .terminal-body {
+      padding: 20px;
+      font-family: 'Space Mono', monospace;
+      font-size: 13px;
+      line-height: 1.8;
+      color: #E6EDF3;
+    }
+
+    .terminal-body .prompt {
+      color: var(--n8n);
+    }
+
+    .terminal-body .comment {
+      color: var(--text-secondary);
+    }
+
+    .terminal-body .node {
+      color: #58A6FF;
+    }
 
     /* INFO BOX */
-    .info-box{display:flex;gap:16px;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;margin-bottom:16px;}
-    .info-box-icon{width:40px;height:40px;background:var(--n8n-glow);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;}.info-box-icon svg{width:20px;height:20px;color:var(--n8n);}
-    .info-box-body h4{font-size:15px;font-weight:700;margin-bottom:6px;}.info-box-body p{font-size:14px;margin:0;}
+    .info-box {
+      display: flex;
+      gap: 16px;
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      margin-bottom: 16px;
+    }
+
+    .info-box-icon {
+      width: 40px;
+      height: 40px;
+      background: var(--n8n-glow);
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .info-box-icon svg {
+      width: 20px;
+      height: 20px;
+      color: var(--n8n);
+    }
+
+    .info-box-body h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 6px;
+    }
+
+    .info-box-body p {
+      font-size: 14px;
+      margin: 0;
+    }
 
     /* STAT CARDS */
-    .stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
-    .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
-    .stat-card .num{font-family:'Space Mono',monospace;font-size:28px;font-weight:700;color:var(--n8n);display:block;}.stat-card .label{font-size:13px;color:var(--text-secondary);margin-top:4px;}
+    .stat-cards {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+      margin-bottom: 28px;
+    }
+
+    .stat-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+      text-align: center;
+    }
+
+    .stat-card .num {
+      font-family: 'Space Mono', monospace;
+      font-size: 28px;
+      font-weight: 700;
+      color: var(--n8n);
+      display: block;
+    }
+
+    .stat-card .label {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-top: 4px;
+    }
 
     /* FAQ */
-    .faq-list{display:flex;flex-direction:column;gap:8px;}
-    .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
-    .faq-q{width:100%;background:none;border:none;cursor:pointer;padding:16px 20px;text-align:right;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;}.faq-q:hover{color:var(--n8n);}
-    .faq-q svg{width:16px;height:16px;flex-shrink:0;transition:transform 0.25s;color:var(--n8n);}.faq-item.open .faq-q svg{transform:rotate(180deg);}
-    .faq-a{display:none;padding:0 20px 16px;color:var(--text-secondary);font-size:14px;line-height:1.7;}.faq-item.open .faq-a{display:block;}
+    .faq-list {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .faq-item {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      overflow: hidden;
+    }
+
+    .faq-q {
+      width: 100%;
+      background: none;
+      border: none;
+      cursor: pointer;
+      padding: 16px 20px;
+      text-align: right;
+      color: var(--text-primary);
+      font-family: 'Heebo', sans-serif;
+      font-size: 15px;
+      font-weight: 600;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .faq-q:hover {
+      color: var(--n8n);
+    }
+
+    .faq-q svg {
+      width: 16px;
+      height: 16px;
+      flex-shrink: 0;
+      transition: transform 0.25s;
+      color: var(--n8n);
+    }
+
+    .faq-item.open .faq-q svg {
+      transform: rotate(180deg);
+    }
+
+    .faq-a {
+      display: none;
+      padding: 0 20px 16px;
+      color: var(--text-secondary);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .faq-item.open .faq-a {
+      display: block;
+    }
 
     /* LEAD */
-    .lead-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px;text-align:center;}
-    .lead-section h2{margin-bottom:8px;}.lead-sub{font-size:16px;color:var(--text-secondary);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;}
-    .lead-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;margin:0 auto 16px;}.lead-form-grid .full{grid-column:1/-1;}
-    .form-group{margin-bottom:0;}.form-group label{display:block;font-size:13px;color:var(--text-secondary);margin-bottom:6px;}
-    .form-group input{width:100%;background:var(--primary);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;transition:border-color 0.2s;}
-    .form-group input:focus{outline:none;border-color:var(--n8n);}
-    .trust-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:14px;}.trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);}.trust-item svg{width:14px;height:14px;color:var(--success);}
+    .lead-section {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      padding: 40px;
+      text-align: center;
+    }
+
+    .lead-section h2 {
+      margin-bottom: 8px;
+    }
+
+    .lead-sub {
+      font-size: 16px;
+      color: var(--text-secondary);
+      margin-bottom: 28px;
+      max-width: 480px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    .lead-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 14px;
+      max-width: 560px;
+      margin: 0 auto 16px;
+    }
+
+    .lead-form-grid .full {
+      grid-column: 1/-1;
+    }
+
+    .form-group {
+      margin-bottom: 0;
+    }
+
+    .form-group label {
+      display: block;
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin-bottom: 6px;
+    }
+
+    .form-group input {
+      width: 100%;
+      background: var(--primary);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      padding: 10px 14px;
+      color: var(--text-primary);
+      font-family: 'Heebo', sans-serif;
+      font-size: 15px;
+      transition: border-color 0.2s;
+    }
+
+    .form-group input:focus {
+      outline: none;
+      border-color: var(--n8n);
+    }
+
+    .trust-row {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 14px;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      font-size: 13px;
+      color: var(--text-secondary);
+    }
+
+    .trust-item svg {
+      width: 14px;
+      height: 14px;
+      color: var(--success);
+    }
 
     /* SIDEBAR */
-    .page-body{padding:56px 0;}
-    .content-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;}
-    .sidebar{display:flex;flex-direction:column;gap:20px;}
-    section{margin-bottom:56px;}
-    h2{font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:16px;scroll-margin-top:80px;}
-    h3{font-size:19px;font-weight:700;margin-bottom:10px;}
-    p{margin-bottom:14px;color:var(--text-secondary);}p strong{color:var(--text-primary);}
-    .widget{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;}.widget-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-secondary);margin-bottom:14px;}
-    .widget-links{list-style:none;display:flex;flex-direction:column;gap:4px;}.widget-links a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:14px;transition:color 0.2s,background 0.2s;}.widget-links a:hover{color:var(--text-primary);background:var(--primary);}.widget-links a::before{content:'→';color:var(--n8n);font-size:12px;}
-    .widget-cta{background:linear-gradient(135deg,var(--n8n-glow),transparent);border:1px solid rgba(234,75,113,0.2);}.widget-cta .btn{width:100%;margin-top:14px;justify-content:center;background:var(--n8n);color:#fff;}.widget-cta .btn:hover{background:#c73d61;}
-    .toc-list{list-style:none;display:flex;flex-direction:column;gap:2px;}.toc-list a{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:13px;transition:color 0.2s,background 0.2s;}.toc-list a:hover{color:var(--n8n);background:var(--primary);}
-    .mini-compare{width:100%;border-collapse:collapse;font-size:12px;}
-    .mini-compare th{color:var(--text-secondary);padding:6px 8px;text-align:right;font-weight:600;border-bottom:1px solid var(--border);}
-    .mini-compare td{padding:6px 8px;border-top:1px solid var(--border);color:var(--text-secondary);}
-    .mini-compare .g{color:var(--success);}.mini-compare .b{color:#EF4444;}.mini-compare .m{color:var(--accent-warm);}
+    .page-body {
+      padding: 56px 0;
+    }
+
+    .content-grid {
+      display: grid;
+      grid-template-columns: 1fr 320px;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+
+    section {
+      margin-bottom: 56px;
+    }
+
+    h2 {
+      font-size: clamp(20px, 3vw, 30px);
+      font-weight: 800;
+      margin-bottom: 16px;
+      scroll-margin-top: 80px;
+    }
+
+    h3 {
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    p {
+      margin-bottom: 14px;
+      color: var(--text-secondary);
+    }
+
+    p strong {
+      color: var(--text-primary);
+    }
+
+    .widget {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      padding: 20px;
+    }
+
+    .widget-title {
+      font-size: 13px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      color: var(--text-secondary);
+      margin-bottom: 14px;
+    }
+
+    .widget-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .widget-links a {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 8px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 14px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .widget-links a:hover {
+      color: var(--text-primary);
+      background: var(--primary);
+    }
+
+    .widget-links a::before {
+      content: '→';
+      color: var(--n8n);
+      font-size: 12px;
+    }
+
+    .widget-cta {
+      background: linear-gradient(135deg, var(--n8n-glow), transparent);
+      border: 1px solid rgba(234, 75, 113, 0.2);
+    }
+
+    .widget-cta .btn {
+      width: 100%;
+      margin-top: 14px;
+      justify-content: center;
+      background: var(--n8n);
+      color: #fff;
+    }
+
+    .widget-cta .btn:hover {
+      background: #c73d61;
+    }
+
+    .toc-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+
+    .toc-list a {
+      display: block;
+      padding: 7px 10px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text-secondary);
+      font-size: 13px;
+      transition: color 0.2s, background 0.2s;
+    }
+
+    .toc-list a:hover {
+      color: var(--n8n);
+      background: var(--primary);
+    }
+
+    .mini-compare {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 12px;
+    }
+
+    .mini-compare th {
+      color: var(--text-secondary);
+      padding: 6px 8px;
+      text-align: right;
+      font-weight: 600;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .mini-compare td {
+      padding: 6px 8px;
+      border-top: 1px solid var(--border);
+      color: var(--text-secondary);
+    }
+
+    .mini-compare .g {
+      color: var(--success);
+    }
+
+    .mini-compare .b {
+      color: #EF4444;
+    }
+
+    .mini-compare .m {
+      color: var(--accent-warm);
+    }
 
     /* FOOTER */
-    .site-footer{background:var(--primary-light);border-top:1px solid var(--border);padding:56px 0 24px;}
-    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px;}.footer-col h4{font-size:15px;font-weight:700;margin-bottom:16px;}
-    .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px;}.footer-links a{color:var(--text-secondary);text-decoration:none;font-size:14px;transition:color 0.2s;}.footer-links a:hover{color:var(--accent);}
-    .footer-desc{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:14px;}
-    .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}.footer-bottom p{font-size:13px;color:var(--text-secondary);margin:0;}
-    .mobile-menu{display:none;flex-direction:column;position:fixed;inset:0;background:var(--primary);z-index:200;padding:24px;overflow-y:auto;}.mobile-menu.open{display:flex;}
-    .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
-    .mobile-menu nav ul{list-style:none;display:flex;flex-direction:column;gap:4px;}.mobile-menu nav a{display:block;padding:14px 16px;border-radius:8px;text-decoration:none;color:var(--text-primary);font-size:18px;font-weight:600;}.mobile-menu nav a:hover{background:var(--surface);}
-    .close-btn{background:none;border:none;color:var(--text-primary);font-size:28px;cursor:pointer;line-height:1;}
-    @media(max-width:900px){.content-grid{grid-template-columns:1fr;}.sidebar{position:static;}.verdict{grid-template-columns:1fr;}.score-grid{grid-template-columns:1fr 1fr;}.plans-grid{grid-template-columns:1fr;}.use-cases{grid-template-columns:1fr;}.stat-cards{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.lead-form-grid{grid-template-columns:1fr;}.lead-section{padding:28px 20px;}}
-    @media(max-width:640px){.site-nav,.btn-cta{display:none;}.hamburger{display:flex;}.stat-cards{grid-template-columns:1fr;}.score-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr;}.hero-stats{flex-direction:column;gap:12px;}}
+    .site-footer {
+      background: var(--primary-light);
+      border-top: 1px solid var(--border);
+      padding: 56px 0 24px;
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 1.5fr 1fr 1fr 1.5fr;
+      gap: 40px;
+      margin-bottom: 40px;
+    }
+
+    .footer-col h4 {
+      font-size: 15px;
+      font-weight: 700;
+      margin-bottom: 16px;
+    }
+
+    .footer-links {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .footer-links a {
+      color: var(--text-secondary);
+      text-decoration: none;
+      font-size: 14px;
+      transition: color 0.2s;
+    }
+
+    .footer-links a:hover {
+      color: var(--accent);
+    }
+
+    .footer-desc {
+      font-size: 14px;
+      color: var(--text-secondary);
+      line-height: 1.7;
+      margin-bottom: 14px;
+    }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 24px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    .footer-bottom p {
+      font-size: 13px;
+      color: var(--text-secondary);
+      margin: 0;
+    }
+
+    .mobile-menu {
+      display: none;
+      flex-direction: column;
+      position: fixed;
+      inset: 0;
+      background: var(--primary);
+      z-index: 200;
+      padding: 24px;
+      overflow-y: auto;
+    }
+
+    .mobile-menu.open {
+      display: flex;
+    }
+
+    .mobile-menu-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 32px;
+    }
+
+    .mobile-menu nav ul {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
+    }
+
+    .mobile-menu nav a {
+      display: block;
+      padding: 14px 16px;
+      border-radius: 8px;
+      text-decoration: none;
+      color: var(--text-primary);
+      font-size: 18px;
+      font-weight: 600;
+    }
+
+    .mobile-menu nav a:hover {
+      background: var(--surface);
+    }
+
+    .close-btn {
+      background: none;
+      border: none;
+      color: var(--text-primary);
+      font-size: 28px;
+      cursor: pointer;
+      line-height: 1;
+    }
+
+    @media(max-width:900px) {
+      .content-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .sidebar {
+        position: static;
+      }
+
+      .verdict {
+        grid-template-columns: 1fr;
+      }
+
+      .score-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .plans-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .use-cases {
+        grid-template-columns: 1fr;
+      }
+
+      .stat-cards {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .lead-form-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .lead-section {
+        padding: 28px 20px;
+      }
+    }
+
+    @media(max-width:640px) {
+
+      .site-nav,
+      .btn-cta {
+        display: none;
+      }
+
+      .hamburger {
+        display: flex;
+      }
+
+      .stat-cards {
+        grid-template-columns: 1fr;
+      }
+
+      .score-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .footer-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-stats {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
   </style>
 </head>
+
 <body>
   <a href="#main-content" class="skip-link">דלג לתוכן</a>
 
   <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
     <div class="mobile-menu-header">
-      <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg"
+          aria-hidden="true">
+          <circle cx="26" cy="26" r="24" fill="#3B82F6" />
+          <circle cx="26" cy="26" r="5.5" fill="white" />
+          <circle cx="26" cy="26" r="2.8" fill="#3B82F6" />
+        </svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
       <button class="close-btn" id="close-menu" aria-label="סגור תפריט">&#x2715;</button>
     </div>
-    <nav><ul>
-      <li><a href="/">בית</a></li>
-      <li><a href="chatgpt.html">ChatGPT</a></li>
-      <li><a href="claude.html">Claude</a></li>
-      <li><a href="gemini.html">Gemini</a></li>
-      <li><a href="n8n.html">n8n</a></li>
-      <li><a href="ai-automation.html">אוטומציה</a></li>
-      <li><a href="contact.html">יצירת קשר</a></li>
-      <li><a href="tel:0524534875" style="color:var(--n8n);">052-4534875</a></li>
-    </ul></nav>
+    <nav>
+      <ul>
+        <li><a href="/">בית</a></li>
+        <li><a href="chatgpt.html">ChatGPT</a></li>
+        <li><a href="claude.html">Claude</a></li>
+        <li><a href="gemini.html">Gemini</a></li>
+        <li><a href="n8n.html">n8n</a></li>
+        <li><a href="ai-automation.html">אוטומציה</a></li>
+        <li><a href="contact.html">יצירת קשר</a></li>
+        <li><a href="tel:0524534875" style="color:var(--n8n);">052-4534875</a></li>
+      </ul>
+    </nav>
   </div>
 
   <header class="site-header">
     <div class="container">
-      <a href="/" class="logo" aria-label="AI IT - דף הבית"><svg width="30" height="30" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><line x1="26" y1="10" x2="26" y2="18.5" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="26" y1="33.5" x2="26" y2="42" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="10" y1="26" x2="18.5" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="33.5" y1="26" x2="42" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="29.5" y1="22.5" x2="36.5" y2="15.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><line x1="22.5" y1="29.5" x2="15.5" y2="36.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><circle cx="26" cy="8" r="3.2" fill="white" opacity="0.88"/><circle cx="26" cy="44" r="3.2" fill="white" opacity="0.88"/><circle cx="8" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="44" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="38.5" cy="13.5" r="2.8" fill="#F59E0B"/><circle cx="13.5" cy="38.5" r="2.8" fill="#F59E0B"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <a href="/" class="logo" aria-label="AI IT - דף הבית"><svg width="30" height="30" viewBox="0 0 52 52"
+          xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+          <circle cx="26" cy="26" r="24" fill="#3B82F6" />
+          <line x1="26" y1="10" x2="26" y2="18.5" stroke="white" stroke-width="1.5" stroke-opacity="0.55" />
+          <line x1="26" y1="33.5" x2="26" y2="42" stroke="white" stroke-width="1.5" stroke-opacity="0.55" />
+          <line x1="10" y1="26" x2="18.5" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55" />
+          <line x1="33.5" y1="26" x2="42" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55" />
+          <line x1="29.5" y1="22.5" x2="36.5" y2="15.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8" />
+          <line x1="22.5" y1="29.5" x2="15.5" y2="36.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8" />
+          <circle cx="26" cy="8" r="3.2" fill="white" opacity="0.88" />
+          <circle cx="26" cy="44" r="3.2" fill="white" opacity="0.88" />
+          <circle cx="8" cy="26" r="3.2" fill="white" opacity="0.88" />
+          <circle cx="44" cy="26" r="3.2" fill="white" opacity="0.88" />
+          <circle cx="38.5" cy="13.5" r="2.8" fill="#F59E0B" />
+          <circle cx="13.5" cy="38.5" r="2.8" fill="#F59E0B" />
+          <circle cx="26" cy="26" r="5.5" fill="white" />
+          <circle cx="26" cy="26" r="2.8" fill="#3B82F6" />
+        </svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
       <nav class="site-nav" aria-label="תפריט ראשי">
         <ul>
           <li><a href="/">בית</a></li>
@@ -221,7 +1336,7 @@
               <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
               <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
               <li><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
-              <li><a href="ai-agents.html">AI Agents לעסקים</a></li>
+              <li><a href="ai-agents.html">AI Agents לעסקים</a></li><li><a href="chatbot.html">צ'אטבוט לעסק</a></li>
               <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
               <li><a href="ai-solutions.html">פתרונות AI</a></li>
             </ul>
@@ -248,8 +1363,14 @@
   <nav class="breadcrumb" aria-label="נתיב ניווט">
     <div class="container">
       <ol itemscope itemtype="https://schema.org/BreadcrumbList">
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">בית</span></a><meta itemprop="position" content="1"></li>
-        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="n8n.html" itemprop="item"><span itemprop="name">n8n</span></a><meta itemprop="position" content="2"></li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/"
+            itemprop="item"><span itemprop="name">בית</span></a>
+          <meta itemprop="position" content="1">
+        </li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="n8n.html"
+            itemprop="item"><span itemprop="name">n8n</span></a>
+          <meta itemprop="position" content="2">
+        </li>
       </ol>
     </div>
   </nav>
@@ -259,7 +1380,8 @@
       <div class="tool-hero-logo" aria-label="לוגו n8n">n8n</div>
       <div class="section-label">ביקורת מקצועית</div>
       <h1 id="main-content">n8n - ביקורת אובייקטיבית מניסיון אמיתי</h1>
-      <p class="hero-desc">n8n הוא כלי האוטומציה שאנחנו משתמשים בו הכי הרבה בפרויקטים מורכבים. הוא עוצמתי מאוד. הוא גם לא מתאים לכולם - ואנחנו נגיד לך בדיוק למה.</p>
+      <p class="hero-desc">n8n הוא כלי האוטומציה שאנחנו משתמשים בו הכי הרבה בפרויקטים מורכבים. הוא עוצמתי מאוד. הוא גם
+        לא מתאים לכולם - ואנחנו נגיד לך בדיוק למה.</p>
       <div class="hero-stats">
         <div class="hero-stat"><strong>400+</strong> אינטגרציות מובנות</div>
         <div class="hero-stat"><strong>Open</strong> Source - קוד פתוח</div>
@@ -276,7 +1398,8 @@
           <!-- Verdict upfront -->
           <section id="verdict" aria-labelledby="verdict-h">
             <h2 id="verdict-h">הפסיקה שלנו - לפני שמתחילים</h2>
-            <p>כשאנחנו בוחרים כלי אוטומציה לפרויקט, n8n נכנס לרשימה הקצרה כמעט תמיד. אבל אנחנו ממליצים עליו רק כשהתנאים מתאימים - ולא כל לקוח מתאים.</p>
+            <p>כשאנחנו בוחרים כלי אוטומציה לפרויקט, n8n נכנס לרשימה הקצרה כמעט תמיד. אבל אנחנו ממליצים עליו רק כשהתנאים
+              מתאימים - ולא כל לקוח מתאים.</p>
 
             <div class="verdict">
               <div class="verdict-box pros">
@@ -305,22 +1428,34 @@
 
             <!-- Score -->
             <div class="score-grid">
-              <div class="score-item"><span class="score-num score-5">9/10</span><div class="score-label">עוצמה ויכולות</div></div>
-              <div class="score-item"><span class="score-num score-2">5/10</span><div class="score-label">קלות שימוש</div></div>
-              <div class="score-item"><span class="score-num score-5">9/10</span><div class="score-label">גמישות</div></div>
-              <div class="score-item"><span class="score-num score-4">7/10</span><div class="score-label">תמחור</div></div>
+              <div class="score-item"><span class="score-num score-5">9/10</span>
+                <div class="score-label">עוצמה ויכולות</div>
+              </div>
+              <div class="score-item"><span class="score-num score-2">5/10</span>
+                <div class="score-label">קלות שימוש</div>
+              </div>
+              <div class="score-item"><span class="score-num score-5">9/10</span>
+                <div class="score-label">גמישות</div>
+              </div>
+              <div class="score-item"><span class="score-num score-4">7/10</span>
+                <div class="score-label">תמחור</div>
+              </div>
             </div>
 
             <div class="callout callout-n8n">
-              <p><strong>המלצת AI IT:</strong> n8n מתאים לעסק שיש לו מישהו שמסוגל לקרוא הודעת שגיאה ולחפש פתרון. אם אין - Zapier יהיה פחות עוצמתי אבל הרבה יותר יציב לתחזוקה.</p>
+              <p><strong>המלצת AI IT:</strong> n8n מתאים לעסק שיש לו מישהו שמסוגל לקרוא הודעת שגיאה ולחפש פתרון. אם אין
+                - Zapier יהיה פחות עוצמתי אבל הרבה יותר יציב לתחזוקה.</p>
             </div>
           </section>
 
           <!-- What is n8n -->
           <section id="what-is" aria-labelledby="what-h">
             <h2 id="what-h">מה זה n8n ולמה זה שונה</h2>
-            <p>n8n (מבוטא "n-eight-n") הוא כלי אוטומציה עם ממשק ויזואלי שמאפשר לחבר בין מאות שירותים ולבנות workflows מורכבים. שוחרר ב-2019 כ-open-source, ועדיין שומר על ה-DNA הזה: אפשר להוריד ולהריץ אותו בחינם לגמרי על כל שרת.</p>
-            <p>ההבדל המהותי מ-Zapier ו-Make: <strong>n8n הוא programmer-friendly</strong>. יש nodes שמריצים JavaScript, אפשר לבנות לוגיקה מורכבת מאוד, ומאז 2023 יש AI nodes מובנים שמחברים ישירות ל-OpenAI, Claude ו-Gemini.</p>
+            <p>n8n (מבוטא "n-eight-n") הוא כלי אוטומציה עם ממשק ויזואלי שמאפשר לחבר בין מאות שירותים ולבנות workflows
+              מורכבים. שוחרר ב-2019 כ-open-source, ועדיין שומר על ה-DNA הזה: אפשר להוריד ולהריץ אותו בחינם לגמרי על כל
+              שרת.</p>
+            <p>ההבדל המהותי מ-Zapier ו-Make: <strong>n8n הוא programmer-friendly</strong>. יש nodes שמריצים JavaScript,
+              אפשר לבנות לוגיקה מורכבת מאוד, ומאז 2023 יש AI nodes מובנים שמחברים ישירות ל-OpenAI, Claude ו-Gemini.</p>
 
             <div class="stat-cards">
               <div class="stat-card">
@@ -344,18 +1479,31 @@
             <p>בחרנו ב-n8n בדיוק בגלל הגמישות שלו. הנה שני פרויקטים שבהם n8n היה הבחירה הנכונה:</p>
 
             <div class="info-box">
-              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"/></svg></div>
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path
+                    d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22" />
+                </svg></div>
               <div class="info-box-body">
                 <h4>חברת SaaS - Pipeline שלם לבדיקת קוד</h4>
-                <p>n8n ניהל את כל ה-pipeline: PR נפתח ב-GitHub → n8n מפעיל Claude API לסריקה → מחזיר תגובות מובנות → מעדכן את ה-PR אוטומטית. 18 מפתחים. זה לא עבד עם Zapier בגלל מגבלות ה-API - n8n נתן את הגמישות שצריך.</p>
+                <p>n8n ניהל את כל ה-pipeline: PR נפתח ב-GitHub → n8n מפעיל Claude API לסריקה → מחזיר תגובות מובנות →
+                  מעדכן את ה-PR אוטומטית. 18 מפתחים. זה לא עבד עם Zapier בגלל מגבלות ה-API - n8n נתן את הגמישות שצריך.
+                </p>
               </div>
             </div>
 
             <div class="info-box">
-              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg></div>
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+                  <circle cx="9" cy="7" r="4" />
+                  <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+                </svg></div>
               <div class="info-box-body">
                 <h4>רשת קליניקות - מערכת דוחות מורכבת</h4>
-                <p>n8n מחבר בין WhatsApp Business → מסד הנתונים → Claude API → יצירת דוח PDF → שליחה למנהל. הלוגיקה כוללת תנאים מורכבים לפי סוג טיפול. Make.com לא תמך בסוג ה-HTTP requests שנדרשו - n8n כן.</p>
+                <p>n8n מחבר בין WhatsApp Business → מסד הנתונים → Claude API → יצירת דוח PDF → שליחה למנהל. הלוגיקה
+                  כוללת תנאים מורכבים לפי סוג טיפול. Make.com לא תמך בסוג ה-HTTP requests שנדרשו - n8n כן.</p>
               </div>
             </div>
 
@@ -390,23 +1538,69 @@
             <div style="overflow-x:auto;">
               <table class="comp-table" aria-label="השוואה n8n Zapier Make">
                 <thead>
-                  <tr><th>קריטריון</th><th class="tool">n8n</th><th class="tool">Zapier</th><th class="tool">Make</th></tr>
+                  <tr>
+                    <th>קריטריון</th>
+                    <th class="tool">n8n</th>
+                    <th class="tool">Zapier</th>
+                    <th class="tool">Make</th>
+                  </tr>
                 </thead>
                 <tbody>
-                  <tr><td>מחיר בסיסי</td><td class="win">חינמי (self)</td><td class="mid">$20/חודש</td><td class="win">$9/חודש</td></tr>
-                  <tr><td>קלות שימוש</td><td class="lose">בינוני-קשה</td><td class="win">קל מאוד</td><td class="mid">בינוני</td></tr>
-                  <tr><td>גמישות טכנית</td><td class="win">גבוהה מאוד</td><td class="lose">מוגבלת</td><td class="mid">גבוהה</td></tr>
-                  <tr><td>AI workflows</td><td class="win">מובנה ועוצמתי</td><td class="mid">בסיסי</td><td class="mid">בסיסי</td></tr>
-                  <tr><td>אינטגרציות</td><td class="mid">400+</td><td class="win">6,000+</td><td class="mid">1,500+</td></tr>
-                  <tr><td>פרטיות נתונים</td><td class="win">שרת פרטי</td><td class="lose">ענן בלבד</td><td class="lose">ענן בלבד</td></tr>
-                  <tr><td>תמיכה</td><td class="mid">קהילה</td><td class="win">תמיכה מלאה</td><td class="win">תמיכה מלאה</td></tr>
-                  <tr><td>מתאים לעסק קטן בלי IT</td><td class="lose">לא</td><td class="win">כן</td><td class="mid">חלקית</td></tr>
+                  <tr>
+                    <td>מחיר בסיסי</td>
+                    <td class="win">חינמי (self)</td>
+                    <td class="mid">$20/חודש</td>
+                    <td class="win">$9/חודש</td>
+                  </tr>
+                  <tr>
+                    <td>קלות שימוש</td>
+                    <td class="lose">בינוני-קשה</td>
+                    <td class="win">קל מאוד</td>
+                    <td class="mid">בינוני</td>
+                  </tr>
+                  <tr>
+                    <td>גמישות טכנית</td>
+                    <td class="win">גבוהה מאוד</td>
+                    <td class="lose">מוגבלת</td>
+                    <td class="mid">גבוהה</td>
+                  </tr>
+                  <tr>
+                    <td>AI workflows</td>
+                    <td class="win">מובנה ועוצמתי</td>
+                    <td class="mid">בסיסי</td>
+                    <td class="mid">בסיסי</td>
+                  </tr>
+                  <tr>
+                    <td>אינטגרציות</td>
+                    <td class="mid">400+</td>
+                    <td class="win">6,000+</td>
+                    <td class="mid">1,500+</td>
+                  </tr>
+                  <tr>
+                    <td>פרטיות נתונים</td>
+                    <td class="win">שרת פרטי</td>
+                    <td class="lose">ענן בלבד</td>
+                    <td class="lose">ענן בלבד</td>
+                  </tr>
+                  <tr>
+                    <td>תמיכה</td>
+                    <td class="mid">קהילה</td>
+                    <td class="win">תמיכה מלאה</td>
+                    <td class="win">תמיכה מלאה</td>
+                  </tr>
+                  <tr>
+                    <td>מתאים לעסק קטן בלי IT</td>
+                    <td class="lose">לא</td>
+                    <td class="win">כן</td>
+                    <td class="mid">חלקית</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
 
             <div class="callout callout-good">
-              <p><strong>כלל האצבע שלנו:</strong> עסק ללא איש טכני → Zapier. עסק עם מפתח/איש IT → n8n. לאוטומציות ויזואליות מורכבות בינהן → Make.</p>
+              <p><strong>כלל האצבע שלנו:</strong> עסק ללא איש טכני → Zapier. עסק עם מפתח/איש IT → n8n. לאוטומציות
+                ויזואליות מורכבות בינהן → Make.</p>
             </div>
           </section>
 
@@ -456,7 +1650,8 @@
             </div>
 
             <div class="callout callout-warn">
-              <p><strong>שימו לב:</strong> Self-hosting חינמי אבל לא "פשוט". צריך שרת (VPS), התקנת Docker, וידע בסיסי בתחזוקה. עסק ללא מפתח - עדיף גרסת ענן למרות המחיר.</p>
+              <p><strong>שימו לב:</strong> Self-hosting חינמי אבל לא "פשוט". צריך שרת (VPS), התקנת Docker, וידע בסיסי
+                בתחזוקה. עסק ללא מפתח - עדיף גרסת ענן למרות המחיר.</p>
             </div>
           </section>
 
@@ -467,16 +1662,20 @@
             <div class="use-cases">
               <div class="use-case">
                 <h4 style="color:var(--success);">✓ בחר n8n כשיש לך:</h4>
-                <p style="font-size:13px;color:var(--text-secondary);">מפתח/איש IT בצוות, workflows מורכבים עם תנאים רבים, צורך בגמישות מקסימלית, דאגה לפרטיות נתונים, תקציב מוגבל לשרתים.</p>
+                <p style="font-size:13px;color:var(--text-secondary);">מפתח/איש IT בצוות, workflows מורכבים עם תנאים
+                  רבים, צורך בגמישות מקסימלית, דאגה לפרטיות נתונים, תקציב מוגבל לשרתים.</p>
               </div>
               <div class="use-case">
                 <h4 style="color:#EF4444;">✗ אל תבחר n8n כשאתה:</h4>
-                <p style="font-size:13px;color:var(--text-secondary);">בעל עסק ללא ידע טכני, צריך אוטומציות פשוטות, רוצה "plug and play", לא יכול לתחזק שרת, צריך תמיכה מיידית.</p>
+                <p style="font-size:13px;color:var(--text-secondary);">בעל עסק ללא ידע טכני, צריך אוטומציות פשוטות, רוצה
+                  "plug and play", לא יכול לתחזק שרת, צריך תמיכה מיידית.</p>
               </div>
             </div>
 
             <div class="quote-block">
-              <p>"n8n הוא הכלי הכי חזק בארגז הכלים שלנו. השתמשנו בו עם חברת ה-SaaS ועם רשת הקליניקות. בשני המקרים הייתה סיבה טכנית ספציפית שגרמה לנו לבחור דווקא בו. לא בוחרים n8n כי הוא מגניב - בוחרים אותו כי הוא פותר בעיה שהמתחרים לא פותרים."</p>
+              <p>"n8n הוא הכלי הכי חזק בארגז הכלים שלנו. השתמשנו בו עם חברת ה-SaaS ועם רשת הקליניקות. בשני המקרים הייתה
+                סיבה טכנית ספציפית שגרמה לנו לבחור דווקא בו. לא בוחרים n8n כי הוא מגניב - בוחרים אותו כי הוא פותר בעיה
+                שהמתחרים לא פותרים."</p>
               <cite>תומר, מייסד AI IT</cite>
             </div>
           </section>
@@ -484,31 +1683,46 @@
           <!-- AI Capabilities -->
           <section id="ai-nodes" aria-labelledby="ai-h">
             <h2 id="ai-h">n8n ו-AI - מה שיש בו מ-2023</h2>
-            <p>החידוש הכי משמעותי ב-n8n בשנים האחרונות: AI nodes מובנים. אפשר לבנות workflow שמשתמש ב-AI בלי לכתוב שורת קוד אחת:</p>
+            <p>החידוש הכי משמעותי ב-n8n בשנים האחרונות: AI nodes מובנים. אפשר לבנות workflow שמשתמש ב-AI בלי לכתוב שורת
+              קוד אחת:</p>
 
             <div class="info-box">
-              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="12" cy="12" r="10"/><path d="M12 8v4m0 4h.01"/></svg></div>
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <circle cx="12" cy="12" r="10" />
+                  <path d="M12 8v4m0 4h.01" />
+                </svg></div>
               <div class="info-box-body">
                 <h4>AI Agent Node</h4>
-                <p>Node שיוצר AI Agent שלם - קובעים מטרה, כלים, וה-Agent מתכנן ומבצע. מחובר ל-OpenAI, Claude, Gemini ועוד. זה מה שהשתמשנו בו בפרויקט SaaS.</p>
+                <p>Node שיוצר AI Agent שלם - קובעים מטרה, כלים, וה-Agent מתכנן ומבצע. מחובר ל-OpenAI, Claude, Gemini
+                  ועוד. זה מה שהשתמשנו בו בפרויקט SaaS.</p>
               </div>
             </div>
             <div class="info-box">
-              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+                </svg></div>
               <div class="info-box-body">
                 <h4>Chat Memory Node</h4>
-                <p>שומר היסטוריית שיחה בין ה-AI לבין המשתמש. בלי זה, כל שאלה שוכחת את הקודמת. עם זה - שיחה רציפה מלאה.</p>
+                <p>שומר היסטוריית שיחה בין ה-AI לבין המשתמש. בלי זה, כל שאלה שוכחת את הקודמת. עם זה - שיחה רציפה מלאה.
+                </p>
               </div>
             </div>
             <div class="info-box">
-              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/></svg></div>
+              <div class="info-box-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+                  aria-hidden="true">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z" />
+                </svg></div>
               <div class="info-box-body">
                 <h4>Vector Store + Embeddings</h4>
-                <p>שמירת מסמכים ב-vector database לחיפוש סמנטי. כך בונים "שאל את המסמכים שלך" - בלי שהמסמכים עוזבים את השרת.</p>
+                <p>שמירת מסמכים ב-vector database לחיפוש סמנטי. כך בונים "שאל את המסמכים שלך" - בלי שהמסמכים עוזבים את
+                  השרת.</p>
               </div>
             </div>
 
-            <p>היכולות האלה הן הסיבה שבחרנו n8n לפרויקטי AI מורכבים. <a href="ai-agents.html" style="color:var(--n8n);">ראה גם את העמוד שלנו על AI Agents</a> שנבנים לרוב עם n8n.</p>
+            <p>היכולות האלה הן הסיבה שבחרנו n8n לפרויקטי AI מורכבים. <a href="ai-agents.html"
+                style="color:var(--n8n);">ראה גם את העמוד שלנו על AI Agents</a> שנבנים לרוב עם n8n.</p>
           </section>
 
           <!-- FAQ -->
@@ -516,24 +1730,44 @@
             <h2 id="faq-h">שאלות נפוצות על n8n</h2>
             <div class="faq-list">
               <div class="faq-item">
-                <button class="faq-q" aria-expanded="false">האם n8n עובד בעברית?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-                <div class="faq-a">הממשק עצמו באנגלית. אבל workflows שמעבדים עברית עובדים מצוין - שולחים מיילים בעברית, מעבדים טקסט עברי, עובדים עם ה-AI בעברית. זה לא בעיה בפועל.</div>
+                <button class="faq-q" aria-expanded="false">האם n8n עובד בעברית?<svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg></button>
+                <div class="faq-a">הממשק עצמו באנגלית. אבל workflows שמעבדים עברית עובדים מצוין - שולחים מיילים בעברית,
+                  מעבדים טקסט עברי, עובדים עם ה-AI בעברית. זה לא בעיה בפועל.</div>
               </div>
               <div class="faq-item">
-                <button class="faq-q" aria-expanded="false">כמה זמן לוקח ללמוד n8n?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-                <div class="faq-a">Workflow ראשון פשוט - יום. Workflow מורכב עם AI - שבוע-שבועיים. אנחנו בדרך כלל לוקחים 3-4 ימים ל-onboarding של מישהו טכני. מישהו לא טכני - לא ממליצים לנסות לבד.</div>
+                <button class="faq-q" aria-expanded="false">כמה זמן לוקח ללמוד n8n?<svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg></button>
+                <div class="faq-a">Workflow ראשון פשוט - יום. Workflow מורכב עם AI - שבוע-שבועיים. אנחנו בדרך כלל לוקחים
+                  3-4 ימים ל-onboarding של מישהו טכני. מישהו לא טכני - לא ממליצים לנסות לבד.</div>
               </div>
               <div class="faq-item">
-                <button class="faq-q" aria-expanded="false">n8n לעומת Zapier - מה אתם ממליצים?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-                <div class="faq-a">אין תשובה אחת. Zapier מנצח בקלות שימוש ובמספר האינטגרציות. n8n מנצח בגמישות, מחיר ופרטיות. לעסקים ללא IT - Zapier. לעסקים עם ידע טכני שרוצים control מלא - n8n.</div>
+                <button class="faq-q" aria-expanded="false">n8n לעומת Zapier - מה אתם ממליצים?<svg viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg></button>
+                <div class="faq-a">אין תשובה אחת. Zapier מנצח בקלות שימוש ובמספר האינטגרציות. n8n מנצח בגמישות, מחיר
+                  ופרטיות. לעסקים ללא IT - Zapier. לעסקים עם ידע טכני שרוצים control מלא - n8n.</div>
               </div>
               <div class="faq-item">
-                <button class="faq-q" aria-expanded="false">האם צריך שרת להריץ n8n?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-                <div class="faq-a">לא בהכרח. גרסת הענן ($20-50/חודש) מריצה בלי שרת. אבל הגרסה החינמית הכי עוצמתית דורשת VPS - שרת ענן שעולה $5-20 בחודש ל-DigitalOcean או Hetzner.</div>
+                <button class="faq-q" aria-expanded="false">האם צריך שרת להריץ n8n?<svg viewBox="0 0 24 24" fill="none"
+                    stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg></button>
+                <div class="faq-a">לא בהכרח. גרסת הענן ($20-50/חודש) מריצה בלי שרת. אבל הגרסה החינמית הכי עוצמתית דורשת
+                  VPS - שרת ענן שעולה $5-20 בחודש ל-DigitalOcean או Hetzner.</div>
               </div>
               <div class="faq-item">
-                <button class="faq-q" aria-expanded="false">האם n8n מתחבר ל-CRM ישראלי?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
-                <div class="faq-a">לרוב הCRMs הגדולים (HubSpot, Salesforce, Pipedrive) - כן, יש nodes מובנים. לCRMs ישראלים ספציפיים - תלוי אם יש API פתוח. אם יש API, n8n יכול להתחבר אפילו בלי node ייעודי.</div>
+                <button class="faq-q" aria-expanded="false">האם n8n מתחבר ל-CRM ישראלי?<svg viewBox="0 0 24 24"
+                    fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+                    <path d="M6 9l6 6 6-6" />
+                  </svg></button>
+                <div class="faq-a">לרוב הCRMs הגדולים (HubSpot, Salesforce, Pipedrive) - כן, יש nodes מובנים. לCRMs
+                  ישראלים ספציפיים - תלוי אם יש API פתוח. אם יש API, n8n יכול להתחבר אפילו בלי node ייעודי.</div>
               </div>
             </div>
           </section>
@@ -546,15 +1780,28 @@
               <p class="lead-sub">30 דקות ייעוץ חינמי - נבדוק אם n8n מתאים לך ומה צריך לבנות.</p>
               <form id="lead-form-main" novalidate>
                 <div class="lead-form-grid">
-                  <div class="form-group"><label for="lf-name">שם מלא</label><input type="text" id="lf-name" name="name" placeholder="ישראל ישראלי" required autocomplete="name"></div>
-                  <div class="form-group"><label for="lf-phone">טלפון</label><input type="tel" id="lf-phone" name="phone" placeholder="052-4534875" required autocomplete="tel"></div>
-                  <div class="form-group full"><button type="submit" class="btn btn-lg" style="width:100%;justify-content:center;background:var(--n8n);color:#fff;">קבל ייעוץ חינמי על n8n</button></div>
+                  <div class="form-group"><label for="lf-name">שם מלא</label><input type="text" id="lf-name" name="name"
+                      placeholder="ישראל ישראלי" required autocomplete="name"></div>
+                  <div class="form-group"><label for="lf-phone">טלפון</label><input type="tel" id="lf-phone"
+                      name="phone" placeholder="052-4534875" required autocomplete="tel"></div>
+                  <div class="form-group full"><button type="submit" class="btn btn-lg"
+                      style="width:100%;justify-content:center;background:var(--n8n);color:#fff;">קבל ייעוץ חינמי על
+                      n8n</button></div>
                 </div>
               </form>
               <div class="trust-row">
-                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>מגיבים תוך 24 שעות</div>
-                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ללא התחייבות</div>
-                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>שיחה בעברית</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>מגיבים תוך 24 שעות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>ללא התחייבות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+                    aria-hidden="true">
+                    <path d="M20 6L9 17l-5-5" />
+                  </svg>שיחה בעברית</div>
               </div>
             </div>
           </section>
@@ -566,19 +1813,47 @@
           <div class="widget" style="background:var(--n8n-glow);border-color:rgba(234,75,113,0.2);">
             <div class="widget-title">השוואה מהירה</div>
             <table class="mini-compare" aria-label="השוואה מהירה">
-              <thead><tr><th></th><th>n8n</th><th>Zapier</th><th>Make</th></tr></thead>
+              <thead>
+                <tr>
+                  <th></th>
+                  <th>n8n</th>
+                  <th>Zapier</th>
+                  <th>Make</th>
+                </tr>
+              </thead>
               <tbody>
-                <tr><td>מחיר</td><td class="g">חינמי</td><td class="b">$20+</td><td class="m">$9+</td></tr>
-                <tr><td>קלות</td><td class="b">קשה</td><td class="g">קל</td><td class="m">בינוני</td></tr>
-                <tr><td>AI</td><td class="g">מובנה</td><td class="m">בסיסי</td><td class="m">בסיסי</td></tr>
-                <tr><td>פרטיות</td><td class="g">שרת שלך</td><td class="b">ענן</td><td class="b">ענן</td></tr>
+                <tr>
+                  <td>מחיר</td>
+                  <td class="g">חינמי</td>
+                  <td class="b">$20+</td>
+                  <td class="m">$9+</td>
+                </tr>
+                <tr>
+                  <td>קלות</td>
+                  <td class="b">קשה</td>
+                  <td class="g">קל</td>
+                  <td class="m">בינוני</td>
+                </tr>
+                <tr>
+                  <td>AI</td>
+                  <td class="g">מובנה</td>
+                  <td class="m">בסיסי</td>
+                  <td class="m">בסיסי</td>
+                </tr>
+                <tr>
+                  <td>פרטיות</td>
+                  <td class="g">שרת שלך</td>
+                  <td class="b">ענן</td>
+                  <td class="b">ענן</td>
+                </tr>
               </tbody>
             </table>
           </div>
 
           <div class="widget widget-cta">
             <div class="widget-title">רוצה ליישם n8n?</div>
-            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:0;">אנחנו בונים workflows ב-n8n לעסקים ישראלים</p>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:0;">אנחנו בונים workflows ב-n8n לעסקים
+              ישראלים</p>
             <a href="#lead-form" class="btn">ייעוץ חינמי</a>
           </div>
 
@@ -614,9 +1889,15 @@
     <div class="container">
       <div class="footer-grid">
         <div class="footer-col">
-          <a href="/" class="logo" style="margin-bottom:16px;display:inline-flex;" aria-label="AI IT"><svg width="28" height="28" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+          <a href="/" class="logo" style="margin-bottom:16px;display:inline-flex;" aria-label="AI IT"><svg width="28"
+              height="28" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <circle cx="26" cy="26" r="24" fill="#3B82F6" />
+              <circle cx="26" cy="26" r="5.5" fill="white" />
+              <circle cx="26" cy="26" r="2.8" fill="#3B82F6" />
+            </svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
           <p class="footer-desc">פורטל הבינה המלאכותית הגדול בישראל.</p>
-          <p style="font-size:14px;margin-bottom:4px;"><a href="tel:0524534875" style="color:var(--accent);text-decoration:none;font-weight:700;">052-4534875</a></p>
+          <p style="font-size:14px;margin-bottom:4px;"><a href="tel:0524534875"
+              style="color:var(--accent);text-decoration:none;font-weight:700;">052-4534875</a></p>
           <p style="font-size:13px;color:var(--text-secondary);">כל הזכויות שמורות AI IT 2025</p>
         </div>
         <div class="footer-col">
@@ -656,22 +1937,23 @@
   </footer>
 
   <script>
-    (function(){var nd=document.querySelectorAll('.site-nav .has-dropdown');nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});nd.forEach(function(item){var dd=item.querySelector('.dropdown'),t;function close(){t=setTimeout(function(){dd.style.display='none';},200);}item.querySelector('a').addEventListener('click',function(e){e.preventDefault();if(dd.style.display==='flex'){close();}else{clearTimeout(t);nd.forEach(function(o){o.querySelector('.dropdown').style.display='none';});dd.style.display='flex';}});item.addEventListener('mouseleave',close);dd.addEventListener('mouseenter',function(){clearTimeout(t);});dd.addEventListener('mouseleave',close);});document.addEventListener('click',function(e){if(!e.target.closest('.site-nav .has-dropdown'))nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});});})();
+    (function () { var nd = document.querySelectorAll('.site-nav .has-dropdown'); nd.forEach(function (i) { i.querySelector('.dropdown').style.display = 'none'; }); nd.forEach(function (item) { var dd = item.querySelector('.dropdown'), t; function close() { t = setTimeout(function () { dd.style.display = 'none'; }, 200); } item.querySelector('a').addEventListener('click', function (e) { e.preventDefault(); if (dd.style.display === 'flex') { close(); } else { clearTimeout(t); nd.forEach(function (o) { o.querySelector('.dropdown').style.display = 'none'; }); dd.style.display = 'flex'; } }); item.addEventListener('mouseleave', close); dd.addEventListener('mouseenter', function () { clearTimeout(t); }); dd.addEventListener('mouseleave', close); }); document.addEventListener('click', function (e) { if (!e.target.closest('.site-nav .has-dropdown')) nd.forEach(function (i) { i.querySelector('.dropdown').style.display = 'none'; }); }); })();
 
     document.querySelectorAll('.faq-q').forEach(btn => {
       btn.addEventListener('click', () => {
         const item = btn.closest('.faq-item');
         const isOpen = item.classList.contains('open');
-        document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded','false'); });
-        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded','true'); }
+        document.querySelectorAll('.faq-item').forEach(i => { i.classList.remove('open'); i.querySelector('.faq-q').setAttribute('aria-expanded', 'false'); });
+        if (!isOpen) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
       });
     });
 
     const menu = document.getElementById('mobile-menu');
-    document.getElementById('open-menu').addEventListener('click', () => { menu.classList.add('open'); document.body.style.overflow='hidden'; });
-    document.getElementById('close-menu').addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow=''; });
-    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow=''; }));
+    document.getElementById('open-menu').addEventListener('click', () => { menu.classList.add('open'); document.body.style.overflow = 'hidden'; });
+    document.getElementById('close-menu').addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow = ''; });
+    menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => { menu.classList.remove('open'); document.body.style.overflow = ''; }));
     document.getElementById('lead-form-main').addEventListener('submit', e => { e.preventDefault(); alert('תודה! נחזור אליך תוך 24 שעות.'); e.target.reset(); });
   </script>
 </body>
+
 </html>
