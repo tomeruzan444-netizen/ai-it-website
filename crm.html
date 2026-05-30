@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>מערכת CRM בהתאמה אישית עם AI - לעסקים ישראלים | AI IT</title>
+  <meta name="description" content="מערכת CRM בהתאמה אישית: לא Salesforce שעולה 500 דולר לחודש, לא Excel שמתפרק. CRM שנבנה בדיוק לתהליכי המכירה שלך - עם AI שחוסך שעות ניהול.">
+  <meta name="robots" content="index, follow">
+  <link rel="canonical" href="https://ai-it.co.il/crm">
+  <meta property="og:title" content="CRM בהתאמה אישית עם AI | AI IT">
+  <meta property="og:description" content="CRM שנבנה לפי תהליכי המכירה שלך - לא לפי מה שנוח למפתח. עם AI שממלא פרטים, מדרג לידים ושולח follow-up אוטומטי.">
+  <meta property="og:url" content="https://ai-it.co.il/crm">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="he_IL">
+  <meta property="og:site_name" content="AI IT">
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"Service","name":"מערכת CRM בהתאמה אישית","provider":{"@type":"Organization","name":"AI IT","telephone":"052-4534875"},"url":"https://ai-it.co.il/crm","description":"בניית מערכות CRM בהתאמה אישית עם AI לעסקים ישראלים","areaServed":"IL"}
+  </script>
+  <script type="application/ld+json">
+  {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+    {"@type":"Question","name":"כמה עולה CRM בהתאמה אישית?","acceptedAnswer":{"@type":"Answer","text":"תלוי בגודל ומורכבות. CRM בסיסי על Airtable - מ-3,000 ש\"ח. CRM מלא עם אוטומציות AI - 8,000-25,000 ש\"ח. עלות שוטפת: $20-100 לחודש לכלים."}},
+    {"@type":"Question","name":"מה ההבדל בין CRM מותאם ל-HubSpot?","acceptedAnswer":{"@type":"Answer","text":"HubSpot הוא מוצר גנרי שמנסה לתת מענה לכולם. CRM מותאם נבנה בדיוק לתהליכי המכירה שלך - שדות, שלבים ודוחות שמשקפים את הדרך שאתה עובד."}},
+    {"@type":"Question","name":"האם הצוות שלי יצטרך הכשרה?","acceptedAnswer":{"@type":"Answer","text":"כן, אבל CRM טוב לא דורש הכשרה ארוכה. אנחנו בונים ממשק פשוט ומדריכים את הצוות. מרבית הלקוחות עצמאיים תוך שבוע."}}
+  ]}
+  </script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Heebo:wght@300;400;500;700;900&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    :root{--primary:#FFFFFF;--primary-light:#F9FAFB;--surface:#F3F4F6;--accent:#3B82F6;--accent-warm:#F59E0B;--accent-glow:rgba(59,130,246,0.08);--text-primary:#111827;--text-secondary:#6B7280;--border:#E5E7EB;--success:#10B981;--crm:#059669;}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+    html{scroll-behavior:smooth;}
+    body{font-family:'Heebo',sans-serif;background:var(--primary);color:var(--text-primary);line-height:1.7;font-size:16px;}
+    .mono,code,pre{font-family:'Space Mono',monospace;}
+    .skip-link{position:absolute;top:-40px;right:0;background:var(--crm);color:#fff;padding:8px 16px;z-index:9999;transition:top 0.2s;}.skip-link:focus{top:0;}
+    .container{max-width:1200px;margin:0 auto;padding:0 24px;}
+    .site-header{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.97);backdrop-filter:blur(10px);border-bottom:1px solid var(--border);}
+    .site-header .container{display:flex;align-items:center;gap:24px;height:64px;}
+    .logo{text-decoration:none;font-size:28px;font-weight:900;letter-spacing:-1px;flex-shrink:0;display:flex;align-items:center;gap:9px;}.logo-ai{color:var(--accent);}.logo-it{color:var(--accent-warm);}
+    .site-nav{flex:1;}.site-nav ul{list-style:none;display:flex;gap:4px;align-items:center;}
+    .site-nav a{text-decoration:none;color:var(--text-secondary);padding:8px 14px;border-radius:8px;font-size:15px;transition:color 0.2s,background 0.2s;white-space:nowrap;}.site-nav a:hover,.site-nav a[aria-current]{color:var(--text-primary);background:var(--surface);}
+    .has-dropdown{position:relative;}.has-dropdown>a::after{content:' ▾';font-size:11px;}
+    .dropdown{display:none;position:absolute;top:100%;right:0;z-index:200;background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:12px 8px 8px;min-width:210px;box-shadow:0 8px 32px rgba(0,0,0,0.1);flex-direction:column;gap:2px;}
+    .dropdown li{list-style:none;}.dropdown a{display:block;padding:10px 14px;border-radius:8px;font-size:14px;}
+    .btn{display:inline-flex;align-items:center;justify-content:center;padding:10px 20px;border-radius:8px;font-weight:600;text-decoration:none;font-size:15px;cursor:pointer;border:none;transition:all 0.2s;font-family:'Heebo',sans-serif;}
+    .btn-cta{background:var(--crm);color:#fff;}.btn-cta:hover{background:#047857;transform:translateY(-1px);}
+    .btn-outline{background:transparent;color:var(--crm);border:1px solid var(--crm);}.btn-outline:hover{background:rgba(5,150,105,0.06);}
+    .btn-lg{padding:14px 28px;font-size:17px;border-radius:10px;}
+    .hamburger{display:none;flex-direction:column;gap:5px;background:none;border:none;cursor:pointer;padding:8px;}.hamburger span{display:block;width:24px;height:2px;background:var(--text-primary);border-radius:2px;}
+    .breadcrumb{padding:16px 0;border-bottom:1px solid var(--border);}.breadcrumb ol{list-style:none;display:flex;gap:8px;font-size:13px;color:var(--text-secondary);}.breadcrumb a{color:var(--text-secondary);text-decoration:none;}.breadcrumb a:hover{color:var(--crm);}.breadcrumb li+li::before{content:'/';margin-left:8px;}
+    .page-hero{padding:56px 0 48px;border-bottom:1px solid var(--border);background:radial-gradient(ellipse at 70% 0%,rgba(5,150,105,0.06) 0%,transparent 60%);}
+    .section-label{font-size:12px;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:var(--crm);margin-bottom:10px;}
+    h1{font-size:clamp(28px,4vw,46px);font-weight:900;line-height:1.15;margin-bottom:16px;}
+    .hero-desc{font-size:18px;color:var(--text-secondary);max-width:600px;margin-bottom:28px;}
+    .hero-stats{display:flex;gap:28px;flex-wrap:wrap;}.hero-stat{display:flex;align-items:center;gap:10px;font-size:14px;color:var(--text-secondary);}.hero-stat strong{color:var(--crm);font-size:22px;font-family:'Space Mono',monospace;}
+    .page-body{padding:56px 0;}
+    .content-grid{display:grid;grid-template-columns:1fr 320px;gap:48px;align-items:start;}
+    .sidebar{display:flex;flex-direction:column;gap:20px;}
+    section{margin-bottom:56px;}
+    h2{font-size:clamp(20px,3vw,30px);font-weight:800;margin-bottom:16px;scroll-margin-top:80px;}
+    h3{font-size:19px;font-weight:700;margin-bottom:10px;}
+    p{margin-bottom:14px;color:var(--text-secondary);}p strong{color:var(--text-primary);}
+
+    .stat-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-bottom:28px;}
+    .stat-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;text-align:center;}
+    .stat-card .num{font-family:'Space Mono',monospace;font-size:32px;font-weight:700;color:var(--crm);display:block;}.stat-card .label{font-size:13px;color:var(--text-secondary);margin-top:4px;}
+
+    .callout{background:rgba(5,150,105,0.06);border:1px solid rgba(5,150,105,0.2);border-radius:12px;padding:20px 24px;margin:24px 0;}.callout p{margin:0;color:var(--text-primary);}
+    .callout-warn{background:#FFFBEB;border-color:#FDE68A;}.callout-warn p{color:#92400E;}
+
+    .problem-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0;}
+    .problem-card{background:#FEF2F2;border:1px solid #FECACA;border-radius:10px;padding:16px;}
+    .problem-card h4{font-size:14px;font-weight:700;color:#DC2626;margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+    .problem-card p{font-size:13px;margin:0;color:var(--text-secondary);}
+
+    .solution-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin:20px 0;}
+    .solution-card{background:#F0FDF4;border:1px solid #BBF7D0;border-radius:10px;padding:16px;}
+    .solution-card h4{font-size:14px;font-weight:700;color:var(--crm);margin-bottom:6px;display:flex;align-items:center;gap:6px;}
+    .solution-card p{font-size:13px;margin:0;color:var(--text-secondary);}
+
+    .features-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:16px;margin:24px 0;}
+    .feature-card{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:22px;transition:border-color 0.2s;}
+    .feature-card:hover{border-color:var(--crm);}
+    .feature-icon{width:40px;height:40px;background:rgba(5,150,105,0.1);border-radius:10px;display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+    .feature-icon svg{width:20px;height:20px;color:var(--crm);}
+    .feature-card h3{font-size:15px;margin-bottom:6px;}
+    .feature-card p{font-size:13px;margin:0;}
+
+    .process-steps{display:flex;flex-direction:column;gap:0;}
+    .process-step{display:grid;grid-template-columns:56px 1fr;gap:20px;position:relative;}
+    .process-step:not(:last-child)::before{content:'';position:absolute;right:27px;top:56px;bottom:0;width:2px;background:var(--border);}
+    .step-num{width:56px;height:56px;border-radius:50%;background:rgba(5,150,105,0.1);border:2px solid var(--crm);display:flex;align-items:center;justify-content:center;font-family:'Space Mono',monospace;font-weight:700;color:var(--crm);font-size:18px;flex-shrink:0;z-index:1;}
+    .step-content{padding-bottom:36px;}.step-content h3{margin-bottom:8px;}.step-content p{font-size:15px;}
+    .step-duration{display:inline-block;background:var(--surface);border:1px solid var(--border);border-radius:100px;padding:3px 12px;font-size:12px;color:var(--text-secondary);margin-top:8px;}
+
+    .tools-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:20px 0;}
+    .tool-pill{background:var(--surface);border:1px solid var(--border);border-radius:10px;padding:14px;display:flex;align-items:center;gap:10px;}
+    .tool-dot{width:10px;height:10px;border-radius:50%;flex-shrink:0;}
+    .tool-pill span{font-size:14px;font-weight:600;}
+    .tool-pill small{font-size:12px;color:var(--text-secondary);display:block;}
+
+    .comp-table{width:100%;border-collapse:collapse;margin:20px 0;font-size:14px;}
+    .comp-table th{background:var(--surface);padding:12px 16px;text-align:right;font-weight:700;border-bottom:2px solid var(--border);}
+    .comp-table td{padding:12px 16px;border-bottom:1px solid var(--border);color:var(--text-secondary);}
+    .comp-table tr:hover td{background:var(--surface);}
+    .comp-table .win{color:var(--crm);font-weight:600;}
+    .comp-table .lose{color:#EF4444;}
+    .comp-table .mid{color:var(--accent-warm);}
+
+    .case-study{background:var(--surface);border:1px solid var(--border);border-radius:12px;overflow:hidden;margin:24px 0;}
+    .case-tabs{display:flex;border-bottom:1px solid var(--border);}
+    .case-tab{flex:1;padding:12px;background:none;border:none;color:var(--text-secondary);font-family:'Heebo',sans-serif;font-size:14px;cursor:pointer;transition:color 0.2s,background 0.2s;}
+    .case-tab.active{color:var(--crm);background:rgba(5,150,105,0.08);font-weight:600;}
+    .case-panel{display:none;padding:24px;}.case-panel.active{display:block;}
+    .result-row{display:flex;align-items:center;gap:10px;margin-bottom:10px;}.result-dot{width:8px;height:8px;border-radius:50%;background:var(--success);flex-shrink:0;}.result-row span{font-size:15px;color:var(--text-secondary);}.result-row strong{color:var(--text-primary);}
+
+    .quote-block{border-right:4px solid var(--crm);padding-right:20px;margin:24px 0;}.quote-block p{font-size:17px;font-style:italic;color:var(--text-primary);margin-bottom:6px;}.quote-block cite{font-size:13px;color:var(--text-secondary);font-style:normal;}
+
+    .faq-list{display:flex;flex-direction:column;gap:8px;}
+    .faq-item{background:var(--surface);border:1px solid var(--border);border-radius:10px;overflow:hidden;}
+    .faq-q{width:100%;background:none;border:none;cursor:pointer;padding:16px 20px;text-align:right;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;font-weight:600;display:flex;justify-content:space-between;align-items:center;gap:12px;}.faq-q:hover{color:var(--crm);}
+    .faq-q svg{width:16px;height:16px;flex-shrink:0;transition:transform 0.25s;color:var(--crm);}.faq-item.open .faq-q svg{transform:rotate(180deg);}
+    .faq-a{display:none;padding:0 20px 16px;color:var(--text-secondary);font-size:14px;line-height:1.7;}.faq-item.open .faq-a{display:block;}
+
+    .lead-section{background:var(--surface);border:1px solid var(--border);border-radius:20px;padding:40px;text-align:center;}
+    .lead-section h2{margin-bottom:8px;}.lead-sub{font-size:16px;color:var(--text-secondary);margin-bottom:28px;max-width:480px;margin-left:auto;margin-right:auto;}
+    .lead-form-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:560px;margin:0 auto 16px;}.lead-form-grid .full{grid-column:1/-1;}
+    .form-group{margin-bottom:0;}.form-group label{display:block;font-size:13px;color:var(--text-secondary);margin-bottom:6px;}
+    .form-group input,.form-group select{width:100%;background:var(--primary);border:1px solid var(--border);border-radius:8px;padding:10px 14px;color:var(--text-primary);font-family:'Heebo',sans-serif;font-size:15px;transition:border-color 0.2s;}
+    .form-group input:focus,.form-group select:focus{outline:none;border-color:var(--crm);}
+    .form-group select option{background:var(--surface);}
+    .trust-row{display:flex;justify-content:center;gap:24px;flex-wrap:wrap;margin-top:14px;}.trust-item{display:flex;align-items:center;gap:6px;font-size:13px;color:var(--text-secondary);}.trust-item svg{width:14px;height:14px;color:var(--success);}
+
+    .widget{background:var(--surface);border:1px solid var(--border);border-radius:12px;padding:20px;}.widget-title{font-size:13px;font-weight:700;text-transform:uppercase;letter-spacing:1px;color:var(--text-secondary);margin-bottom:14px;}
+    .widget-links{list-style:none;display:flex;flex-direction:column;gap:4px;}.widget-links a{display:flex;align-items:center;gap:8px;padding:8px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:14px;transition:color 0.2s,background 0.2s;}.widget-links a:hover{color:var(--text-primary);background:var(--primary);}.widget-links a::before{content:'→';color:var(--crm);font-size:12px;}
+    .widget-cta{background:linear-gradient(135deg,rgba(5,150,105,0.07),transparent);border:1px solid rgba(5,150,105,0.2);}.widget-cta .btn-cta{width:100%;margin-top:14px;justify-content:center;}
+    .toc-list{list-style:none;display:flex;flex-direction:column;gap:2px;}.toc-list a{display:block;padding:7px 10px;border-radius:8px;text-decoration:none;color:var(--text-secondary);font-size:13px;transition:color 0.2s,background 0.2s;}.toc-list a:hover{color:var(--crm);background:var(--primary);}
+
+    .site-footer{background:var(--primary-light);border-top:1px solid var(--border);padding:56px 0 24px;}
+    .footer-grid{display:grid;grid-template-columns:1.5fr 1fr 1fr 1.5fr;gap:40px;margin-bottom:40px;}.footer-col h4{font-size:15px;font-weight:700;margin-bottom:16px;}
+    .footer-links{list-style:none;display:flex;flex-direction:column;gap:8px;}.footer-links a{color:var(--text-secondary);text-decoration:none;font-size:14px;transition:color 0.2s;}.footer-links a:hover{color:var(--accent);}
+    .footer-desc{font-size:14px;color:var(--text-secondary);line-height:1.7;margin-bottom:14px;}
+    .footer-bottom{border-top:1px solid var(--border);padding-top:24px;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}.footer-bottom p{font-size:13px;color:var(--text-secondary);margin:0;}
+    .mobile-menu{display:none;flex-direction:column;position:fixed;inset:0;background:var(--primary);z-index:200;padding:24px;overflow-y:auto;}.mobile-menu.open{display:flex;}
+    .mobile-menu-header{display:flex;justify-content:space-between;align-items:center;margin-bottom:32px;}
+    .mobile-menu nav ul{list-style:none;display:flex;flex-direction:column;gap:4px;}.mobile-menu nav a{display:block;padding:14px 16px;border-radius:8px;text-decoration:none;color:var(--text-primary);font-size:18px;font-weight:600;}.mobile-menu nav a:hover{background:var(--surface);}
+    .close-btn{background:none;border:none;color:var(--text-primary);font-size:28px;cursor:pointer;line-height:1;}
+    @media(max-width:900px){.content-grid{grid-template-columns:1fr;}.sidebar{position:static;}.stat-cards{grid-template-columns:1fr 1fr;}.features-grid{grid-template-columns:1fr;}.problem-grid{grid-template-columns:1fr;}.solution-grid{grid-template-columns:1fr;}.tools-grid{grid-template-columns:1fr 1fr;}.footer-grid{grid-template-columns:1fr 1fr;}.lead-form-grid{grid-template-columns:1fr;}.lead-section{padding:28px 20px;}}
+    @media(max-width:640px){.site-nav,.btn-cta{display:none;}.hamburger{display:flex;}.stat-cards{grid-template-columns:1fr;}.tools-grid{grid-template-columns:1fr;}.footer-grid{grid-template-columns:1fr;}.hero-stats{flex-direction:column;gap:12px;}}
+  </style>
+</head>
+<body>
+  <a href="#main-content" class="skip-link">דלג לתוכן</a>
+
+  <div class="mobile-menu" id="mobile-menu" role="dialog" aria-modal="true" aria-label="תפריט ניווט">
+    <div class="mobile-menu-header">
+      <a href="/" class="logo"><svg width="28" height="28" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <button class="close-btn" id="close-menu" aria-label="סגור תפריט">&#x2715;</button>
+    </div>
+    <nav><ul>
+      <li><a href="/">בית</a></li>
+      <li><a href="crm.html">CRM בהתאמה אישית</a></li>
+      <li><a href="ai-automation.html">אוטומציה</a></li>
+      <li><a href="chatbot.html">צ'אטבוט</a></li>
+      <li><a href="about.html">אודות</a></li>
+      <li><a href="contact.html">יצירת קשר</a></li>
+      <li><a href="tel:0524534875" style="color:var(--crm);">052-4534875</a></li>
+    </ul></nav>
+  </div>
+
+  <header class="site-header">
+    <div class="container">
+      <a href="/" class="logo" aria-label="AI IT - דף הבית"><svg width="30" height="30" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><line x1="26" y1="10" x2="26" y2="18.5" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="26" y1="33.5" x2="26" y2="42" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="10" y1="26" x2="18.5" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="33.5" y1="26" x2="42" y2="26" stroke="white" stroke-width="1.5" stroke-opacity="0.55"/><line x1="29.5" y1="22.5" x2="36.5" y2="15.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><line x1="22.5" y1="29.5" x2="15.5" y2="36.5" stroke="#F59E0B" stroke-width="1.3" stroke-opacity="0.8"/><circle cx="26" cy="8" r="3.2" fill="white" opacity="0.88"/><circle cx="26" cy="44" r="3.2" fill="white" opacity="0.88"/><circle cx="8" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="44" cy="26" r="3.2" fill="white" opacity="0.88"/><circle cx="38.5" cy="13.5" r="2.8" fill="#F59E0B"/><circle cx="13.5" cy="38.5" r="2.8" fill="#F59E0B"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+      <nav class="site-nav" aria-label="תפריט ראשי">
+        <ul>
+          <li><a href="/">בית</a></li>
+          <li class="has-dropdown"><a href="#">שירותים</a>
+            <ul class="dropdown" role="menu">
+              <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+              <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+              <li><a href="marketing-automation.html">אוטומציה שיווקית</a></li>
+              <li><a href="ai-agents.html">AI Agents לעסקים</a></li>
+              <li><a href="chatbot.html">צ'אטבוט לעסק</a></li>
+              <li><a href="crm.html" aria-current="page">CRM בהתאמה אישית</a></li>
+              <li><a href="ai-consulting.html">ייעוץ טכנולוגי</a></li>
+              <li><a href="ai-solutions.html">פתרונות AI</a></li>
+            </ul>
+          </li>
+          <li class="has-dropdown"><a href="#">כלי AI</a>
+            <ul class="dropdown" role="menu">
+              <li><a href="chatgpt.html">ChatGPT</a></li>
+              <li><a href="claude.html">Claude</a></li>
+              <li><a href="gemini.html">Gemini</a></li>
+              <li><a href="grok.html">Grok</a></li>
+              <li><a href="perplexity.html">Perplexity</a></li>
+              <li><a href="n8n.html">n8n</a></li>
+            </ul>
+          </li>
+          <li><a href="about.html">אודות</a></li>
+          <li><a href="contact.html">יצירת קשר</a></li>
+        </ul>
+      </nav>
+      <a href="tel:0524534875" class="btn btn-cta">052-4534875</a>
+      <button class="hamburger" id="open-menu" aria-label="פתח תפריט"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <nav class="breadcrumb" aria-label="נתיב ניווט">
+    <div class="container">
+      <ol itemscope itemtype="https://schema.org/BreadcrumbList">
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="/" itemprop="item"><span itemprop="name">בית</span></a><meta itemprop="position" content="1"></li>
+        <li itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem"><a href="crm.html" itemprop="item"><span itemprop="name">CRM בהתאמה אישית</span></a><meta itemprop="position" content="2"></li>
+      </ol>
+    </div>
+  </nav>
+
+  <section class="page-hero">
+    <div class="container">
+      <div class="section-label">שירות</div>
+      <h1 id="main-content">CRM בהתאמה אישית - שמנהל את העסק שלך, לא להפך</h1>
+      <p class="hero-desc">Salesforce עולה $150 לחודש לאיש ומכיל 200 פיצ'רים שלא תגע בהם. Excel מתפרק כשמגיעים ל-200 לידים. יש דרך אחרת.</p>
+      <div class="hero-stats">
+        <div class="hero-stat"><strong>15%</strong> עלייה בסגירות - סוכנות נדל"ן</div>
+        <div class="hero-stat"><strong>3 שב'</strong> לCRM מלא ופעיל</div>
+        <div class="hero-stat"><strong>0</strong> ידע תכנות נדרש לתחזוקה</div>
+      </div>
+    </div>
+  </section>
+
+  <main class="page-body">
+    <div class="container">
+      <div class="content-grid">
+        <div class="main-content">
+
+          <!-- Problem -->
+          <section id="problem" aria-labelledby="prob-h">
+            <h2 id="prob-h">הבעיה עם CRM "סטנדרטי" לעסקים ישראלים</h2>
+            <p>רוב עסקי SMB מגיעים אלינו עם אחת מהבעיות הבאות. מכירים אחת?</p>
+
+            <div class="problem-grid">
+              <div class="problem-card">
+                <h4>❌ Excel ו-Sheets</h4>
+                <p>"המתכנן" שלנו הוא גיליון. כשצוות גדל - כולם עורכים את אותו קובץ ומשבשים אחד את השני.</p>
+              </div>
+              <div class="problem-card">
+                <h4>❌ HubSpot / Salesforce גנרי</h4>
+                <p>רכשנו, הגדרנו, ו-80% מהשדות לא רלוונטיים לתחום שלנו. הצוות לא ממלא כי "זה מסורבל".</p>
+              </div>
+              <div class="problem-card">
+                <h4>❌ WhatsApp + הזיכרון</h4>
+                <p>"הכל בראש" - עד שאיש מכירות עוזב ולוקח את כל ההיסטוריה איתו. לקוחות מתקשרים שוב מהתחלה.</p>
+              </div>
+              <div class="problem-card">
+                <h4>❌ CRM ישראלי יקר</h4>
+                <p>פתרונות מקומיים שעולים 800-2,000 ש"ח לחודש, ועדיין לא מדברים עם שאר הכלים שלנו.</p>
+              </div>
+            </div>
+
+            <div class="callout">
+              <p><strong>מה שעסקים ישראלים צריכים:</strong> CRM שבנוי לפי התהליך שלהם - לא ההיפך. שדות בעברית. אוטומציות שמתחברות ל-WhatsApp ול-Gmail. ו-AI שממלא את הפרטים לבד.</p>
+            </div>
+          </section>
+
+          <!-- What we build -->
+          <section id="what-we-build" aria-labelledby="what-h">
+            <h2 id="what-h">מה זה CRM בהתאמה אישית - בפועל</h2>
+            <p>אנחנו לא מפתחים תוכנה מאפס. זה יקר ולוקח חודשים. אנחנו לוקחים פלטפורמות עוצמתיות קיימות ומתאימים אותן בדיוק לאיך שהעסק שלך עובד.</p>
+            <p>הכלים שאנחנו בונים עליהם - Airtable, HubSpot, ו-Pipedrive - הם מערכות שארגונים גדולים בעולם משתמשים בהן. ההתאמה שלנו אומרת שתקבל את העוצמה שלהן בלי הסיבוך.</p>
+
+            <div class="solution-grid">
+              <div class="solution-card">
+                <h4>✓ שדות שמתאימים לתחום שלך</h4>
+                <p>לנדל"ן - סוג נכס, אזור, תקציב. לרופא - סוג טיפול, תדירות. לא שדות גנריים שאף אחד לא ממלא.</p>
+              </div>
+              <div class="solution-card">
+                <h4>✓ תהליך מכירה שמשקף את שלך</h4>
+                <p>שלבי הפייפליין שאנחנו מגדירים יחד - לא "Lead, MQL, SQL, Closed" שהומצאו לחברת SaaS אמריקאית.</p>
+              </div>
+              <div class="solution-card">
+                <h4>✓ אוטומציות AI שחוסכות הקלדה</h4>
+                <p>כשסוכן מוסיף לקוח חדש מ-WhatsApp - AI ממלא שם, טלפון, תחום. לא צריך להקליד ידנית.</p>
+              </div>
+              <div class="solution-card">
+                <h4>✓ דוחות שמנהלים רוצים לראות</h4>
+                <p>לא 47 גרפים. 3-4 מדדים שחשובים: כמה לידים, כמה סגירות, מה ה-conversion rate, מה הפייפליין השבוע.</p>
+              </div>
+            </div>
+
+            <div class="stat-cards">
+              <div class="stat-card">
+                <span class="num">15%</span>
+                <div class="label">עלייה בסגירות - סוכנות נדל"ן עם CRM חדש</div>
+              </div>
+              <div class="stat-card">
+                <span class="num">12 דק'</span>
+                <div class="label">זמן תגובה ללידים (במקום 4 שעות)</div>
+              </div>
+              <div class="stat-card">
+                <span class="num">40%</span>
+                <div class="label">פחות זמן על ניהול ידני של לידים</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Features with AI -->
+          <section id="ai-features" aria-labelledby="ai-h">
+            <h2 id="ai-h">מה ה-AI מוסיף ל-CRM</h2>
+            <p>CRM רגיל רק שומר מידע. CRM עם AI פועל על המידע. ארבעה דברים שהAI עושה שמנהלי מכירות אוהבים:</p>
+
+            <div class="features-grid">
+              <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M12 20h9"/><path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/></svg></div>
+                <h3>סיכום שיחה אוטומטי</h3>
+                <p style="font-size:13px;">אחרי שיחה עם לקוח - הסוכן כותב 3 מילים ב-WhatsApp, ה-AI מרחיב לסיכום מלא ב-CRM. אף אחד לא שוכח מה סוכם.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><polyline points="22 12 18 12 15 21 9 3 6 12 2 12"/></svg></div>
+                <h3>דירוג לידים חכם</h3>
+                <p style="font-size:13px;">AI מנתח כל ליד ונותן ציון 1-10 לפי תקציב, דחיפות, התאמה. הסוכן יודע איפה להתמקד בבוקר.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg></div>
+                <h3>Follow-up אוטומטי</h3>
+                <p style="font-size:13px;">ליד שלא ענה 3 ימים? AI שולח הודעת follow-up מותאמת אישית. לא template גנרי - מסר שמתייחס לשיחה האחרונה.</p>
+              </div>
+              <div class="feature-card">
+                <div class="feature-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><rect x="3" y="3" width="18" height="18" rx="2" ry="2"/><line x1="3" y1="9" x2="21" y2="9"/><line x1="9" y1="21" x2="9" y2="9"/></svg></div>
+                <h3>מילוי שדות אוטומטי</h3>
+                <p style="font-size:13px;">לקוח שלח מסמך? AI קורא ומוציא: שם, טלפון, תקציב, תחום - ומכניס ישירות ל-CRM. הסוכן רק מאשר.</p>
+              </div>
+            </div>
+          </section>
+
+          <!-- Process -->
+          <section id="process" aria-labelledby="proc-h">
+            <h2 id="proc-h">התהליך - מ-0 ל-CRM עובד תוך 3 שבועות</h2>
+            <p>בנינו CRM לסוכנות נדל"ן עם 15 סוכנים, לחברת ביטוח עם 12 עובדים, ולרשת קליניקות. בכל פעם התהליך הוא אותו הדבר.</p>
+
+            <div class="process-steps">
+              <div class="process-step">
+                <div class="step-num">1</div>
+                <div class="step-content">
+                  <h3>מיפוי תהליך המכירה</h3>
+                  <p>ישיבה אחת של 2-3 שעות. אנחנו שואלים: מאיפה מגיעים לידים? מה קורה אחרי שמגיעים? מה שלבי הסגירה? כמה זמן לוקח כל שלב?</p>
+                  <p>ב-90% מהמקרים, בעל העסק לא ידע בדיוק מה ה-conversion rate שלו. זה הממצא הראשון - ובד"כ המדהים ביותר.</p>
+                  <span class="step-duration">1-2 ימים</span>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num">2</div>
+                <div class="step-content">
+                  <h3>בנייה והגדרה</h3>
+                  <p>אנחנו בונים את ה-CRM לפי המיפוי: שדות מותאמים, שלבי פייפליין, תצוגות מותאמות לכל תפקיד, ו-dashboards למנהל.</p>
+                  <p>כולל אוטומציות ראשוניות: כניסת ליד → הודעה לסוכן. ליד בשלב "הצעת מחיר" 5 ימים - תזכורת אוטומטית.</p>
+                  <span class="step-duration">שבוע</span>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num">3</div>
+                <div class="step-content">
+                  <h3>חיבור AI ואינטגרציות</h3>
+                  <p>מחברים ל-WhatsApp, Gmail, לוח מודעות, קבצי PDF - כל מה שרלוונטי. AI nodes שמבצעים את הסיכומים והדירוגים.</p>
+                  <span class="step-duration">שבוע</span>
+                </div>
+              </div>
+              <div class="process-step">
+                <div class="step-num">4</div>
+                <div class="step-content">
+                  <h3>הדרכה ו-launch</h3>
+                  <p>הדרכה של שעתיים לצוות - לא "קורס" - פשוט נעבור יחד על כל מה שרלוונטי לתפקיד שלהם. הצוות עצמאי תוך שבוע.</p>
+                  <span class="step-duration">2-3 ימים</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Tools -->
+          <section id="tools" aria-labelledby="tools-h">
+            <h2 id="tools-h">הפלטפורמות שאנחנו בונים עליהן</h2>
+            <p>לא כל פלטפורמה מתאימה לכל עסק. הנה מה שאנחנו בוחרים ולמה:</p>
+
+            <div class="tools-grid">
+              <div class="tool-pill"><div class="tool-dot" style="background:#F59E0B;"></div><div><span>Airtable</span><small>לעסקים קטנים-בינוניים</small></div></div>
+              <div class="tool-pill"><div class="tool-dot" style="background:#FF7A59;"></div><div><span>HubSpot</span><small>לצוותי מכירות גדולים</small></div></div>
+              <div class="tool-pill"><div class="tool-dot" style="background:#003366;"></div><div><span>Pipedrive</span><small>פייפליין מכירות פשוט</small></div></div>
+              <div class="tool-pill"><div class="tool-dot" style="background:#000000;"></div><div><span>Notion</span><small>לעסקים שמנהלים ידע</small></div></div>
+              <div class="tool-pill"><div class="tool-dot" style="background:var(--n8n,#EA4B71);"></div><div><span>n8n / Zapier</span><small>אוטומציות ואינטגרציות</small></div></div>
+              <div class="tool-pill"><div class="tool-dot" style="background:var(--accent);"></div><div><span>Claude / GPT</span><small>ה-AI שמפעיל הכל</small></div></div>
+            </div>
+
+            <div class="callout">
+              <p><strong>הכלל שלנו לבחירת פלטפורמה:</strong> Airtable מתאים לעסקים עד 20 עובדים שרוצים גמישות. HubSpot מתאים כשיש צוות מכירות של 5+ שדורש pipeline ודוחות מתקדמים. Pipedrive - לסוכנים שרוצים פשטות מקסימלית.</p>
+            </div>
+          </section>
+
+          <!-- Case Study -->
+          <section id="case-study" aria-labelledby="case-h">
+            <h2 id="case-h">מקרה שימוש: סוכנות נדל"ן (15 סוכנים)</h2>
+
+            <div class="case-study">
+              <div class="case-tabs">
+                <button class="case-tab active" data-panel="crm-bg">רקע</button>
+                <button class="case-tab" data-panel="crm-ch">אתגר</button>
+                <button class="case-tab" data-panel="crm-sol">פתרון</button>
+                <button class="case-tab" data-panel="crm-res">תוצאות</button>
+              </div>
+              <div id="panel-crm-bg" class="case-panel active">
+                <h4 style="margin-bottom:10px;">15 סוכנים, 3 שיטות שונות לניהול</h4>
+                <p style="font-size:14px;">סוכנות נדל"ן פעילה. שלושה סוכנים עבדו עם Excel, שלושה עם מחברת, והשאר "בזיכרון". כשמנהל ביקש דוח שבועי - לקח 3 שעות לאסוף נתונים.</p>
+              </div>
+              <div id="panel-crm-ch" class="case-panel">
+                <h4 style="margin-bottom:10px;">זמן תגובה של 4 שעות וחוסר נראות</h4>
+                <p style="font-size:14px;">לידים מ-Yad2 ומ-landing page הגיעו למייל ולטלפון בצורה לא מסודרת. זמן תגובה ממוצע - 4 שעות. לפי המחקרים, ליד שלא מקבל מענה תוך 5 דקות מאבד 80% מהעניין.</p>
+              </div>
+              <div id="panel-crm-sol" class="case-panel">
+                <h4 style="margin-bottom:10px;">Airtable + n8n + Claude</h4>
+                <ul style="padding-right:20px;font-size:14px;color:var(--text-secondary);line-height:2.2;">
+                  <li>Airtable - CRM מרכזי עם שדות מותאמים לנדל"ן (אזור, טיפוס, תקציב)</li>
+                  <li>n8n - ליד נכנס → נרשם ב-CRM → SMS לסוכן תוך 2 דקות</li>
+                  <li>Claude - מסכם כל שיחה ומדרג ליד לפי רמת עניין</li>
+                  <li>דשבורד מנהל - pipeline, סגירות, נכסים פעילים</li>
+                </ul>
+              </div>
+              <div id="panel-crm-res" class="case-panel">
+                <h4 style="margin-bottom:10px;">תוצאות אחרי 3 חודשים</h4>
+                <div class="result-row"><div class="result-dot"></div><span>זמן תגובה: <strong>מ-4 שעות ל-12 דקות</strong></span></div>
+                <div class="result-row"><div class="result-dot"></div><span>סגירות עלו <strong>ב-15%</strong></span></div>
+                <div class="result-row"><div class="result-dot"></div><span>דוח שבועי: <strong>מ-3 שעות ל-0</strong> - אוטומטי</span></div>
+                <div class="result-row"><div class="result-dot"></div><span>כל הסוכנים עובדים על <strong>מערכת אחת</strong></span></div>
+              </div>
+            </div>
+
+            <div class="quote-block">
+              <p>"לפני ה-CRM, כשסוכן חדש הצטרף - לקח לו חודש ללמוד מי הלקוחות. היום הוא פותח Airtable ורואה את כל ההיסטוריה."</p>
+              <cite>מנהל הסוכנות, לאחר הפרויקט</cite>
+            </div>
+          </section>
+
+          <!-- Comparison -->
+          <section id="comparison" aria-labelledby="comp-h">
+            <h2 id="comp-h">CRM מותאם לעומת off-the-shelf</h2>
+
+            <div style="overflow-x:auto;">
+              <table class="comp-table" aria-label="השוואת CRM">
+                <thead>
+                  <tr><th>קריטריון</th><th>CRM מותאם (שלנו)</th><th>HubSpot Free</th><th>Salesforce</th></tr>
+                </thead>
+                <tbody>
+                  <tr><td>התאמה לתהליך שלך</td><td class="win">מלאה</td><td class="mid">חלקית</td><td class="mid">חלקית</td></tr>
+                  <tr><td>מחיר חודשי שוטף</td><td class="win">$20-100</td><td class="win">חינמי (מוגבל)</td><td class="lose">$150+ לאיש</td></tr>
+                  <tr><td>AI מובנה</td><td class="win">כן - מותאם</td><td class="mid">בסיסי</td><td class="mid">בתוספת תשלום</td></tr>
+                  <tr><td>זמן הטמעה</td><td class="win">3 שבועות</td><td>שבועיים</td><td class="lose">3-6 חודשים</td></tr>
+                  <tr><td>צורך ב-IT</td><td class="win">לא</td><td class="win">לא</td><td class="lose">כן</td></tr>
+                  <tr><td>עברית מלאה</td><td class="win">כן</td><td class="mid">חלקית</td><td class="lose">לא</td></tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <!-- FAQ -->
+          <section id="faq" aria-labelledby="faq-h">
+            <h2 id="faq-h">שאלות על CRM בהתאמה אישית</h2>
+            <div class="faq-list">
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">כמה עולה CRM בהתאמה אישית?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">תלוי בגודל ומורכבות. CRM בסיסי על Airtable עם אוטומציות בסיסיות - 3,000-5,000 ש"ח. CRM מלא עם AI, אינטגרציות ל-WhatsApp, ודשבורד מנהל - 10,000-20,000 ש"ח. עלות שוטפת: $20-100 לחודש לכלים. ב-30 דקות ייעוץ נוכל לתת הצעה מדויקת.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">האם הצוות יצטרך הכשרה ארוכה?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">לא. CRM טוב לא דורש הכשרה ארוכה - הוא פשוט. אנחנו מוסרים הדרכה של שעתיים שמכסה הכל. מרבית הצוות עצמאיים תוך שבוע. זה לא Salesforce עם 300 דפי תיעוד.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">האם המידע שלנו מאובטח?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">כן. Airtable, HubSpot ו-Pipedrive הם פלטפורמות Enterprise-grade עם הצפנה מלאה. אנחנו מגדירים הרשאות כך שכל עובד רואה רק מה שרלוונטי לתפקידו.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">מה קורה אם צריך לשנות את ה-CRM אחר כך?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">אנחנו בונים להיות גמישים. הוספת שדה, שינוי שלב, הוספת אוטומציה - כל זה ניתן לעדכון תוך שעות. אנחנו גם מלמדים את הצוות לעשות שינויים קטנים לבד.</div>
+              </div>
+              <div class="faq-item">
+                <button class="faq-q" aria-expanded="false">האם זה מתחבר ל-WhatsApp שלנו?<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><path d="M6 9l6 6 6-6"/></svg></button>
+                <div class="faq-a">כן. דרך WhatsApp Business API ו-n8n, כל הודעה שנכנסת ב-WhatsApp יכולה לעדכן ליד ב-CRM אוטומטית. ראינו את זה עובד עם הסוכנות - זמן תגובה ירד מ-4 שעות ל-12 דקות.</div>
+              </div>
+            </div>
+          </section>
+
+          <!-- Lead Form -->
+          <section id="lead-form" aria-labelledby="lead-h">
+            <div class="lead-section">
+              <div class="section-label">התחל עכשיו</div>
+              <h2 id="lead-h">בנה CRM שמתאים לעסק שלך</h2>
+              <p class="lead-sub">30 דקות ייעוץ חינמי - נבין מה הצוות צריך ונציע את הפתרון הנכון.</p>
+              <form id="lead-form-main" novalidate>
+                <div class="lead-form-grid">
+                  <div class="form-group"><label for="lf-name">שם מלא</label><input type="text" id="lf-name" name="name" placeholder="ישראל ישראלי" required autocomplete="name"></div>
+                  <div class="form-group"><label for="lf-phone">טלפון</label><input type="tel" id="lf-phone" name="phone" placeholder="052-4534875" required autocomplete="tel"></div>
+                  <div class="form-group">
+                    <label for="lf-crm">מה יש לכם עכשיו?</label>
+                    <select id="lf-crm" name="current_crm">
+                      <option value="">בחר...</option>
+                      <option>Excel / Google Sheets</option>
+                      <option>ניהול בראש / WhatsApp</option>
+                      <option>HubSpot - לא מנוצל מספיק</option>
+                      <option>Salesforce - יקר מדי</option>
+                      <option>CRM ישראלי</option>
+                      <option>אין כלום עדיין</option>
+                    </select>
+                  </div>
+                  <div class="form-group">
+                    <label for="lf-team">גודל הצוות</label>
+                    <select id="lf-team" name="team_size">
+                      <option value="">בחר...</option>
+                      <option>1-5 עובדים</option>
+                      <option>6-15 עובדים</option>
+                      <option>16-30 עובדים</option>
+                      <option>30+ עובדים</option>
+                    </select>
+                  </div>
+                  <div class="form-group full">
+                    <button type="submit" class="btn btn-cta btn-lg" style="width:100%;justify-content:center;">קבל ייעוץ חינמי על CRM</button>
+                  </div>
+                </div>
+              </form>
+              <div class="trust-row">
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>מגיבים תוך 24 שעות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>ללא התחייבות</div>
+                <div class="trust-item"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>שיחה בעברית</div>
+              </div>
+            </div>
+          </section>
+
+        </div>
+
+        <aside class="sidebar" aria-label="סרגל צד">
+          <div class="widget widget-cta">
+            <div class="widget-title">בנה CRM מותאם</div>
+            <p style="font-size:14px;color:var(--text-secondary);margin-bottom:0;">30 דקות לבדוק מה הצוות צריך</p>
+            <a href="#lead-form" class="btn btn-cta">קבע שיחה חינמית</a>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">תוכן עניינים</div>
+            <ul class="toc-list">
+              <li><a href="#problem">הבעיה עם CRM רגיל</a></li>
+              <li><a href="#what-we-build">מה אנחנו בונים</a></li>
+              <li><a href="#ai-features">AI ב-CRM</a></li>
+              <li><a href="#process">התהליך</a></li>
+              <li><a href="#tools">הכלים</a></li>
+              <li><a href="#case-study">מקרה: נדל"ן</a></li>
+              <li><a href="#comparison">השוואה</a></li>
+              <li><a href="#faq">שאלות נפוצות</a></li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">שירותים קשורים</div>
+            <ul class="widget-links">
+              <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+              <li><a href="chatbot.html">צ'אטבוט לעסק</a></li>
+              <li><a href="ai-agents.html">AI Agents</a></li>
+              <li><a href="ai-implementation.html">הטמעת AI</a></li>
+            </ul>
+          </div>
+
+          <div class="widget">
+            <div class="widget-title">כלים לCRM</div>
+            <ul class="widget-links">
+              <li><a href="n8n.html">n8n - אוטומציות CRM</a></li>
+              <li><a href="claude.html">Claude - AI לCRM</a></li>
+              <li><a href="chatgpt.html">ChatGPT - סיכומי שיחות</a></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </main>
+
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-col">
+          <a href="/" class="logo" style="margin-bottom:16px;display:inline-flex;" aria-label="AI IT"><svg width="28" height="28" viewBox="0 0 52 52" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"><circle cx="26" cy="26" r="24" fill="#3B82F6"/><circle cx="26" cy="26" r="5.5" fill="white"/><circle cx="26" cy="26" r="2.8" fill="#3B82F6"/></svg><span class="logo-ai">AI</span><span class="logo-it">IT</span></a>
+          <p class="footer-desc">פורטל הבינה המלאכותית הגדול בישראל.</p>
+          <p style="font-size:14px;margin-bottom:4px;"><a href="tel:0524534875" style="color:var(--accent);text-decoration:none;font-weight:700;">052-4534875</a></p>
+          <p style="font-size:13px;color:var(--text-secondary);">כל הזכויות שמורות AI IT 2025</p>
+        </div>
+        <div class="footer-col">
+          <h4>שירותים</h4>
+          <ul class="footer-links">
+            <li><a href="ai-implementation.html">הטמעת AI בארגון</a></li>
+            <li><a href="ai-automation.html">אוטומציה לעסקים</a></li>
+            <li><a href="chatbot.html">צ'אטבוט לעסק</a></li>
+            <li><a href="crm.html">CRM בהתאמה אישית</a></li>
+            <li><a href="ai-agents.html">AI Agents</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>כלי AI</h4>
+          <ul class="footer-links">
+            <li><a href="chatgpt.html">ChatGPT</a></li>
+            <li><a href="claude.html">Claude</a></li>
+            <li><a href="n8n.html">n8n</a></li>
+            <li><a href="gemini.html">Gemini</a></li>
+            <li><a href="perplexity.html">Perplexity</a></li>
+          </ul>
+        </div>
+        <div class="footer-col">
+          <h4>החברה</h4>
+          <ul class="footer-links">
+            <li><a href="about.html">אודות AI IT</a></li>
+            <li><a href="contact.html">יצירת קשר</a></li>
+            <li><a href="tel:0524534875">052-4534875</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <p>AI IT - פורטל הבינה המלאכותית לעסקים ישראלים</p>
+        <p><a href="sitemap.xml" style="color:var(--text-secondary);text-decoration:none;">מפת אתר</a></p>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    (function(){var nd=document.querySelectorAll('.site-nav .has-dropdown');nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});nd.forEach(function(item){var dd=item.querySelector('.dropdown'),t;function close(){t=setTimeout(function(){dd.style.display='none';},200);}item.querySelector('a').addEventListener('click',function(e){e.preventDefault();if(dd.style.display==='flex'){close();}else{clearTimeout(t);nd.forEach(function(o){o.querySelector('.dropdown').style.display='none';});dd.style.display='flex';}});item.addEventListener('mouseleave',close);dd.addEventListener('mouseenter',function(){clearTimeout(t);});dd.addEventListener('mouseleave',close);});document.addEventListener('click',function(e){if(!e.target.closest('.site-nav .has-dropdown'))nd.forEach(function(i){i.querySelector('.dropdown').style.display='none';});});})();
+    document.querySelectorAll('.faq-q').forEach(btn=>{btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const isOpen=item.classList.contains('open');document.querySelectorAll('.faq-item').forEach(i=>{i.classList.remove('open');i.querySelector('.faq-q').setAttribute('aria-expanded','false');});if(!isOpen){item.classList.add('open');btn.setAttribute('aria-expanded','true');}});});
+    document.querySelectorAll('.case-tab').forEach(tab=>{tab.addEventListener('click',()=>{const cs=tab.closest('.case-study');cs.querySelectorAll('.case-tab').forEach(t=>t.classList.remove('active'));cs.querySelectorAll('.case-panel').forEach(p=>p.classList.remove('active'));tab.classList.add('active');cs.querySelector('#panel-'+tab.dataset.panel).classList.add('active');});});
+    const menu=document.getElementById('mobile-menu');document.getElementById('open-menu').addEventListener('click',()=>{menu.classList.add('open');document.body.style.overflow='hidden';});document.getElementById('close-menu').addEventListener('click',()=>{menu.classList.remove('open');document.body.style.overflow='';});menu.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{menu.classList.remove('open');document.body.style.overflow='';}));
+    document.getElementById('lead-form-main').addEventListener('submit',e=>{e.preventDefault();alert('תודה! נחזור אליך תוך 24 שעות.');e.target.reset();});
+  </script>
+</body>
+</html>
