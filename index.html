@@ -379,6 +379,45 @@
     }
     .footer-bottom p { font-size: 13px; color: var(--text-secondary); margin: 0; }
 
+    /* ========== ROI CALCULATOR ========== */
+    .roi-calculator {
+      background: var(--surface); border: 1px solid var(--border);
+      border-radius: 16px; padding: 32px; margin-top: 24px;
+    }
+    .roi-inputs { display: flex; flex-direction: column; gap: 24px; margin-bottom: 28px; }
+    .roi-input-group { display: flex; flex-direction: column; gap: 8px; }
+    .roi-input-header { display: flex; justify-content: space-between; align-items: center; }
+    .roi-input-header label { font-size: 15px; font-weight: 600; color: var(--text-primary); }
+    .roi-val { font-family: 'Space Mono', monospace; font-size: 14px; font-weight: 700; color: var(--accent); background: var(--accent-glow); padding: 3px 10px; border-radius: 100px; }
+    .roi-slider {
+      -webkit-appearance: none; width: 100%; height: 6px;
+      background: var(--border); border-radius: 100px; outline: none; cursor: pointer;
+      transition: background 0.2s;
+    }
+    .roi-slider::-webkit-slider-thumb {
+      -webkit-appearance: none; width: 20px; height: 20px; border-radius: 50%;
+      background: var(--accent); cursor: pointer; box-shadow: 0 0 0 4px var(--accent-glow);
+      transition: box-shadow 0.2s;
+    }
+    .roi-slider::-webkit-slider-thumb:hover { box-shadow: 0 0 0 6px var(--accent-glow); }
+    .roi-minmax { display: flex; justify-content: space-between; font-size: 11px; color: var(--text-secondary); }
+    .roi-results {
+      display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px;
+    }
+    .roi-result-card {
+      background: var(--primary); border: 1px solid var(--border); border-radius: 12px;
+      padding: 20px; text-align: center; transition: border-color 0.2s;
+    }
+    .roi-result-card.roi-result-main { border-color: var(--accent); background: var(--accent-glow); }
+    .roi-number {
+      display: block; font-family: 'Space Mono', monospace; font-size: 28px; font-weight: 700;
+      color: var(--accent); margin-bottom: 6px; transition: all 0.3s;
+    }
+    .roi-result-main .roi-number { font-size: 32px; }
+    .roi-label { font-size: 13px; color: var(--text-secondary); }
+    .roi-note { font-size: 12px; color: var(--text-secondary); text-align: center; }
+    @media (max-width: 640px) { .roi-results { grid-template-columns: 1fr; } }
+
     /* ========== MOBILE ========== */
     @media (max-width: 900px) {
       .content-grid { grid-template-columns: 1fr; }
@@ -714,6 +753,56 @@
             </div>
           </section>
 
+          <!-- ROI Calculator -->
+          <section id="roi-calculator" aria-labelledby="roi-heading">
+            <div class="section-label">כמה AI שווה לעסק שלך?</div>
+            <h2 id="roi-heading">מחשבון חיסכון - בדוק את המספרים שלך</h2>
+            <p>הזז את המחוונים לפי נתוני העסק שלך - ותראה מיידית כמה AI יכול לחסוך.</p>
+            <div class="roi-calculator">
+              <div class="roi-inputs">
+                <div class="roi-input-group">
+                  <div class="roi-input-header">
+                    <label for="roi-employees">עובדים שמבצעים משימות חוזרות</label>
+                    <span class="roi-val" id="roi-emp-val">5 עובדים</span>
+                  </div>
+                  <input type="range" id="roi-employees" min="1" max="50" value="5" class="roi-slider">
+                  <div class="roi-minmax"><span>1</span><span>50</span></div>
+                </div>
+                <div class="roi-input-group">
+                  <div class="roi-input-header">
+                    <label for="roi-hours">שעות ביום על משימות חוזרות (לעובד)</label>
+                    <span class="roi-val" id="roi-hrs-val">2 שעות</span>
+                  </div>
+                  <input type="range" id="roi-hours" min="0.5" max="8" step="0.5" value="2" class="roi-slider">
+                  <div class="roi-minmax"><span>30 דק'</span><span>8 שעות</span></div>
+                </div>
+                <div class="roi-input-group">
+                  <div class="roi-input-header">
+                    <label for="roi-cost">עלות שעת עבודה (ש"ח)</label>
+                    <span class="roi-val" id="roi-cost-val">80 ₪</span>
+                  </div>
+                  <input type="range" id="roi-cost" min="30" max="300" step="10" value="80" class="roi-slider">
+                  <div class="roi-minmax"><span>30 ₪</span><span>300 ₪</span></div>
+                </div>
+              </div>
+              <div class="roi-results">
+                <div class="roi-result-card">
+                  <span class="roi-number" id="roi-weekly">35</span>
+                  <span class="roi-label">שעות חסכון בשבוע</span>
+                </div>
+                <div class="roi-result-card roi-result-main">
+                  <span class="roi-number" id="roi-monthly">11,200</span>
+                  <span class="roi-label">ש"ח ערך חודשי</span>
+                </div>
+                <div class="roi-result-card">
+                  <span class="roi-number" id="roi-yearly">134,400</span>
+                  <span class="roi-label">ש"ח ערך שנתי</span>
+                </div>
+              </div>
+              <p class="roi-note">* מבוסס על חיסכון של 70% מזמן המשימות החוזרות - ממוצע מ-7 הפרויקטים שלנו</p>
+            </div>
+          </section>
+
           <!-- Lead Form -->
           <section id="lead-form" aria-labelledby="lead-heading">
             <div class="lead-section">
@@ -958,6 +1047,28 @@
       }, 2000);
       el.style.transition = 'opacity 0.2s';
     }
+
+    // ROI Calculator
+    (function() {
+      var emp = document.getElementById('roi-employees');
+      var hrs = document.getElementById('roi-hours');
+      var cst = document.getElementById('roi-cost');
+      function fmt(n) { return Math.round(n).toLocaleString('he-IL'); }
+      function calc() {
+        var e = +emp.value, h = +hrs.value, c = +cst.value;
+        var saving = 0.7;
+        document.getElementById('roi-emp-val').textContent = e + ' עובדים';
+        document.getElementById('roi-hrs-val').textContent = h + ' שעות';
+        document.getElementById('roi-cost-val').textContent = c + ' ₪';
+        document.getElementById('roi-weekly').textContent = fmt(e * h * 5 * saving);
+        document.getElementById('roi-monthly').textContent = fmt(e * h * 22 * saving * c);
+        document.getElementById('roi-yearly').textContent = fmt(e * h * 264 * saving * c);
+      }
+      emp.addEventListener('input', calc);
+      hrs.addEventListener('input', calc);
+      cst.addEventListener('input', calc);
+      calc();
+    })();
 
     // FAQ accordion
     document.querySelectorAll('.faq-q').forEach(btn => {
