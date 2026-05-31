@@ -20,6 +20,6 @@ jobs:
           password: ${{ secrets.SSH_PASSWORD }}
           port: 65002
           source: "."
-          target: "/home/u260375810/domains/lightgreen-chamois-629563.hostingersite.com/public_html"
+          target: "/home/u260375810/domains/slategray-viper-406372.hostingersite.com/public_html"
           strip_components: 1
           rm: false
