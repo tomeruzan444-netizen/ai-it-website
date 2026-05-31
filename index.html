@@ -1088,18 +1088,21 @@
       });
     });
 
-    // Dropdown menus - click to open, mouseleave to close
+    // Dropdown menus - hover to open (after delay), mouseleave to close
     (function() {
       var nd = document.querySelectorAll('.site-nav .has-dropdown');
       nd.forEach(function(item) { item.querySelector('.dropdown').style.display = 'none'; });
+      var he = false;
+      setTimeout(function() { he = true; }, 600);
       nd.forEach(function(item) {
         var dd = item.querySelector('.dropdown');
         var t;
         function close() { t = setTimeout(function() { dd.style.display = 'none'; }, 200); }
+        function open() { clearTimeout(t); nd.forEach(function(o) { o.querySelector('.dropdown').style.display = 'none'; }); dd.style.display = 'flex'; }
+        item.addEventListener('mouseenter', function() { if (he) open(); });
         item.querySelector('a').addEventListener('click', function(e) {
           e.preventDefault();
-          if (dd.style.display === 'flex') { close(); }
-          else { clearTimeout(t); nd.forEach(function(o) { o.querySelector('.dropdown').style.display = 'none'; }); dd.style.display = 'flex'; }
+          if (dd.style.display === 'flex') { close(); } else { open(); }
         });
         item.addEventListener('mouseleave', close);
         dd.addEventListener('mouseenter', function() { clearTimeout(t); });
