@@ -12,6 +12,21 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Check ai-it.co.il folder structure
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 82.29.187.1
+          username: u260375810
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 65002
+          script: |
+            echo "=== ai-it.co.il folder ==="
+            ls -la /home/u260375810/domains/ai-it.co.il/
+            echo "=== public_html ==="
+            ls /home/u260375810/domains/ai-it.co.il/public_html/ | head -5 2>/dev/null || echo "no public_html subfolder"
+            echo "=== index.html H1 check ==="
+            grep -o '<h1[^>]*>[^<]*</h1>' /home/u260375810/domains/ai-it.co.il/public_html/index.html 2>/dev/null || grep -o '<h1[^>]*>[^<]*</h1>' /home/u260375810/domains/ai-it.co.il/index.html 2>/dev/null || echo "index.html not found"
+
       - name: Deploy via SCP (SSH)
         uses: appleboy/scp-action@v0.1.7
         with:
