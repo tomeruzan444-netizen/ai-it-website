@@ -12,6 +12,25 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Find correct web root path
+        uses: appleboy/ssh-action@v1.0.3
+        with:
+          host: 82.29.187.1
+          username: u260375810
+          password: ${{ secrets.SSH_PASSWORD }}
+          port: 65002
+          script: |
+            echo "=== HOME DIR ==="
+            echo $HOME
+            echo "=== ROOT CONTENTS ==="
+            ls -la $HOME
+            echo "=== PUBLIC_HTML CONTENTS ==="
+            ls $HOME/public_html/ | head -10 2>/dev/null || echo "no public_html"
+            echo "=== DOMAINS ==="
+            ls $HOME/domains/ 2>/dev/null || echo "no domains folder"
+            echo "=== HTDOCS ==="
+            ls $HOME/htdocs/ 2>/dev/null || echo "no htdocs folder"
+
       - name: Deploy via SCP (SSH)
         uses: appleboy/scp-action@v0.1.7
         with:
